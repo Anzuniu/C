@@ -1,11 +1,11 @@
 
 #include <stdio.h>
 
-int    ft_strlcat(char *sr1, char  *sr2, int size)
+int    ft_strlcat(char *sr1, char  *sr2, size_t size)
 {
-    unsigned int    i;
-    unsigned int    j;
-    int             len_total;
+    size_t    i;
+    size_t    j;
+    int       len_total;
 
     i = 0;
     j = 0;
@@ -21,7 +21,7 @@ int    ft_strlcat(char *sr1, char  *sr2, int size)
         i++;
         j++;
     }
-    sr1[i] = '\0';
+    sr1[i] = 0;
     if (len_total > size)
     {
         printf("No cabe");
@@ -39,7 +39,7 @@ int main()
 {
     char sr1[] = "Tremendo ";
     char sr2[] = "diplodocus.";
-    int  size = 19;
+    int  size = 20;
 
     printf("sr1: %s\nsr2: %s\n", sr1, sr2);
     printf("\n%d\n",ft_strlcat(sr1, sr2, size));

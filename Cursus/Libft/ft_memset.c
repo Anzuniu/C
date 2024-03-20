@@ -1,12 +1,12 @@
 /*Establece un bloque de memoria con un valor específico.
  Retorna un puntero al bloque de memoria modificado.*/
 
-char    *ft_memset(char *str, char c, int n)
+char    *ft_memset(char *str, char c, size_t size)
 {
-    unsigned int    i;
+    size_t    i;
     
     i = 0;
-    while(str[i] != '\0' && i < n)
+    while(str[i] && i < size)
     {
         str[i] = c;
         i++;

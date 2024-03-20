@@ -5,15 +5,15 @@ Retorna un puntero a la cadena de destino después de la copia.*/
 
 void	*ft_strcpy(char	*dest, char	*src)
 {
-	unsigned int	i;	
+	size_t	i;	
 
 	i = 0;
-    while (src[i] != 0)
+    while (src[i])
 		{
 			dest[i] = src[i];
 			i++;
 		}
-	dest[i] = '\0';
+	dest[i] = 0;
 }
 
 int main()

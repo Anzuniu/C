@@ -4,7 +4,7 @@ Retorna un puntero a la primera aparición del carácter en la cadena o NULL si 
 
 char *ft_strchr(const char *s, int c)
 {
-    unsigned int    i;
+    size_t    i;
     
     i = 0;
     while (s[i])

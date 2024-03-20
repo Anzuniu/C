@@ -2,7 +2,7 @@
 Retorna un puntero a la primera aparición de la subcadena en la cadena o NULL si no se encuentra.*/
 #include <stdio.h>
 
-const char *ft_strnstr(const char *haystack, const char *needle, int len)
+const char *ft_strnstr(const char *haystack, const char *needle, size_t size)
 {
     unsigned int i;
     unsigned int j;
@@ -10,18 +10,18 @@ const char *ft_strnstr(const char *haystack, const char *needle, int len)
     i = 0;
     while(needle[i])
         i++;
-    if ( len < i)
+    if (size < i)
         return NULL;
     i = 0;
     j = 0;
-    while (haystack[i] && i < len)
+    while (haystack[i] && i < size)
     {
-        while((haystack[i] == needle[j]) && i < len)
+        while((haystack[i] == needle[j]) && i < size)
         {
             i++;
             j++;
         }
-        if(needle[j] == '\0')
+        if(needle[j])
             return &haystack[i - j];
         j = 0;
         i++;
@@ -33,7 +33,7 @@ int main()
 {
     const char  haystack[] = "Al diplodocus le cayó un meteorito.";
     const char  needle[] = "di";
-    int len = 8;
+    size_t size = 8;
 
-    printf("%s", ft_strnstr(haystack,needle,len));
+    printf("%s", ft_strnstr(haystack,needle,size));
 }

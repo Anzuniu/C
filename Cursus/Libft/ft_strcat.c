@@ -4,8 +4,8 @@ Retorna un puntero a la cadena resultante después de la concatenación.*/
 
 void    ft_strcat(char *sr1, char  *sr2)
 {
-    unsigned int    i;
-    unsigned int    j;
+    size_t    i;
+    size_t    j;
 
     i = 0;
     j = 0;
@@ -17,7 +17,7 @@ void    ft_strcat(char *sr1, char  *sr2)
         j++;
         i++;
     }
-    sr1[i] = '\0';
+    sr1[i] = 0;
 }
 
 int main()

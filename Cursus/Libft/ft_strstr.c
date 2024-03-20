@@ -4,8 +4,8 @@
 
 const char *ft_strstr(const char *haystack, const char *needle)
 {
-    unsigned int i;
-    unsigned int j;
+    size_t i;
+    size_t j;
 
     i = 0;
     j = 0;
@@ -17,7 +17,7 @@ const char *ft_strstr(const char *haystack, const char *needle)
             j++;
         
         }
-        if(needle[j] == '\0')
+        if(needle[j])
             return(&haystack[i - j]);
         j = 0;
         i++;

@@ -1,23 +1,34 @@
 /*Copia una cadena de caracteres a otra con límite de tamaño.
 Retorna el número de caracteres que intentó copiar (sin contar el carácter nulo) en el búfer de destino.*/
 
-unsigned int	ft_strlcpy(char	*dest, char	*src, unsigned int size)
+#include <stdio.h>
+
+unsigned int	ft_strlcpy(char	*dest, char	*src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	j;			
+	size_t	i;
+	size_t	j;			
 
 	j = 0;
 	i = 0;
-	while (src[j] != 0)
+	while (src[j])
 		j++;
-	if (size != 0)
+	if (size)
 	{
-		while (src[i] != 0 && i < size - 1)
+		while (src[i] && i < (size - 1))
 		{
 			dest[i] = src[i];
 			i++;
 		}
-		dest[i] = '\0';
+		dest[i] = 0;
 	}
 	return (j);
+}
+
+int main()
+{
+	char dest[] = "";
+	char src[] = "srcqesqwewqdaseasdase";
+	size_t size = 2;
+
+	printf("%d", ft_strlcpy(dest,src,size));
 }

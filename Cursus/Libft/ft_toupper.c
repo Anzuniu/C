@@ -4,13 +4,13 @@ Retorna el carácter convertido a mayúscula si es una letra; de lo contrario, r
 
 char    *ft_toupper(char *str)
 {
-    unsigned int    i;
+    size_t    i;
 
     i = 0;
-    while(str[i] != '\0')
+    while(str[i])
     {
         if (str[i] >= 'a' && str[i] <= 'z')
-            str[i] = str[i] - 32;
+            str[i] -= 32;
         i++;
     }
     return (str);

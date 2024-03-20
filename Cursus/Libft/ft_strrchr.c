@@ -4,7 +4,7 @@ Retorna un puntero a la última aparición del carácter en la cadena o NULL si 
 
 char *ft_strrchr(const char *str, int c)
 {
-    unsigned int    i;
+    size_t    i;
     
     i = 0;
     while (str[i])
