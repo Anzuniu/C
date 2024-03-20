@@ -15,7 +15,7 @@ memcmp se utiliza comúnmente para realizar comparaciones de memoria, por ejempl
 de arreglos o en la búsqueda de elementos en estructuras de datos.*/
 #include <stdio.h>
 
-int memcmp(const void *ptr1, const void *ptr2, size_t size)
+int ft_memcmp(const void *ptr1, const void *ptr2, size_t size)
 {
     char *str1;
     char *str2;

@@ -5,7 +5,7 @@ Su declaración típica es:
 void *memcpy(void *dest, const void *src, size_t num);
 
 La función memcpy copia los primeros num bytes de la memoria apuntada por src en la memoria apuntada por dest.*/
-void *memcpy(void *dest, const void *src, size_t size)
+void *ft_memcpy(void *dest, const void *src, size_t size)
 {
     char    *d;
     char    *s;

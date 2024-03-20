@@ -10,7 +10,7 @@ num: Número de bytes a copiar.
 La función memmove garantiza una copia segura incluso cuando las áreas de origen y destino se superponen.
 Esto la distingue de la función memcpy, que puede dar resultados inesperados si hay solapamiento.*/
 
-void *memmove(void *dest, const void *src, size_t size)
+void *ft_memmove(void *dest, const void *src, size_t size)
 {
     char *d;
     char *s;
