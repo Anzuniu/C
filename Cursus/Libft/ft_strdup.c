@@ -11,7 +11,7 @@
    It is important to remember that memory allocated by strdup must be manually freed using the free function
    when it is no longer needed. */
 
-   char *strdup(const char *str)
+   char *ft_strdup(const char *str)
    {
       char *cpy;
       size_t i;

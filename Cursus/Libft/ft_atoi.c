@@ -8,7 +8,7 @@ int check_sign(char *str);
 
 int main()
 {
-    char str[] = "+12312--+-+3-65415asd123";
+    char str[] = "-12312--+-+3-65415asd123";
 
     printf("%d", ft_atoi(str));
     return (0);

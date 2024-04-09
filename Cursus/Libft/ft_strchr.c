@@ -10,10 +10,10 @@ char *ft_strchr(const char *s, int c)
     while (s[i])
     {
         if(s[i] == c)
-            return (&s[i]);
+            return ((char *)&s[i]);
         i++;
     }
-    return (0);
+    return (NULL);
 }
 
 int main()
@@ -21,7 +21,7 @@ int main()
     const char s[] = "Diplodocus";
     int c;
 
-    c = 'p';
-    printf("%s", ft_strchr(s,c));
+    c = 'l';
+    printf("%d", ft_strchr(s,c));
 
 }
