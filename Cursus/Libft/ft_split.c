@@ -51,7 +51,6 @@ char **ft_split(char const *s, char c)
                 free_s(split);
                 return NULL;
             }
-            printf("num_strings = %d\n", num_strings);
             j = 0;
             while (j < num_strings)
             {
