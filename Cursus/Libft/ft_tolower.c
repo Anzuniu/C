@@ -1,5 +1,5 @@
-/*Convierte un carácter a minúscula si es una letra.
-Retorna el carácter convertido a minúscula si es una letra; de lo contrario, retorna el mismo carácter.*/
+//Converts character c to lowercase if it's uppercase.
+
 #include <stdio.h>
 
 char    *ft_tolower(char *str)
@@ -16,10 +16,10 @@ char    *ft_tolower(char *str)
     return (str);
 }
 
-int main()
+/*int main()
 {
     char    str[] = "DiPlOdOcUs";
 
     printf("%s",ft_tolower(str));
     return (0);
-}
+}*/

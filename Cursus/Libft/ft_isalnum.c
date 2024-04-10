@@ -1,5 +1,5 @@
-/* Verifica si un carácter es alfanumérico (letra o número).
-Retorna un valor distinto de cero si el carácter es alfanumérico; de lo contrario, retorna 0.*/
+//Checks if character c is alphanumeric.
+
 int ft_isalnum(int c)
 {
     return((c>='0' && c <='9') ||

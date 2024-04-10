@@ -1,3 +1,5 @@
+//Splits a string into others strings.
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -7,7 +9,7 @@ void free_s(char **s);
 
 int main()
 {
-    char const s[] = "Como estan los maquinas";
+    char const s[] = "Como estan los maquinas, lo primero de todo.";
     char c = 'm';
     char **split = ft_split(s,c);
     int i = 0;

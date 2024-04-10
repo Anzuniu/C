@@ -1,7 +1,8 @@
+//Appends src to dest until reaching size.
 
 #include <stdio.h>
 
-int    ft_strlcat(char *sr1, char  *sr2, size_t size)
+size_t    ft_strlcat(char *sr1, const char  *sr2, size_t size)
 {
     size_t    i;
     size_t    j;
@@ -31,17 +32,16 @@ int    ft_strlcat(char *sr1, char  *sr2, size_t size)
     {
         printf("Cabe");
         return (i);
-    }
-        
+    }       
 }
 
-int main()
+/*int main()
 {
-    char sr1[] = "Tremendo ";
-    char sr2[] = "diplodocus.";
-    int  size = 20;
+    char sr1[] = "Como estan ";
+    char sr2[] = "los maquinas.";
+    int  size = 25;
 
     printf("sr1: %s\nsr2: %s\n", sr1, sr2);
     printf("\n%d\n",ft_strlcat(sr1, sr2, size));
     printf("New Sr2: %s\n", sr1);
-}
+}*/

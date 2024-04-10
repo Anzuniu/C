@@ -1,5 +1,4 @@
-/*Compara los primeros n caracteres de dos cadenas.
-Retorna un valor menor que, igual a, o mayor que cero según la comparación de las cadenas.*/
+//Compares the first size characters of s1 and s2.
 
 #include <stdio.h>
 
@@ -57,10 +56,10 @@ int strncmp(const char *str1, const char *str2, size_t size)
     return (0);
 }
 
-int main()
+/*int main()
 {
-    const char str1[] = "Diplodocus";
-    const char str2[] = "DiplodocUS";
+    const char str1[] = "Maquinas";
+    const char str2[] = "MaquiNas";
     size_t size = 10;
     printf("%d", strncmp(str1,str2,size));
-}
+}*/

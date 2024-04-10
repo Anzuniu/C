@@ -1,8 +1,4 @@
-/*A cada carácter de la string ’s’, aplica la función
-’f’ dando como parámetros el índice de cada
-carácter dentro de ’s’ y la dirección del propio
-carácter, que podrá modificarse si es necesario.
-*/
+//Applies a function to each character of a string, with its index.
 
 #include <unistd.h>
 #include <stdio.h>

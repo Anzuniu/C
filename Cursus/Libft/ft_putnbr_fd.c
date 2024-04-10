@@ -1,4 +1,4 @@
-/*Envía el número ’n’ al file descriptor dado.*/
+//Writes an integer to a file descriptor.
 
 #include <unistd.h>
 #include <stdio.h>

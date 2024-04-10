@@ -1,5 +1,4 @@
-/*Envía la string ’s’ al file descriptor dado,
-seguido de un salto de línea.*/
+//Writes a string followed by a newline to a file descriptor.
 
 #include <unistd.h>
 #include <stdio.h>

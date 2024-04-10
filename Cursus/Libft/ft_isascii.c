@@ -1,5 +1,4 @@
-/*Determina si un carácter es un valor ASCII válido.
-Retorna un valor distinto de cero si el carácter es un valor ASCII válido; de lo contrario, retorna 0.*/
+//Checks if character c is an ASCII character.
 
 int ft_isascii(int c)
 {

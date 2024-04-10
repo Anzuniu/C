@@ -1,17 +1,17 @@
-/*Convierte una cadena de caracteres que representa un número entero en su equivalente numérico entero.*/
+//Converts an integer to a string.
 
 #include <stdio.h>
 #include <stdlib.h>
 
 char *ft_itoa(int n);
 
-int main()
+/*int main()
 {
     int n;
 
     n = -2147483647;
     printf("%s", ft_itoa(n));
-}
+}*/
 
 char *ft_itoa(int n)
 {

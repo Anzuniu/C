@@ -1,29 +1,7 @@
+//Extracts a substring from a string.
+
 #include <stdio.h>
 #include <stdlib.h>
-
-/*char *ft_substr(char const *s, unsigned int start, size_t len)
-{
-    size_t i;
-    size_t j;
-    char *cpy;
-
-    j = 0;
-    while (s[j])
-        j++;
-    i = start;
-    if(s == NULL)
-        return NULL;
-    cpy = malloc(len + 1);
-    if (cpy == NULL)
-        return NULL;
-    while (s[i] && i < (start + len) && i < j)
-    {
-        cpy[i] = s[i];
-        i++;
-    }
-    cpy[i] = 0;
-    return cpy;
-}*/
 
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -57,13 +35,11 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
     return cpy;
 }
 
-
-
-int main()
+/*int main()
 {
-    char const s[] = "Diplodocus";
-    unsigned int start = 1;
-    size_t len = 4;
+    char const s[] = "Como estan los maquinas";
+    unsigned int start = 0;
+    size_t len = 16;
 
     printf("%s", ft_substr(s,start,len));
-}
+}*/

@@ -1,5 +1,5 @@
-/*Busca la última aparición de un carácter en una cadena.
-Retorna un puntero a la última aparición del carácter en la cadena o NULL si no se encuentra.*/
+//Locates the last occurrence of c in str.
+
 #include <stdio.h>
 
 char *ft_strrchr(const char *str, int c)
@@ -18,11 +18,11 @@ char *ft_strrchr(const char *str, int c)
     return (0);
 }
 
-int main()
+/*int main()
 {
     const char str[] = "Diplodocus";
     int c;
 
     c = 'o';
     printf("%s", ft_strrchr(str,c));
-}
+}*/

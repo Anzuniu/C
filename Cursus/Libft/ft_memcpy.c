@@ -1,10 +1,5 @@
-/*
-La función memcpy en C se utiliza para copiar un bloque de memoria desde una ubicación de origen a una ubicación de destino. 
-Su declaración típica es:
+//Copies size bytes from src to dest.
 
-void *memcpy(void *dest, const void *src, size_t num);
-
-La función memcpy copia los primeros num bytes de la memoria apuntada por src en la memoria apuntada por dest.*/
 void *ft_memcpy(void *dest, const void *src, size_t size)
 {
     char    *d;

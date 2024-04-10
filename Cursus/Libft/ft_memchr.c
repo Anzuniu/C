@@ -1,12 +1,8 @@
-/*La función memchr en C se utiliza para buscar la primera ocurrencia de un byte
-específico en una región de memoria y devuelve un puntero a esa ubicación.
-La función recorre la región de memoria apuntada por ptr y detiene la búsqueda 
-cuando encuentra la primera ocurrencia de value o después de examinar num bytes.
-Retorna un puntero a la posición donde se encontró el byte, o NULL si no se encuentra.*/
+//Locates the first occurrence of c in str within a maximum of size bytes.
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 
 void	*ft_memchr(const void *str, int c, size_t size)
 {
@@ -24,7 +20,7 @@ void	*ft_memchr(const void *str, int c, size_t size)
 	return (NULL);
 }
 
-int main(void)
+/*int main(void)
 {
     const char *str = "Hello, World!"; //Esto indica que el contenido no debe ser modificado
     int c = 'W';
@@ -43,4 +39,4 @@ int main(void)
         printf("Caracter no encontrado\n");
     }
     return 0;
-}
+}*/

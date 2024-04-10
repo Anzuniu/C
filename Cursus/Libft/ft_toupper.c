@@ -1,5 +1,5 @@
-/*Convierte un carácter a mayúscula si es una letra.
-Retorna el carácter convertido a mayúscula si es una letra; de lo contrario, retorna el mismo carácter.*/
+//Converts character c to uppercase if it's lowercase.
+
 #include <stdio.h>
 
 char    *ft_toupper(char *str)
@@ -16,10 +16,10 @@ char    *ft_toupper(char *str)
     return (str);
 }
 
-int main()
+/*int main()
 {
     char    str[] = "DiPlOdOcUs";
 
     printf("%s",ft_toupper(str));
     return (0);
-}
+}*/

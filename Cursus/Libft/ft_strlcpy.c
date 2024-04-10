@@ -1,9 +1,8 @@
-/*Copia una cadena de caracteres a otra con límite de tamaño.
-Retorna el número de caracteres que intentó copiar (sin contar el carácter nulo) en el búfer de destino.*/
+//Copies up to size characters from src to dest.
 
 #include <stdio.h>
 
-unsigned int	ft_strlcpy(char	*dest, char	*src, size_t size)
+size_t	ft_strlcpy(char	*dest, const char	*src, size_t size)
 {
 	size_t	i;
 	size_t	j;			
@@ -24,11 +23,11 @@ unsigned int	ft_strlcpy(char	*dest, char	*src, size_t size)
 	return (j);
 }
 
-int main()
+/*int main()
 {
-	char dest[] = "";
-	char src[] = "srcqesqwewqdaseasdase";
-	size_t size = 2;
+	char dest[20];
+	char src[] = "Como estan los maquinas, lo primero de todo";
+	size_t size = sizeof(dest);
 
-	printf("%d", ft_strlcpy(dest,src,size));
-}
+	printf("%zu", ft_strlcpy(dest,src,size));
+}*/

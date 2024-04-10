@@ -1,8 +1,8 @@
-/* Busca una subcadena en otra, limitando la búsqueda a n caracteres.
-Retorna un puntero a la primera aparición de la subcadena en la cadena o NULL si no se encuentra.*/
+//Locates the first occurrence of needle in haystack within a maximum of size bytes.
+
 #include <stdio.h>
 
-const char *ft_strnstr(const char *haystack, const char *needle, size_t size)
+char *ft_strnstr(const char *haystack, const char *needle, size_t size)
 {
     size_t i;
     size_t j;
@@ -16,24 +16,24 @@ const char *ft_strnstr(const char *haystack, const char *needle, size_t size)
     j = 0;
     while (haystack[i] && i < size)
     {
-        while((haystack[i] == needle[j]) && i < size)
+        while((haystack[i] == needle[j]) && haystack[i] && needle[j] && i < size)
         {
             i++;
             j++;
         }
         if(needle[j] == 0)
-            return &haystack[i - j];
+            return ((char *)&haystack[i - j]);
         j = 0;
         i++;
     }
     return NULL;
 }
 
-int main()
+/*int main()
 {
-    const char  haystack[] = "Al diplodocus le cayó un meteorito.";
-    const char  needle[] = "di";
-    size_t size = 10;
+    const char  haystack[] = "Como estan los maquinas, lo primero de todo.";
+    const char  needle[] = "ri";
+    size_t size = 45;
 
     printf("%s", ft_strnstr(haystack,needle,size));
-}
+}*/

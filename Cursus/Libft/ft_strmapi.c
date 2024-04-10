@@ -1,3 +1,5 @@
+//Applies a function to each character of a string.
+
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -6,7 +8,7 @@ char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int     ft_strlen(char *str);
 char    ft_upper(unsigned int i, char c);
 
-int main()
+/*int main()
 {
     char *s = "Hola Mundo";
     char *result = ft_strmapi(s, ft_upper);
@@ -14,7 +16,7 @@ int main()
     printf("Resultado: %s\n", result);
     free(result);
     return 0;
-}
+}*/
 
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char)) //El segundo argumento es un puntero a una función, que sera aplicada a cada carácter de la cadena.
 {

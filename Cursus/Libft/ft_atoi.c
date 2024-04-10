@@ -1,20 +1,20 @@
-/*Convierte una cadena de caracteres que representa un número entero en su equivalente numérico entero.*/
+/*Converts a string to an integer.*/
 
 #include <stdio.h>
 
-int ft_atoi(char *str);
-int jump_spaces(char *str);
-int check_sign(char *str);
+int ft_atoi(const char *str);
+int jump_spaces(const char *str);
+int check_sign(const char *str);
 
-int main()
+/*int main()
 {
-    char str[] = "-12312--+-+3-65415asd123";
+    const char str[] = "-12312--+-+3-65415asd123";
 
     printf("%d", ft_atoi(str));
     return (0);
-}
+}*/
 
-int ft_atoi(char *str)
+int ft_atoi(const char *str)
 {
     size_t    i;
     int result;
@@ -35,7 +35,7 @@ int ft_atoi(char *str)
     return (result);
 }
 
-int jump_spaces(char *str)
+int jump_spaces(const char *str)
 {
     size_t    i;
 
@@ -47,7 +47,7 @@ int jump_spaces(char *str)
     return(i);
 }
 
-int check_sign(char *str)
+int check_sign(const char *str)
 {
     size_t    i;
     int neg;

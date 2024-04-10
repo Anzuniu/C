@@ -1,5 +1,4 @@
-/*Comprueba si un carácter es una letra del alfabeto.
-Retorna un valor distinto de cero si el carácter es una letra; de lo contrario, retorna 0.*/
+//Checks if character c is alphabetic.
 
 int ft_isalpha(int c)
 {

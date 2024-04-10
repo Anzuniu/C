@@ -1,3 +1,5 @@
+//Removes specified characters from the beginning and end of a string.
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -51,21 +53,7 @@ char *ft_strtrim(char const *s1, char const *set)
     return (cpy_s1);                //Devolvemos el string ya modificado, ya que el que nos dieron es const
 }
 
-/*char *ft_strchr(const char *s, int c) //Busca la primera aparición de un carácter en una cadena.
-{
-    size_t    i;
-    
-    i = 0;
-    while (s[i])
-    {
-        if(s[i] == c)
-            return ((char *)&s[i]);
-        i++;
-    }
-    return (NULL);
-}*/
-
-int    ft_strlen(char *str) //Calcula la longitud de una cadena
+int    ft_strlen(char *str)
 {
     unsigned int    i;
 
@@ -102,10 +90,10 @@ void    ft_printcutre(char *cpy_s1)
     printf("%c",cpy_s1[22]);
 }
 
-int main()
+/*int main()
 {
     const char  s1[] = "Como estan los maquinas";
     const char  set[] = "omo estan los maqui";
 
     printf("\n\n%s", ft_strtrim(s1,set));
-}
+}*/

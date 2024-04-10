@@ -1,5 +1,4 @@
-/*Envía el carácter ’c’ al file descriptor
-especificado.*/
+//Writes a character to a file descriptor.
 
 #include <unistd.h>
 #include <stdio.h>

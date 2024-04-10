@@ -1,5 +1,4 @@
-/*Comprueba si un carácter es un dígito numérico.
-Retorna un valor distinto de cero si el carácter es un dígito numérico; de lo contrario, retorna 0.*/
+//Checks if character c is a numeric digit.
 
 int ft_isdigit(char c)
 {

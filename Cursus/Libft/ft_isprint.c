@@ -1,5 +1,4 @@
-/* Indica si un carácter es imprimible (visible)
-Retorna un valor distinto de cero si el carácter es imprimible; de lo contrario, retorna 0.*/
+//Checks if character c is printable.
 
 int ft_isprint(char c)
 {

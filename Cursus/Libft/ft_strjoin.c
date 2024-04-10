@@ -1,3 +1,5 @@
+//Concatenates two strings into a new one.
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -29,10 +31,10 @@ char *ft_strjoin(char const *s1, char const *s2)
     return cat; 
 }
 
-int main()
+/*int main()
 {
-    char const s1[] = "Tremendo ";
-    char const s2[] = "diplosaddfsdfdocus.";
+    char const s1[] = "Como estan ";
+    char const s2[] = "los maquinas.";
 
     printf("%s", ft_strjoin(s1, s2));
-}
+}*/

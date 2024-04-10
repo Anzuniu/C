@@ -1,8 +1,4 @@
-/*La función calloc en muchos lenguajes de programación, incluyendo C y C++, se utiliza para asignar un bloque 
-de memoria contigua y establecer todos sus bytes a cero. Toma dos argumentos: el número de elementos que se deben 
-asignar y el tamaño en bytes de cada elemento. Diferente de la función malloc, que simplemente asigna la memoria 
-sin inicializarla, calloc garantiza que la memoria asignada esté inicializada a cero. Esto es útil, por ejemplo, 
-cuando se trabaja con arreglos o estructuras de datos y se desea que todos los elementos comiencen con un valor predeterminado.*/
+//Allocates memory and fills it with zeros.
 
 void *calloc(size_t n, size_t size)
 {
