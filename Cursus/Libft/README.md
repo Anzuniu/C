@@ -1,0 +1,44 @@
+| Function                         | Description                                                                     | Prototype                                                                        |
+| -------------------------------- | ------------------------------------------------------------------------------- |--------------------------------------------------------------------------------- |
+| [ft_isalpha](./src/ft_isalpha.c) | Checks if character `c` is alphabetic.                                          | int ft_isalpha(int c);                                                           |
+| [ft_isdigit](./src/ft_isdigit.c) | Checks if character `c` is a numeric digit.                                     | int ft_isdigit(int c);                                                           |
+| [ft_isalnum](./src/ft_isalnum.c) | Checks if character `c` is alphanumeric.                                        | int ft_isalnum(int c);                                                           |
+| [ft_isascii](./src/ft_isascii.c) | Checks if character `c` is an ASCII character.                                  | int ft_isascii(int c);                                                           |
+| [ft_isprint](./src/ft_isprint.c) | Checks if character `c` is printable.                                           | int ft_isprint(int c);                                                           |
+| [ft_strlen](./src/ft_strlen.c)   | Computes the length of the string `str`.                                        | int ft_strlen(char *str);                                                        |
+| [ft_memset](./src/ft_memset.c)   | Fills the first `size` bytes of `str` with the byte `c`.                        | char *ft_memset(char *str, char c, size_t size);                                 |
+| [ft_bzero](./src/ft_bzero.c)     | Sets the first `size` bytes of `str` to zero.                                   | void ft_bzero(char *str, size_t n);                                              |
+| [ft_memcpy](./src/ft_memcpy.c)   | Copies `size` bytes from `src` to `dest`.                                       | void *ft_memcpy(void *dest, const void *src, size_t size);                       |
+| [ft_memmove](./src/ft_memmove.c) | Copies `size` bytes from `src` to `dest`, even if they overlap.                 | void *ft_memmove(void *dest, const void *src, size_t size);                      |
+| [ft_strlcpy](./src/ft_strlcpy.c) | Copies up to `size` characters from `src` to `dest`.                            | size_t ft_strlcpy(char *dest, const char *src, size_t size);                     |
+| [ft_strlcat](./src/ft_strlcat.c) | Appends `src` to `dest` until reaching `size`.                                  | size_t ft_strlcat(char *dst, const char *src, size_t size);                      |
+| [ft_toupper](./src/ft_toupper.c) | Converts character `c` to uppercase if it's lowercase.                          | int ft_toupper(int c);                                                           | 
+| [ft_tolower](./src/ft_tolower.c) | Converts character `c` to lowercase if it's uppercase.                          | int ft_tolower(int c);                                                           |
+| [ft_strchr](./src/ft_strchr.c)   | Locates the first occurrence of `c` in `str`.                                   | char *ft_strchr(const char *s, int c);                                           |
+| [ft_strrchr](./src/ft_strrchr.c) | Locates the last occurrence of `c` in `str`.                                    | char *ft_strrchr(const char *s, int c);                                          |
+| [ft_strncmp](./src/ft_strncmp.c) | Compares the first `size` characters of `s1` and `s2`.                          | int ft_strncmp(const char *s1, const char *s2, size_t size);                     |
+| [ft_memchr](./src/ft_memchr.c)   | Locates the first occurrence of `c` in `str` within a maximum of `size` bytes.  | void *ft_memchr(const void *str, int c, size_t size);                            |
+| [ft_memcmp](./src/ft_memcmp.c)   | Compares the first `size` bytes of `s1` and `s2`.                               | int ft_memcmp(const void *s1, const void *s2, size_t size);                      |
+| [ft_strnstr](./src/ft_strnstr.c) | Locates the first occurrence of `needle` in `haystack` within a maximum of `size` bytes. | char *ft_strnstr(const char *haystack, const char *needle, size_t size);|
+| [ft_atoi](./src/ft_atoi.c)       | Converts a string to an integer.                                                | int ft_atoi(const char *str);                                                    |
+
+
+| Function                         | Description                                                                     | Prototype                                                                        |
+| -------------------------------- | ------------------------------------------------------------------------------- |--------------------------------------------------------------------------------- |
+| [ft_calloc](./src/ft_calloc.c)   | Allocates memory and fills it with zeros.                                       | void *ft_calloc(size_t nmemb, size_t size);                                      |
+| [ft_strdup](./src/ft_strdup.c)   | Duplicates a dynamic string.                                                    | char *ft_strdup(const char *s1);                                                 |
+
+
+| Function                         | Description                                                                     | Prototype                                                                        |
+| -------------------------------- | ------------------------------------------------------------------------------- |--------------------------------------------------------------------------------- |
+| [ft_substr](./src/ft_substr.c)   | Extracts a substring from a string.                                             | char *ft_substr(const char *s, unsigned int start, size_t len);                  |
+| [ft_strjoin](./src/ft_strjoin.c) | Concatenates two strings into a new one.                                        | char *ft_strjoin(const char *s1, const char *s2);                                |
+| [ft_strtrim](./src/ft_strtrim.c) | Removes specified characters from the beginning and end of a string.            | char *ft_strtrim(const char *s1, const char *set);                               |
+| [ft_split](./src/ft_split.c)     | Splits a string into words.                                                     | char **ft_split(const char *s, char c);                                          |
+| [ft_itoa](./src/ft_itoa.c)       | Converts an integer to a string.                                                | char *ft_itoa(int n);                                                            |
+| [ft_strmapi](./src/ft_strmapi.c) | Applies a function to each character of a string.                               | char *ft_strmapi(const char *s, char (*f)(unsigned int, char));                  |
+| [ft_striteri](./src/ft_striteri.c)| Applies a function to each character of a string, with its index.              | void ft_striteri(char *s, void (*f)(unsigned int, char*));                       |
+| [ft_putchar_fd](./src/ft_putchar_fd.c)| Writes a character to a file descriptor.                                   | void ft_putchar_fd(char c, int fd);                                              |
+| [ft_putstr_fd](./src/ft_putstr_fd.c) | Writes a string to a file descriptor.                                       | void ft_putstr_fd(char *s, int fd);                                              |
+| [ft_putendl_fd](./src/ft_putendl_fd.c)| Writes a string followed by a newline to a file descriptor.                | void ft_putendl_fd(char *s, int fd);                                             |
+| [ft_putnbr_fd](./src/ft_putnbr_fd.c)   | Writes an integer to a file descriptor.                                   | void ft_putnbr_fd(int n, int fd);                                                |
