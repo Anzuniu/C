@@ -21,8 +21,16 @@
 | [ft_memcmp](./src/ft_memcmp.c)   | Compares the first `size` bytes of `s1` and `s2`.                               | int ft_memcmp(const void *s1, const void *s2, size_t size);                      |
 | [ft_strnstr](./src/ft_strnstr.c) | Locates the first occurrence of `needle` in `haystack` within a maximum of `size` bytes. | char *ft_strnstr(const char *haystack, const char *needle, size_t size);|
 | [ft_atoi](./src/ft_atoi.c)       | Converts a string to an integer.                                                | int ft_atoi(const char *str);                                                    |
+
+
+| Function                         | Description                                                                     | Prototype                                                                        |
+| -------------------------------- | ------------------------------------------------------------------------------- |--------------------------------------------------------------------------------- |
 | [ft_calloc](./src/ft_calloc.c)   | Allocates memory and fills it with zeros.                                       | void *ft_calloc(size_t nmemb, size_t size);                                      |
 | [ft_strdup](./src/ft_strdup.c)   | Duplicates a dynamic string.                                                    | char *ft_strdup(const char *s1);                                                 |
+
+
+| Function                         | Description                                                                     | Prototype                                                                        |
+| -------------------------------- | ------------------------------------------------------------------------------- |--------------------------------------------------------------------------------- |
 | [ft_substr](./src/ft_substr.c)   | Extracts a substring from a string.                                             | char *ft_substr(const char *s, unsigned int start, size_t len);                  |
 | [ft_strjoin](./src/ft_strjoin.c) | Concatenates two strings into a new one.                                        | char *ft_strjoin(const char *s1, const char *s2);                                |
 | [ft_strtrim](./src/ft_strtrim.c) | Removes specified characters from the beginning and end of a string.            | char *ft_strtrim(const char *s1, const char *set);                               |
