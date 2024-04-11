@@ -1,3 +1,12 @@
+## Mandatory
+
+### Funciones libc
+
+Deberás rehacer algunas funciones de la libc. Tus funciones tendrán los mismos prototipos e implementarán los mismos comportamientos que las funciones originales. Deberán ser tal y como las describe el man. La única diferencia será la nomenclatura. Empezarán con el prefijo `ft_`. Por ejemplo, `strlen` se convertirá en 
+ `ft_strlen`.
+
+
+
 | Function                         | Description                                                                     | Prototype                                                                        |
 | -------------------------------- | ------------------------------------------------------------------------------- |--------------------------------------------------------------------------------- |
 | [ft_isalpha](./src/ft_isalpha.c) | Checks if character `c` is alphabetic.                                          | int ft_isalpha(int c);                                                           |
@@ -21,13 +30,12 @@
 | [ft_memcmp](./src/ft_memcmp.c)   | Compares the first `size` bytes of `s1` and `s2`.                               | int ft_memcmp(const void *s1, const void *s2, size_t size);                      |
 | [ft_strnstr](./src/ft_strnstr.c) | Locates the first occurrence of `needle` in `haystack` within a maximum of `size` bytes. | char *ft_strnstr(const char *haystack, const char *needle, size_t size);|
 | [ft_atoi](./src/ft_atoi.c)       | Converts a string to an integer.                                                | int ft_atoi(const char *str);                                                    |
-
-
-| Function                         | Description                                                                     | Prototype                                                                        |
-| -------------------------------- | ------------------------------------------------------------------------------- |--------------------------------------------------------------------------------- |
 | [ft_calloc](./src/ft_calloc.c)   | Allocates memory and fills it with zeros.                                       | void *ft_calloc(size_t nmemb, size_t size);                                      |
 | [ft_strdup](./src/ft_strdup.c)   | Duplicates a dynamic string.                                                    | char *ft_strdup(const char *s1);                                                 |
 
+### Funciones adicionales
+
+En esta segunda parte, deberás desarrollar un conjunto de funciones que, o no son de la librería libc, o lo son pero de una forma distinta.
 
 | Function                         | Description                                                                     | Prototype                                                                        |
 | -------------------------------- | ------------------------------------------------------------------------------- |--------------------------------------------------------------------------------- |
@@ -42,3 +50,8 @@
 | [ft_putstr_fd](./src/ft_putstr_fd.c) | Writes a string to a file descriptor.                                       | void ft_putstr_fd(char *s, int fd);                                              |
 | [ft_putendl_fd](./src/ft_putendl_fd.c)| Writes a string followed by a newline to a file descriptor.                | void ft_putendl_fd(char *s, int fd);                                             |
 | [ft_putnbr_fd](./src/ft_putnbr_fd.c)   | Writes an integer to a file descriptor.                                   | void ft_putnbr_fd(int n, int fd);                                                |
+
+## BONUS
+
+
+## BONUS
