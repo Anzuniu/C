@@ -2,20 +2,20 @@
 
 #include <stdio.h>
 
-char *ft_strrchr(const char *str, int c)
+char	*ft_strrchr(const char *str, int c)
 {
-    size_t    i;
-    
-    i = 0;
-    while (str[i])
-        i++;
-    while (i != 0)
-    {
-        if(str[i] == c)
-            return (&str[i]);
-        i--;
-    }
-    return (0);
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	while (i != 0)
+	{
+		if (str[i] == c)
+			return (&str[i]);
+		i--;
+	}
+	return (0);
 }
 
 /*int main()

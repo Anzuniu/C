@@ -2,14 +2,14 @@
 
 #include <stdio.h>
 
-size_t    ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
-    unsigned int    i;
+	size_t	i;
 
-    i = 0;
-    while(str[i])
-        i++;
-    return(i);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
 
 /*int main()

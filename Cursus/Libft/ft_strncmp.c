@@ -42,18 +42,18 @@
     }
 }*/
 
-int strncmp(const char *str1, const char *str2, size_t size)
+int	strncmp(const char *str1, const char *str2, size_t size)
 {
-    size_t    i;
+	size_t	i;
 
-    i = 0;
-    while(size--)
-    {
-        if(str1[i] != str2[i] || str1[i] == 0 || str2[i] == 0)
-            return (str1[i] - str2[i]);
-        i++;
-    }
-    return (0);
+	i = 0;
+	while (size--)
+	{
+		if (str1[i] != str2[i] || str1[i] == 0 || str2[i] == 0)
+			return (str1[i] - str2[i]);
+		i++;
+	}
+	return (0);
 }
 
 /*int main()
@@ -62,4 +62,4 @@ int strncmp(const char *str1, const char *str2, size_t size)
     const char str2[] = "MaquiNas";
     size_t size = 10;
     printf("%d", strncmp(str1,str2,size));
-}*/
+    }*/

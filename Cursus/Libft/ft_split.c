@@ -44,9 +44,9 @@ char	**ft_split(char const *s, char c)
 				free_s(split);
 				return (NULL);
 			}
-            //Añadimos la subcadena al arreglo de cadenas
+			//Añadimos la subcadena al arreglo de cadenas
 			tmp = (char **)malloc((num_strings + 2) * sizeof(char *));
-			if (tmp == NULL)// Liberamos la memoria si falla la asignación
+			if (tmp == NULL) //Liberamos la memoria si falla la asignación
 			{
 				free(substr);
 				free_s(split);
@@ -58,12 +58,12 @@ char	**ft_split(char const *s, char c)
 				tmp[j] = split[j];
 				j++;
 			}
-            //Añadimos la nueva subcadena
+			//Añadimos la nueva subcadena
 			tmp[num_strings++] = substr;
 			tmp[num_strings] = NULL;
 			free(split);
 			split = tmp;
-            //Actualizamos el índice de inicio
+			//Actualizamos el índice de inicio
 			start = i + 1;
 		}
 		i++;
@@ -73,16 +73,17 @@ char	**ft_split(char const *s, char c)
 
 void	free_s(char **s)
 {
-	if (s == NULL)
-		return;
+	int	i;
 
-	int i = 0;
+	i = 0;
+	if (s == NULL)
+		return ;
 	while (s[i] != NULL)
 		free(s[i++]);
 	free(s);
 }
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)  //Reserva espacio y devuelve una substring 's' que empieza desde start y mide 'len'
+char	*ft_substr(char const *s, unsigned int start, size_t len)//Reserva espacio y devuelve una substring 's' que empieza desde start y mide 'len'
 {
 	size_t	i;
 	size_t	j;
@@ -93,7 +94,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)  //Reserva espaci
 		return (NULL);
 	while (s[j])
 		j++;
-	if (start >= j)//Si start es mayor que j significa que la substring está más allá del final de la cadena. Ya que si "s" que es medida por j mide 10, no puede empezar en 12.
+	if (start >= j) //Si start es mayor que j significa que la substring está más allá del final de la cadena. Ya que si "s" que es medida por j mide 10, no puede empezar en 12.
 	{
 		cpy = malloc(1);
 		if (cpy == NULL)

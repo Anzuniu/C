@@ -2,31 +2,31 @@
 
 #include <stdio.h>
 
-char *ft_strnstr(const char *haystack, const char *needle, size_t size)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t size)
 {
-    size_t i;
-    size_t j;
+	size_t	i;
+	size_t	j;
 
-    i = 0;
-    while(needle[i])
-        i++;
-    if (size < i)
-        return NULL;
-    i = 0;
-    j = 0;
-    while (haystack[i] && i < size)
-    {
-        while((haystack[i] == needle[j]) && haystack[i] && needle[j] && i < size)
-        {
-            i++;
-            j++;
-        }
-        if(needle[j] == 0)
-            return ((char *)&haystack[i - j]);
-        j = 0;
-        i++;
-    }
-    return NULL;
+	i = 0;
+	while (needle[i])
+		i++;
+	if (size < i)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (haystack[i] && i < size)
+	{
+		while ((haystack[i] == needle[j]) && haystack[i] && needle[j] && i < size)
+		{
+			i++;
+			j++;
+		}
+		if (needle[j] == 0)
+			return ((char *)&haystack[i - j]);
+		j = 0;
+		i++;
+	}
+	return (NULL);
 }
 
 /*int main()
