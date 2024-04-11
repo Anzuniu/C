@@ -1,3 +1,7 @@
+## Mandatory
+
+### Funciones libc
+
 Deberás rehacer algunas funciones de la libc. Tus funciones tendrán los mismos prototipos e implementarán los mismos comportamientos que las funciones originales. Deberán ser tal y como las describe el man. La única diferencia será la nomenclatura. Empezarán con el prefijo `ft_`. Por ejemplo, `strlen` se convertirá en 
  `ft_strlen`.
 
@@ -29,6 +33,9 @@ Deberás rehacer algunas funciones de la libc. Tus funciones tendrán los mismos
 | [ft_calloc](./src/ft_calloc.c)   | Allocates memory and fills it with zeros.                                       | void *ft_calloc(size_t nmemb, size_t size);                                      |
 | [ft_strdup](./src/ft_strdup.c)   | Duplicates a dynamic string.                                                    | char *ft_strdup(const char *s1);                                                 |
 
+### Funciones adicionales
+
+En esta segunda parte, deberás desarrollar un conjunto de funciones que, o no son de la librería libc, o lo son pero de una forma distinta.
 
 | Function                         | Description                                                                     | Prototype                                                                        |
 | -------------------------------- | ------------------------------------------------------------------------------- |--------------------------------------------------------------------------------- |
@@ -43,3 +50,8 @@ Deberás rehacer algunas funciones de la libc. Tus funciones tendrán los mismos
 | [ft_putstr_fd](./src/ft_putstr_fd.c) | Writes a string to a file descriptor.                                       | void ft_putstr_fd(char *s, int fd);                                              |
 | [ft_putendl_fd](./src/ft_putendl_fd.c)| Writes a string followed by a newline to a file descriptor.                | void ft_putendl_fd(char *s, int fd);                                             |
 | [ft_putnbr_fd](./src/ft_putnbr_fd.c)   | Writes an integer to a file descriptor.                                   | void ft_putnbr_fd(int n, int fd);                                                |
+
+## BONUS
+
+
+## BONUS
