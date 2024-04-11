@@ -3,14 +3,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void    *ft_memset(void *str, char c, size_t size)
+void	*ft_memset(void *str, char c, size_t size)
 {
-    size_t    i;
-    
-    i = 0;
-    while(i < size)
-        ((char *)str)[i++] = c;
-    return (str);
+	size_t	i;
+
+	i = 0;
+	while (i < size)
+		((char *)str)[i++] = c;
+	return (str);
 }
 
 /*int main()

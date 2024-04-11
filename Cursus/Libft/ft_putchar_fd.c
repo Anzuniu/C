@@ -4,15 +4,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
-    write(fd, &c, 1);
+	write (fd, &c, 1);
 }
 
-int main()
+/*int main()
 {
     char c = 'J';
     int fd = 1;
 
     ft_putchar_fd(c,fd);
-}
+}*/

@@ -1,6 +1,6 @@
 //Checks if character c is a numeric digit.
 
-int ft_isdigit(char c)
+int	ft_isdigit(char c)
 {
-    return (c >= '0' && c <= '9');
+	return (c >= '0' && c <= '9');
 }

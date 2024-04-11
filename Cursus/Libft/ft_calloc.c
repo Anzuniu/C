@@ -1,37 +1,18 @@
 //Allocates memory and fills it with zeros.
 
-void *calloc(size_t n, size_t size)
+void	*calloc(size_t n, size_t size)
 {
-    void    *p;
-    size_t  i;
+	void	*p;
+	size_t	i;
 
-    p = malloc(n * size);
-    if (!p)
-        return (NULL);
-    i = 0;
-    while (i < n * size)
-    {
-        *((char *)p + i) = 0;
-        i++;
-    }
-    return (p);
-}
-
-//Es lo mismo que esto
-
-void *calloc(size_t n, size_t size)
-{
-    char    *p;
-    size_t  i;
-
-    p = malloc(n * size);
-    if (!p)
-        return (NULL);
-    i = 0;
-    while (i < n * size)
-    {
-        *(p + i) = 0;
-        i++;
-    }
-    return (p);
+	p = malloc(n * size);
+	if (!p)
+		return (NULL);
+	i = 0;
+	while (i < n * size)
+	{
+		*((char *)p + i) = 0;
+		i++;
+	}
+	return (p);
 }
