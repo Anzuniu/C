@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:46:16 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/12 02:47:34 by antalvar         ###   ########.fr       */
+/*   Updated: 2024/04/12 12:47:04 by antalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,17 @@
 
 #include "libft.h"
 
-char	*ft_toupper(char *str)
+int	ft_toupper(int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			str[i] -= 32;
-		i++;
-	}
-	return (str);
+	if (c >= 97 && c <= 122)
+		c -= 32;
+	return (c);
 }
 
-/*int main()
+int main()
 {
-    char    str[] = "DiPlOdOcUs";
+    int	c = 'd';
 
-    printf("%s",ft_toupper(str));
+    printf("%c",ft_toupper(c));
     return (0);
-}*/
+}

@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:45:44 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/12 03:14:15 by antonio          ###   ########.fr       */
+/*   Updated: 2024/04/12 12:43:01 by antalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 #include "libft.h"
 
 char	*ft_strchr(const char *s, int c);
-int	ft_strlen(char *str);
+int		ft_strlen(char *str);
 void	ft_printcutre(char *cpy_s1);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*cpy_s1;
 	char	*cpy_set;
-	int	start;
-	int	found;
+	int		start;
+	int		found;
 	size_t	i;
 	size_t	j;
 
