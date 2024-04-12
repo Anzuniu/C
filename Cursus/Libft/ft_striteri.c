@@ -3,9 +3,10 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+//#include <libft.h>
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-int	ft_strlen(char *str);
+size_t	ft_strlen(char *str);
 void	ft_upper(unsigned int i, char *c);
 
 /*int main()
@@ -30,7 +31,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	}
 }
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(char *str)
 {
 	size_t	i;
 

@@ -6,7 +6,7 @@ size_t	ft_strlcat(char	*sr1, const char *sr2, size_t size)
 {
 	size_t	i;
 	size_t	j;
-	int	len_total;
+	size_t	len_total;
 
 	i = 0;
 	j = 0;

@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-int	ft_strlen(char *str);
+size_t	ft_strlen(char *str);
 char	ft_upper(unsigned int i, char c);
 
 /*int main()
@@ -18,7 +18,7 @@ char	ft_upper(unsigned int i, char c);
     return 0;
 }*/
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char)) //El segundo argumento es un puntero a una función, que sera aplicada a cada carácter de la cadena.
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t	i;
 	char	*str;
@@ -33,7 +33,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char)) //El segundo argu
 	return (str);
 }
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(char *str)
 {
 	size_t	i;
 

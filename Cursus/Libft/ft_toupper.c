@@ -2,18 +2,18 @@
 
 #include <stdio.h>
 
-char    *ft_toupper(char *str)
+char	*ft_toupper(char *str)
 {
-    size_t    i;
+	size_t	i;
 
-    i = 0;
-    while(str[i])
-    {
-        if (str[i] >= 'a' && str[i] <= 'z')
-            str[i] -= 32;
-        i++;
-    }
-    return (str);
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] -= 32;
+		i++;
+	}
+	return (str);
 }
 
 /*int main()

@@ -17,8 +17,8 @@ char	*ft_itoa(int n)
 {
 	char	*result;
 	size_t	len;
-	int	cpy_n;
-	int	sign;
+	size_t	cpy_n;
+	size_t	sign;
 
 	cpy_n = n;
 	len = 0;

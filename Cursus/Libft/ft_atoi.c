@@ -16,7 +16,7 @@ int	check_sign(const char *str);
 
 int	ft_atoi(const char *str)
 {
-	size_t	i;
+	int	i;
 	int	result;
 
 	i = 0;
@@ -50,8 +50,8 @@ int	jump_spaces(const char *str)
 int	check_sign(const char *str)
 {
 	size_t	i;
-	int	neg;
-	int	signs;
+	size_t	neg;
+	size_t	signs;
 
 	signs = 0;
 	i = 0;
