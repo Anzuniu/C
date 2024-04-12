@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/12 02:42:36 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/12 02:56:06 by antalvar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 //Converts an integer to a string.
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_itoa(int n);
 

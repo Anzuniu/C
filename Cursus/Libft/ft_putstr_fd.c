@@ -1,8 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/12 02:43:44 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/12 02:53:14 by antalvar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 //Writes a string to a file descriptor.
 
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 int	ft_strlen(char *str);
 

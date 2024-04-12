@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/12 02:43:11 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/12 02:54:33 by antalvar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 //Fills the first size bytes of str with the byte c.
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memset(void *str, char c, size_t size)
 {

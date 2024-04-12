@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/12 02:42:51 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/12 02:55:32 by antalvar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 //Compares the first size bytes of s1 and s2.
 
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *ptr1, const void *ptr2, size_t size)
 {

@@ -1,8 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/12 02:43:19 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/12 02:54:16 by antalvar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 //Writes a character to a file descriptor.
 
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {

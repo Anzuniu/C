@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/12 02:41:10 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/12 03:05:55 by antonio          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 /*Converts a string to an integer.*/
 
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_atoi(const char *str);
 int	jump_spaces(const char *str);
@@ -8,9 +20,9 @@ int	check_sign(const char *str);
 
 /*int main()
 {
-    const char str[] = "-12312--+-+3-65415asd123";
+    const char str[] = "-124f312--+-+3-65415asd123";
 
-    printf("%d", ft_atoi(str));
+    printf("%d\n", ft_atoi(st}r));
     return (0);
 }*/
 
@@ -40,9 +52,9 @@ int	jump_spaces(const char *str)
 	size_t	i;
 
 	i = 0;
-	while ((str[i] >= 9 && str[i] <= 13
-			|| str[i] == ' ') || (str[i] == '+'
-			|| str[i] == '-'))
+	while (((str[i] >= 9) && (str[i] <= 13))
+		|| (str[i] == ' ') || (str[i] == '+')
+		|| (str[i] == '-'))
 		i++;
 	return (i);
 }

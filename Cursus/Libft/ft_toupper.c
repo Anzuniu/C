@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/12 02:46:16 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/12 02:47:34 by antalvar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 //Converts character c to uppercase if it's lowercase.
 
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_toupper(char *str)
 {

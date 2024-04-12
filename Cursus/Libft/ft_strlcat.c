@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/12 02:44:31 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/12 02:51:29 by antalvar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 //Appends src to dest until reaching size.
 
-#include <stdio.h>
+#include "libft.h"
 
 size_t	ft_strlcat(char	*sr1, const char *sr2, size_t size)
 {

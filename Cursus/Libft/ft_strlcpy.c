@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/12 02:44:38 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/12 02:51:06 by antalvar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 //Copies up to size characters from src to dest.
 
-#include <stdio.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char	*dest, const char	*src, size_t size)
 {

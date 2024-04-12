@@ -1,8 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/12 02:45:00 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/12 03:03:36 by antonio          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 //Applies a function to each character of a string.
 
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 size_t	ft_strlen(char *str);
@@ -25,7 +35,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	i = ft_strlen((char *)s);
 	str = (char *)malloc(sizeof(char) * (i + 1));
-	if (!str) //Verificación de memoria
+	if (!str)
 		return (NULL);
 	str[i] = 0;
 	while (i--)

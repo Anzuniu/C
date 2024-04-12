@@ -1,9 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/12 02:44:17 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/12 02:44:19 by antalvar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 //Applies a function to each character of a string, with its index.
 
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
-//#include <libft.h>
+#include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 size_t	ft_strlen(char *str);
@@ -43,6 +52,8 @@ size_t	ft_strlen(char *str)
 
 void	ft_upper(unsigned int i, char *c)
 {
+	i = 0;
 	if (*c >= 'a' && *c <= 'z')
 		*c -= 32;
+	i++;
 }

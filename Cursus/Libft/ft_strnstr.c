@@ -1,6 +1,16 @@
-//Locates the first occurrence of needle in haystack within a maximum of size bytes.
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/12 02:45:21 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/12 03:02:06 by antonio          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t size)
 {
@@ -16,7 +26,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t size)
 	j = 0;
 	while (haystack[i] && i < size)
 	{
-		while ((haystack[i] == needle[j]) && haystack[i] && needle[j] && i < size)
+		while ((haystack[i] == needle[j])
+			&& haystack[i] && needle[j] && i < size)
 		{
 			i++;
 			j++;

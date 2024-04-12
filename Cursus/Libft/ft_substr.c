@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/12 02:48:03 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/12 03:07:19 by antonio          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 //Extracts a substring from a string.
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -14,12 +25,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	while (s[j])
 		j++;
-	if (start >= j) //Si start es mayor que j significa que la substring está más allá del final de la cadena. Ya que si "s" que es medida por j mide 10, no puede empezar en 12.
+	if (start >= j)
 	{
 		cpy = malloc(1);
 		if (cpy == NULL)
 			return (NULL);
-		cpy[0] = '\0'; //Con esto creamos una cadena vacía
+		cpy[0] = '\0';
 		return (cpy);
 	}
 	i = start;
