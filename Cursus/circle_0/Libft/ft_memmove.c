@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:43:04 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/13 15:12:50 by antonio          ###   ########.fr       */
+/*   Updated: 2024/04/13 17:12:42 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t size)
 {
-	char	*d;
+	char		*d;
 	const char	*s;
 
 	d = (char *)dest;

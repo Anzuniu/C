@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:41:10 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/12 18:44:14 by antonio          ###   ########.fr       */
+/*   Updated: 2024/04/13 17:31:14 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ int	jump_spaces(const char *str)
 	size_t	i;
 
 	i = 0;
-	while (((str[i] >= 9) && (str[i] <= 13))
-		|| (str[i] == ' ') || (str[i] == '+')
-		|| (str[i] == '-'))
+	while (((str[i] >= 9) && (str[i] <= 13)) || str[i] == ' ')
+		i++;
+	if (str[i] == '+' || str[i] == '-')
 		i++;
 	return (i);
 }

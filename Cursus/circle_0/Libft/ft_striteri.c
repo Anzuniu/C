@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:44:17 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/13 01:49:16 by antonio          ###   ########.fr       */
+/*   Updated: 2024/04/13 17:29:48 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	size_t	i;
 
-	i = ft_strlen(s);
-	while (i > 0)
+	i = 0;
+	while (s[i])
 	{
 		f (i, &s[i]);
-		i--;
+		i++;
 	}
 }
 
