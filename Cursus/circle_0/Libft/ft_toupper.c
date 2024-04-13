@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: antonio <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 02:46:16 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/12 18:04:26 by antonio          ###   ########.fr       */
+/*   Created: 2024/04/13 02:25:49 by antonio           #+#    #+#             */
+/*   Updated: 2024/04/13 02:26:13 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	ft_toupper(int n)
 
 /*int main()
 {
-    int	n = 'h';
+	int	n = 'h';
 
-    printf("%c",ft_toupper(n));
-    return (0);
+	printf("%c",ft_toupper(n));
+       	return (0);
 }*/
