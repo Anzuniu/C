@@ -1,46 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 02:43:44 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/12 02:53:14 by antalvar         ###   ########.fr       */
+/*   Created: 2024/04/12 02:45:44 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/13 01:10:37 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Writes a string to a file descriptor.
+//Removes specified characters from the beginning and end of a string.
 
 #include "libft.h"
 
-int	ft_strlen(char *str);
-
-void	ft_putstr_fd(char *s, int fd)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;
 
-	i = 0;
-	if (!s)
-		return ;
-	while (s[i])
-		write (fd, &s[i++], 1);
-}
-
-int	ft_strlen(char *str)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	if (!s1 || !set)
+		return (NULL);
+	while (ft_strchr(set, *s1) && *s1)
+		s1++;
+	i = ft_strlen(s1);
+	while (ft_strchr(set, s1[i]) && i != 0)
+		i--;
+	return (ft_substr(s1, 0, i + 1));
 }
 
 /*int main()
 {
-    char c[] = "Como estan los maquinas";
-    int fd = 1;
+    const char  s1[] = "Como estan los maquinas";
+    const char  set[] = "omo estan los maqui";
 
-    ft_putstr_fd(c,fd);
+    printf("\n\n%s", ft_strtrim(s1,set));
 }*/

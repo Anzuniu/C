@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 02:45:30 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/12 02:49:06 by antalvar         ###   ########.fr       */
+/*   Created: 2024/04/12 02:46:10 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/13 01:30:00 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Locates the last occurrence of c in str.
+//Converts character c to lowercase if it's uppercase.
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *str, int c)
+int	ft_tolower(int n)
 {
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	while (i != 0)
-	{
-		if (str[i] == c)
-			return (&str[i]);
-		i--;
-	}
-	return (0);
+	if (n >= 'A' && n <= 'Z')
+		n += 32;
+	return (n);
 }
 
 /*int main()
 {
-    const char str[] = "Diplodocus";
-    int c;
+    char    str[] = "DiPlOdOcUs";
 
-    c = 'o';
-    printf("%s", ft_strrchr(str,c));
+    printf("%s\n",ft_tolower(str));
+    return (0);
 }*/

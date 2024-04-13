@@ -46,12 +46,16 @@ OBJ = $(SRC: .c = .o)
 
 #Macros
 
-all: $(SRC) $(OBJ)
-	 $(CC) -c $(CFLAGS) $(SRC)
+all: $(NAME)
 
-clean: $(RM) -f $(OBJ)
+$(NAME): $(FILES) $(OBJ)
+	$(CC) -c $(FLAGS) $(SRC)
+	@ar rcs $(NAME) $(OBJ)
+	@echo "Compilation completed"
+
+clean: @rm -r $(OBJ)
 
 fclean: clean 
-		$(RM) -f $(OBJ) $(NAME)
+	@rm -f $(OBJ) $(NAME)
 
 re: fclean all

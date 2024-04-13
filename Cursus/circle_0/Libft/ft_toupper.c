@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 02:42:11 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/12 02:57:02 by antalvar         ###   ########.fr       */
+/*   Created: 2024/04/12 02:46:16 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/12 18:04:26 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Checks if character c is an ASCII character.
+//Converts character c to uppercase if it's lowercase.
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+int	ft_toupper(int n)
 {
-	return (c >= 0 && c <= 127);
+	if (n >= 'a' && n <= 'z')
+		n -= 32;
+	return (n);
 }
+
+/*int main()
+{
+    int	n = 'h';
+
+    printf("%c",ft_toupper(n));
+    return (0);
+}*/

@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 02:46:10 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/12 02:47:20 by antalvar         ###   ########.fr       */
+/*   Created: 2024/04/12 02:41:55 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/12 19:31:17 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Converts character c to lowercase if it's uppercase.
+//Checks if character c is alphanumeric.
 
 #include "libft.h"
 
-char	*ft_tolower(char *str)
+int	ft_isalnum(int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-			str[i] += 32;
-		i++;
-	}
-	return (str);
+	return ((c >= '0' && c <= '9')
+		|| (c >= 'A' && c <= 'Z')
+		|| (c >= 'a' && c <= 'z'));
 }
 
 /*int main()
 {
-    char    str[] = "DiPlOdOcUs";
+	int c = '\n';
 
-    printf("%s\n",ft_tolower(str));
-    return (0);
+	printf("%d", ft_isalnum(c));
 }*/

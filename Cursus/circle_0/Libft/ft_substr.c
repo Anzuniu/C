@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:48:03 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/12 03:07:19 by antonio          ###   ########.fr       */
+/*   Updated: 2024/04/13 00:56:37 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+/*char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
 	size_t	j;
@@ -44,6 +44,23 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	cpy[i - start] = 0;
 	return (cpy);
+}*/
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*substr;
+
+	if (!s)
+		return (NULL);
+	if (ft_strlen(s) < start)
+		return (ft_strdup(""));
+	if (len > ft_strlen(s + start))
+		len = ft_strlen(s + start);
+	substr = malloc(sizeof(char) * (len + 1));
+	if (!substr)
+		return (NULL);
+	ft_strlcpy(substr, (s + start), len + 1);
+	return (substr);
 }
 
 /*int main()
@@ -52,5 +69,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
     unsigned int start = 0;
     size_t len = 16;
 
-    printf("%s", ft_substr(s,start,len));
+    printf("%s", ft_substr(s, start, len));
 }*/

@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 02:43:11 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/12 02:54:33 by antalvar         ###   ########.fr       */
+/*   Created: 2024/04/12 02:43:27 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/13 00:25:47 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Fills the first size bytes of str with the byte c.
+//Writes a string followed by a newline to a file descriptor.
 
 #include "libft.h"
 
-void	*ft_memset(void *str, char c, size_t size)
+void	ft_putendl_fd(char *s, int fd)
 {
 	size_t	i;
 
 	i = 0;
-	while (i < size)
-		((char *)str)[i++] = c;
-	return (str);
+	if (!s)
+		return ;
+	while (s[i])
+		write (fd, &s[i++], 1);
+	write (fd, "\n", 1);
 }
 
 /*int main()
 {
-    char buffer[120];
-    size_t buffer_size = sizeof(buffer);
+    char c[] = "Como estan los maquinas";
+    int fd = 1;
 
-    ft_memset(buffer, 'E', buffer_size);
-    buffer[buffer_size - 1] = '\0';
-    printf("Buffer modificado: %s", buffer);
-    return 0;
+    ft_putendl_fd(c,fd);
 }*/

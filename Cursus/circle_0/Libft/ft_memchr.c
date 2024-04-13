@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:42:44 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/12 02:55:51 by antalvar         ###   ########.fr       */
+/*   Updated: 2024/04/12 23:55:32 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ void	*ft_memchr(const void *str, int c, size_t size)
 	return (NULL);
 }
 
-/*int main(void)
+/*int main()
 {
-    const char *str = "Hello, World!";
-    int c = 'W';
-    size_t size = 10;
+    const char *str = "Como estan los maquinas";
+    int c = 'l';
+    size_t size = 18;
 
     // Llamada a la función ft_memchr
     void *result = ft_memchr(str, c, size);

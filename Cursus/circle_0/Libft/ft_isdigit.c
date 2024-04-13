@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 02:41:30 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/12 03:08:09 by antonio          ###   ########.fr       */
+/*   Created: 2024/04/12 02:42:19 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/12 22:52:49 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Sets the first size bytes of str to zero.
-
+//Checks if character c is a numeric digit.
 #include "libft.h"
 
-void	ft_bzero( void *s, size_t n)
+int	ft_isdigit(int n)
 {
-	size_t	i;
-	char	*str;
-
-	str = (char *)s;
-	i = 0;
-	while (i < n)
-	{
-		str[i] = 0;
-		i++;
-	}
+	return (n >= '0' && n <= '9');
 }
 
 /*int main()
 {
-    char    str[] = "Como estan los maquinas, lo primero de todo";
-    int     n = 5;
+	int n = '4';
 
-    ft_bzero(str, n);
-    printf("%s", str);
+	printf("%d", ft_isdigit(n));
 }*/

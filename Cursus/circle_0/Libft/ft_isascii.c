@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 02:44:53 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/12 03:00:19 by antonio          ###   ########.fr       */
+/*   Created: 2024/04/12 02:42:11 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/12 22:49:46 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Computes the length of the string str.
+//Checks if character c is an ASCII character.
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_isascii(int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	return (c >= 0 && c <= 127);
 }
 
 /*int main()
 {
-    const char s[] = "Diplodocus";
-    printf("%d", ft_strlen(s));
+	int c = 123;
+	printf("%d", ft_isascii(c));
 }*/

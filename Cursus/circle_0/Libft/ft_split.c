@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:43:51 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/12 03:16:49 by antonio          ###   ########.fr       */
+/*   Updated: 2024/04/13 01:33:58 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	free_s(char **s);
         printf("%s\n",split[i++]);
     free_s(split);
 }*/
+
 
 char	**ft_split(char const *s, char c)
 {
@@ -94,32 +95,17 @@ void	free_s(char **s)
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
-	size_t	j;
-	char	*cpy;
+	char	*substr;
 
-	j = 0;
-	if (s == NULL)
+	if (!s)
 		return (NULL);
-	while (s[j])
-		j++;
-	if (start >= j)
-	{
-		cpy = malloc(1);
-		if (cpy == NULL)
-			return (NULL);
-		cpy[0] = '\0';
-		return (cpy);
-	}
-	i = start;
-	cpy = malloc(len + 1);
-	if (cpy == NULL)
+	if (ft_strlen(s) < start)
+		return (ft_strdup(""));
+	if (len > ft_strlen(s + start))
+		len = ft_strlen(s + start);
+	substr = malloc(sizeof(char) * (len + 1));
+	if (!substr)
 		return (NULL);
-	while (i < (start + len) && i < j)
-	{
-		cpy[i - start] = s[i];
-		i++;
-	}
-	cpy[i - start] = 0;
-	return (cpy);
+	ft_strlcpy(substr, (s + start), len + 1);
+	return (substr);
 }

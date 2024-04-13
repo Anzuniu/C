@@ -1,46 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 02:43:35 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/12 02:53:37 by antalvar         ###   ########.fr       */
+/*   Created: 2024/04/12 02:42:51 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/12 23:57:39 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Writes an integer to a file descriptor.
+//Compares the first size bytes of s1 and s2.
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd);
-
-void	ft_putnbr_fd(int n, int fd)
+int	ft_memcmp(const void *ptr1, const void *ptr2, size_t size)
 {
-	if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		n *= -1;
-	}
-	if (n >= 10)
-	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
-	}
-	else
-		ft_putchar_fd(n + '0', fd);
-}
+	char	*str1;
+	char	*str2;
+	size_t	i;
 
-void	ft_putchar_fd(char c, int fd)
-{
-	write (fd, &c, 1);
+	str1 = (char *)ptr1;
+	str2 = (char *)ptr2;
+	i = 0;
+	while (size--)
+	{
+		if (str1[i] != str2[i])
+			return (str1[i] - str2[i]);
+		i++;
+	}
+	return (0);
 }
 
 /*int main()
 {
-    int n = -2147483647;
-    int fd = 1;
+    const void *ptr1;
+    const void *ptr2;
+    size_t size = 8;
 
-    ft_putnbr_fd(n,fd);
+    printf("%d", memcmp(ptr1,ptr2,size));
 }*/

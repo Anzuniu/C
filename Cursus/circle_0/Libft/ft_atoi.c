@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:41:10 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/12 03:05:55 by antonio          ###   ########.fr       */
+/*   Updated: 2024/04/12 18:44:14 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	check_sign(const char *str);
 {
     const char str[] = "-124f312--+-+3-65415asd123";
 
-    printf("%d\n", ft_atoi(st}r));
+    printf("%d\n", ft_atoi(str));
     return (0);
 }*/
 

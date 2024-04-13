@@ -1,42 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 02:42:51 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/12 02:55:32 by antalvar         ###   ########.fr       */
+/*   Created: 2024/04/12 02:44:53 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/13 01:50:46 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Compares the first size bytes of s1 and s2.
+//Computes the length of the string str.
 
 #include "libft.h"
 
-int	ft_memcmp(const void *ptr1, const void *ptr2, size_t size)
+size_t	ft_strlen(const char *s)
 {
-	char	*str1;
-	char	*str2;
 	size_t	i;
 
-	str1 = (char *)ptr1;
-	str2 = (char *)ptr2;
 	i = 0;
-	while (size--)
-	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
+	while (s[i])
 		i++;
-	}
-	return (0);
+	return (i);
 }
 
 /*int main()
 {
-    const void *ptr1;
-    const void *ptr2;
-    size_t size = 8;
-
-    printf("%d", memcmp(ptr1,ptr2,size));
+    const char s[] = "Diplodocus";
+    printf("%d", ft_strlen(s));
 }*/
