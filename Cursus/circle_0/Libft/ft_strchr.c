@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:44:00 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/13 12:59:10 by antonio          ###   ########.fr       */
+/*   Updated: 2024/04/13 19:08:10 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,13 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i] || (c == '\0' && s[i] == '\0'))
+	while (*s != (char)c)
 	{
-		if (s[i] == c)
-			return ((char *)&s[i]);
-		i++;
+		if (!(*s))
+			return (NULL);
+		s++;
 	}
-	return (NULL);
+	return ((char *)s);
 }
 
 /*int main()
