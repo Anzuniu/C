@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:44:07 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/12 02:52:15 by antalvar         ###   ########.fr       */
+/*   Updated: 2024/04/13 14:52:15 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,31 @@
 char	*ft_strdup(const char *str)
 {
 	char	*cpy;
+	size_t	len;
 	size_t	i;
 
 	if (str == NULL)
 		return (NULL);
-	while (str[i])
-		i++;
-	cpy = malloc (i + 1);
+
+	len = ft_strlen(str);
+	cpy = (char *)malloc(sizeof(char) * (len + 1));
+	if (!cpy)
+		return (NULL);
 	i = 0;
-	while (str[i])
+	while (i < len)
 	{
 		cpy[i] = str[i];
 		i++;
 	}
+	cpy[len] = '\0';
 	return (cpy);
 }
+
+/*int main()
+{
+	const char str[] = "Como estan los maquinas";
+	char *cpy;
+
+	cpy = ft_strdup(str);
+	printf("%s", cpy);
+}*/
