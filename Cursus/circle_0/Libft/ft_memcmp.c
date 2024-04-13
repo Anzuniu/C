@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:42:51 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/12 23:57:39 by antonio          ###   ########.fr       */
+/*   Updated: 2024/04/13 15:17:09 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 
 int	ft_memcmp(const void *ptr1, const void *ptr2, size_t size)
 {
-	char	*str1;
-	char	*str2;
+	const unsigned char	*str1;
+	const unsigned char	*str2;
 	size_t	i;
 
-	str1 = (char *)ptr1;
-	str2 = (char *)ptr2;
+	str1 = (const unsigned char *)ptr1;
+	str2 = (const unsigned char *)ptr2;
 	i = 0;
 	while (size--)
 	{
