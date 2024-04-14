@@ -1,3 +1,12 @@
+## LIBFT
+
+## MAKEFILE
+
+`all`
+`clean`
+`fclean`
+`re`
+
 ## Mandatory
 
 ### Funciones libc
