@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:44:17 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/13 17:29:48 by antonio          ###   ########.fr       */
+/*   Updated: 2024/04/15 01:06:24 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-size_t	ft_strlen(const char *str);
 void	ft_upper(unsigned int i, char *c);
 
 /*int main()
@@ -38,16 +37,6 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		f (i, &s[i]);
 		i++;
 	}
-}
-
-size_t	ft_strlen(const char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
 }
 
 void	ft_upper(unsigned int i, char *c)

@@ -36,6 +36,7 @@ FILES = \
 	ft_tolower.c\
 	ft_toupper.c\
 
+
 OBJ = $(FILES:.c=.o)
 
 FLAGS = -Wall -Werror -Wextra
@@ -44,6 +45,8 @@ $(NAME): $(FILES) $(OBJ)
 	@gcc -c $(FLAGS) $(FILES)
 	@ar rcs $(NAME) $(OBJ)
 
+TESTEO: TESTEO.o $(NAME)
+	gcc $(FLAGS) -o TESTEO TESTEO.o -L. -lft
 
 all: $(NAME)
 

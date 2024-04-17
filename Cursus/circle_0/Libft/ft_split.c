@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:43:51 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/13 01:33:58 by antonio          ###   ########.fr       */
+/*   Updated: 2024/04/14 02:16:34 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include "libft.h"
 
 char	**ft_split(char const *s, char c);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
 void	free_s(char **s);
 
 /*int main()
@@ -29,7 +28,6 @@ void	free_s(char **s);
         printf("%s\n",split[i++]);
     free_s(split);
 }*/
-
 
 char	**ft_split(char const *s, char c)
 {
@@ -46,11 +44,16 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	start = 0;
 	num_strings = 0;
+	if (!s)
+		return (NULL);
 	while (s[i])
 	{
 		if (s[i] == c || s[i + 1] == '\0')
 		{
-			len = (s[i] == c) ? i - start : i - start + 1;
+			if (s[i] == c)
+				len = i - start;
+			else
+				len = i - start + 1;
 			substr = ft_substr(s, start, len);
 			if (substr == NULL)
 			{
@@ -91,21 +94,4 @@ void	free_s(char **s)
 	while (s[i] != NULL)
 		free(s[i++]);
 	free(s);
-}
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	char	*substr;
-
-	if (!s)
-		return (NULL);
-	if (ft_strlen(s) < start)
-		return (ft_strdup(""));
-	if (len > ft_strlen(s + start))
-		len = ft_strlen(s + start);
-	substr = malloc(sizeof(char) * (len + 1));
-	if (!substr)
-		return (NULL);
-	ft_strlcpy(substr, (s + start), len + 1);
-	return (substr);
 }

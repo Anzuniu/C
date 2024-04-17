@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:57:59 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/13 13:20:28 by antonio          ###   ########.fr       */
+/*   Updated: 2024/04/16 23:38:38 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	*ft_calloc(size_t n, size_t size)
 	void	*p;
 	size_t	i;
 
-	if (n == 0 || size == 0 || SIZE_MAX / n < size)
-		return (NULL);
 	p = malloc(n * size);
 	if (!p)
 		return (NULL);

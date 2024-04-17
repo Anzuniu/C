@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:44:07 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/13 17:11:39 by antonio          ###   ########.fr       */
+/*   Updated: 2024/04/16 23:41:13 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ char	*ft_strdup(const char *str)
 	size_t	len;
 	size_t	i;
 
-	if (str == NULL)
-		return (NULL);
 	len = ft_strlen(str);
 	cpy = (char *)malloc(sizeof(char) * (len + 1));
 	if (!cpy)

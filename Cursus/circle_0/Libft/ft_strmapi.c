@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:45:00 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/13 01:51:49 by antonio          ###   ########.fr       */
+/*   Updated: 2024/04/15 01:07:47 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 #include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-size_t	ft_strlen(const char *str);
-char	ft_upper(unsigned int i, char c);
+char	ft_upperc(unsigned int i, char c);
 
 /*int main()
 {
@@ -43,17 +42,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (str);
 }
 
-size_t	ft_strlen(const char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-char	ft_upper(unsigned int i, char c)
+char	ft_upperc(unsigned int i, char c)
 {
 	if (c >= 'a' && c <= 'z')
 		return (c - 32);
