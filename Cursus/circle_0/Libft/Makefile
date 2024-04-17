@@ -41,22 +41,32 @@ OBJ = $(FILES:.c=.o)
 
 FLAGS = -Wall -Werror -Wextra
 
-$(NAME): $(FILES) $(OBJ)
+CC = gcc
+
+$(NAME): $(OBJ)
 	@gcc -c $(FLAGS) $(FILES)
 	@ar rcs $(NAME) $(OBJ)
+	@echo "$(NAME) created!"
 
-TESTEO: TESTEO.o $(NAME)
-	gcc $(FLAGS) -o TESTEO TESTEO.o -L. -lft
+test_program: test_program.o $(NAME)
+	@gcc $(FLAGS) -o test_program test_program.o -L. -lft
+	@echo "test_program ready!"
 
 all: $(NAME)
 
 
 clean:
 	@rm -f $(OBJ)
+	@echo "clean completed!"
 
-fclean: clean
-	@rm -f $(NAME) $(OBJ)
+fclean: 
+	@rm -f $(OBJ)
+	@rm -f $(NAME) $(OBJ) test_program
+	@echo "fclean completed!"
 
 re:	fclean all
+
+$(OBJ): %.o: %.c
+	@$(CC) -c $(FLAGS) $< -o $@
 
 .PHONY: all clean fclean re bonus
