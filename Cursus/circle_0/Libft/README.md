@@ -16,9 +16,8 @@ Deberás rehacer algunas funciones de la libc. Tus funciones tendrán los mismos
 
 
 
-| Function                         | Description                                                                     | Prototype                                                                        |
-<<<<<<< HEAD
-| -------------------------------- | ----------------------------------------------------------- |--------------------------------------------------------------------------------- |
+| Function                         | Description                                                                     | Prototype
+| -------------------------------- | ----------------------------------------------------------- |---------------------------------------------------------------- |
 | [ft_isalpha](./src/ft_isalpha.c) | Checks if character `c` is alphabetic.         | int ft_isalpha(int c);                                                           |
 | [ft_isdigit](./src/ft_isdigit.c) | Checks if character `c` is a numeric digit.    | int ft_isdigit(int c);                                                           |
 | [ft_isalnum](./src/ft_isalnum.c) | Checks if character `c` is alphanumeric.       | int ft_isalnum(int c);                                                           |
