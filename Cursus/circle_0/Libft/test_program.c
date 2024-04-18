@@ -235,8 +235,8 @@ int main() {
         "+",             // Solo signo positivo
         "-",             // Solo signo negativo
         "   ",           // Espacios sin números
-        "\n12345",       // Carácter de nueva línea antes del número
-        "12345\n",       // Carácter de nueva línea después del número
+        "\t1234\t5",       // Carácter de nueva línea antes del número
+        "1\t2345\t",       // Carácter de nueva línea después del número
         "\t12345",       // Carácter de tabulación antes del número
         "12345\t"        // Carácter de tabulación después del número
     };
@@ -252,13 +252,13 @@ int main() {
     int *ptr_calloc = ft_calloc(nmemb_calloc, size_calloc);
     printf("Test ft_calloc : \n");
     if (ptr_calloc != NULL) {
-	printf("        Memoria a asignar: %ld\n Bytes de cada asignación: %ld\n", nmemb_calloc, size_calloc);
-        printf("	\n	Memoria asignada correctamente.   \n");
+	printf("        Memoria a asignar: %ld\n	Bytes de cada asignación: %ld\n", nmemb_calloc, size_calloc);
+        printf("	Memoria asignada correctamente.   \n");
 	printf("	Valores asignados por ft_calloc:");
         for (size_t i_calloc = 0; i_calloc < nmemb_calloc; i_calloc++) {
             printf(" %d", ptr_calloc[i_calloc]);
         }
-        printf("\n");
+        printf("\n\n");
         free(ptr_calloc);
     } else {
         printf("Test ft_calloc(%zu, %zu):\n	Error al asignar memoria\n\n", nmemb_calloc, size_calloc);
@@ -280,10 +280,14 @@ int main() {
 printf("\n------------------------------------------------------------------------------------\n			PARTE 2  FUNCIONES ADICIONALES				\n------------------------------------------------------------------------------------\n\n");
 
     // ft_substr TEST
-    printf("Test ft_substr(\"Como estan los maquinas\", 7, 5): %s\n\n", ft_substr(str, 7, 5));
+    printf("Test ft_substr :\n");
+    printf("	Cadena original : %s\n	Posición de comienzo de la substracción : %d\n	Tamaño de la substracción : %d\n	Cadena resultante : %s\n\n", str, 7, 5, ft_substr(str , 7 , 5));
 
     // ft_strjoin TEST
-    printf("Test ft_strjoin(\"Como estan \", \" los maquinas\"): %s\n\n", ft_strjoin(s1, s2));
+    printf("Test ft_strjoin :\n");
+    char *s1_strjoin = "Como estan ";
+    char *s2_strjoin = "los maquinas";
+    printf("	Primera cadena : %s\n	Segunda cadena : %s\n	Cadena resultante : %s\n\n", s1_strjoin, s2_strjoin, ft_strjoin(s1_strjoin, s2_strjoin));
 
     // ft_strtrim TEST
     const char *s1_strtrim = "   Como estan los maquinas   ";
@@ -291,7 +295,7 @@ printf("\n----------------------------------------------------------------------
     char *trimmed_strtrim = ft_strtrim(s1_strtrim, set_strtrim);
     if (trimmed_strtrim != NULL) {
         printf("Test ft_strtrim:\n 	Original: \"%s\"\n", s1_strtrim);
-        printf("	Trimmed: \"%s\"\n", trimmed_strtrim);
+        printf("	Trimmed: \"%s\"\n\n", trimmed_strtrim);
         free(trimmed_strtrim);
     } else {
         printf("Error al llamar a ft_strtrim\n\n");
@@ -318,8 +322,64 @@ printf("\n----------------------------------------------------------------------
     printf("	2147483647 : %s\n", ft_itoa(num4));
     printf("	-2147483648 : %s\n\n", ft_itoa(num5));
 
-    printf("quedan STRMAPI, STRITERI, PUTCHAR_FD, PUTSTR_FD, PUTENDL_FD, PUTNBR_FD\n\n");
+    // ft_strmapi TEST
+    const char *str_strmapi = "Como estan los maquinas";
+    printf("Test ft_strmapi : \n");
+    char ft_upper(unsigned int i_strmapi, char c_strmapi)
+    {
+	    return ft_toupper(c_strmapi);
+    }
+    printf("	Cadena original : %s\n", str_strmapi);
+    printf("	Función a aplicar : ft_toupper\n");
+    printf("	Cadena modificada : %s\n\n", ft_strmapi(str_strmapi, ft_upper));
 
+
+    // ft_striteri TEST
+    printf("Test ft_striteri : \n");
+    void    ft_upper_striteri(unsigned int i_striteri, char *c_striteri)
+    {
+	    i_striteri = 0;
+	    if (*c_striteri >= 'a' && *c_striteri <= 'z')
+		    *c_striteri -= 32;
+	    i_striteri++;
+    }
+    char	s_striteri[] = "Como estan los maquinas";
+    printf ("	Cadena original: %s\n", s_striteri);
+    ft_striteri(s_striteri, ft_upper_striteri);
+    printf("	Cadena modificada: %s\n\n", s_striteri);
+
+
+    // ft_putchar_fd TEST
+    printf("Test ft_putchar_fd :\n");
+    char	c_putchar = 'A';
+    int		fd = 1;
+    printf("	Carácter a imprimir : %c\n	Salida : %d\n", c_putchar, fd);
+    ft_putchar_fd(c_putchar, fd);
+    printf("\n\n");
+
+    // ft_putstr_fd TEST
+    printf("Test ft_putstr_fd :\n");
+    char       *str_putstr = "Como estan los maquinas";
+    int         fd2 = 1;
+    printf("	Cadena a imprimir : %s\n	Salida : %d\n", str_putstr, fd);
+    ft_putstr_fd(str_putstr, fd2);
+    printf("\n\n");
+   
+    // ft_putendl_fd TEST
+    printf("Test ft_putendl_fd :\n");
+    char *str_putendl = "Como estan los maquinas";
+    int fd3 = 1;
+    printf("	Cadena a imprimir : %s\n	Salida : %d\n", str_putendl, fd3);
+    ft_putendl_fd(str_putendl, fd3);
+    printf("\n\n");
+
+    // ft_putnbr_fd TEST
+    printf("Test ft_putnbr_fd :\n");
+    int num_putnbr = 12345;
+    int fd4 = 1;
+    printf("	Número a imprimir : %d\n	Salida : %d\n", num_putnbr, fd4);
+    ft_putnbr_fd(num_putnbr, fd4);
+    printf("\n\n");
 
     printf("\n------------------------------------------------------------------------------------\n                        PARTE 3  FUNCIONES BONUS                          \n------------------------------------------------------------------------------------\n\n");
 

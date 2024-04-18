@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:44:38 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/17 17:33:14 by antonio          ###   ########.fr       */
+/*   Updated: 2024/04/18 03:46:40 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcpy(char	*dest, const char	*src, size_t size)
 
 	i = 0;
 	j = 0;
-	while(src[j])
+	while (src[j])
 		j++;
 	if (size)
 	{

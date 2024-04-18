@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:44:25 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/12 02:51:45 by antalvar         ###   ########.fr       */
+/*   Updated: 2024/04/18 02:27:55 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		i++;
 	while (s2[j])
 		j++;
-	cat = malloc (i + j +1);
+	cat = malloc (i + j + 1);
 	if (!s1 || !s2 || !cat)
 		return (NULL);
 	i = 0;
