@@ -60,6 +60,3 @@ En esta segunda parte, deberás desarrollar un conjunto de funciones que, o no s
 | [ft_putnbr_fd](./ft_putnbr_fd.c)   | Writes an integer to a file descriptor.                                   | void ft_putnbr_fd(int n, int fd);                                                |
 
 ## BONUS
-
-
-## BONUS
