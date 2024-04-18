@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 02:43:04 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/18 16:28:50 by antalvar         ###   ########.fr       */
+/*   Created: 2024/04/12 02:44:53 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/13 01:50:46 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Copies size bytes from src to dest, even if they overlap.
+//Computes the length of the string str.
+
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+size_t	ft_strlen(const char *s)
 {
-	char		*d;
-	const char	*s;
+	size_t	i;
 
-	d = (char *)dest;
-	s = (char *)src;
-	if (!dest && !src)
-		return (NULL);
-	if (d < s)
-	{
-		while (len--)
-			*d++ = *s++;
-	}
-	else
-	{
-		while (len--)
-			d[len] = s[len];
-	}
-	return (dest);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }
+
+/*int main()
+{
+    const char s[] = "Diplodocus";
+    printf("%d", ft_strlen(s));
+}*/

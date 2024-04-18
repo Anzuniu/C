@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 02:43:04 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/18 16:28:50 by antalvar         ###   ########.fr       */
+/*   Created: 2024/04/12 02:57:59 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/16 23:38:38 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Copies size bytes from src to dest, even if they overlap.
+//Allocates memory and fills it with zeros.
+
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+void	*ft_calloc(size_t n, size_t size)
 {
-	char		*d;
-	const char	*s;
+	void	*p;
+	size_t	i;
 
-	d = (char *)dest;
-	s = (char *)src;
-	if (!dest && !src)
+	p = malloc(n * size);
+	if (!p)
 		return (NULL);
-	if (d < s)
+	i = 0;
+	while (i < n * size)
 	{
-		while (len--)
-			*d++ = *s++;
+		*((char *)p + i) = 0;
+		i++;
 	}
-	else
-	{
-		while (len--)
-			d[len] = s[len];
-	}
-	return (dest);
+	return (p);
 }

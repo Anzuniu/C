@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 02:43:04 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/18 16:28:50 by antalvar         ###   ########.fr       */
+/*   Created: 2024/04/12 02:41:55 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/12 19:31:17 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Copies size bytes from src to dest, even if they overlap.
+//Checks if character c is alphanumeric.
+
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+int	ft_isalnum(int c)
 {
-	char		*d;
-	const char	*s;
-
-	d = (char *)dest;
-	s = (char *)src;
-	if (!dest && !src)
-		return (NULL);
-	if (d < s)
-	{
-		while (len--)
-			*d++ = *s++;
-	}
-	else
-	{
-		while (len--)
-			d[len] = s[len];
-	}
-	return (dest);
+	return ((c >= '0' && c <= '9')
+		|| (c >= 'A' && c <= 'Z')
+		|| (c >= 'a' && c <= 'z'));
 }
+
+/*int main()
+{
+	int c = '\n';
+
+	printf("%d", ft_isalnum(c));
+}*/

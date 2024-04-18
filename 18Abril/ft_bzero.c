@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 02:43:04 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/18 16:28:50 by antalvar         ###   ########.fr       */
+/*   Created: 2024/04/12 02:41:30 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/12 18:45:11 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Copies size bytes from src to dest, even if they overlap.
+//Sets the first size bytes of str to zero.
+
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+void	ft_bzero( void *s, size_t n)
 {
-	char		*d;
-	const char	*s;
+	size_t	i;
+	char	*str;
 
-	d = (char *)dest;
-	s = (char *)src;
-	if (!dest && !src)
-		return (NULL);
-	if (d < s)
+	str = (char *)s;
+	i = 0;
+	while (i < n)
 	{
-		while (len--)
-			*d++ = *s++;
+		str[i] = 0;
+		i++;
 	}
-	else
-	{
-		while (len--)
-			d[len] = s[len];
-	}
-	return (dest);
 }
+
+/*int main()
+{
+    char    str[] = "Como estan los maquinas, lo primero de todo";
+    int     n = 5;
+
+    ft_bzero(str, n);
+    printf("%s", str);
+}*/

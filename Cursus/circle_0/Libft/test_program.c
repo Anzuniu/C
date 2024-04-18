@@ -13,7 +13,7 @@ int main() {
     char *s4 = "Como estan los maquinas";
 
     // MANDATORY
-    printf("\n------------------------------------------------------------------------------------\n                        PARTE 1  FUNCIONES DE LIBC                          \n------------------------------------------------------------------------------------\n\n");
+	printf("\n------------------------------------------------------------------------------------\n                        PARTE 1  FUNCIONES DE LIBC                          \n------------------------------------------------------------------------------------\n\n");
     // ft_isalpha TEST
     printf("Test ft_isalpha :\n");
     printf("	A ---> Valor esperado 1 : %d\n", ft_isalpha('A'));
@@ -63,7 +63,7 @@ int main() {
     for (int i_mem = 0; i_mem < 9; i_mem++) {
         printf("%c ", str2_mem[i_mem]);
     }
-    printf("\n");
+    printf("\n\n");
 
     // ft_memcpy TEST
     printf("Test ft_memcpy :\n");
@@ -75,8 +75,8 @@ int main() {
 
     // ft_memmove TEST
     printf("Test ft_memmove :\n");
-    char str3_mem[] = "123456789";
-    char str4_mem[] = "abcdefghi";
+    char str3_mem[] = "12345";
+    char str4_mem[] = "abcdefghai";
     printf("	Cadena original : %s\n	Cadena sustituta : %s\n	Número a sustituir : %d\n", str3_mem, str4_mem, 4);
     ft_memmove(str4_mem, str3_mem, 4);
     printf("	Resultado : %s\n", str4_mem);
@@ -290,7 +290,7 @@ printf("\n----------------------------------------------------------------------
     printf("	Primera cadena : %s\n	Segunda cadena : %s\n	Cadena resultante : %s\n\n", s1_strjoin, s2_strjoin, ft_strjoin(s1_strjoin, s2_strjoin));
 
     // ft_strtrim TEST
-    const char *s1_strtrim = "   Como estan los maquinas   ";
+    const char *s1_strtrim = "       Como estan los maquinas        ";
     const char *set_strtrim = " ";
     char *trimmed_strtrim = ft_strtrim(s1_strtrim, set_strtrim);
     if (trimmed_strtrim != NULL) {
@@ -325,7 +325,7 @@ printf("\n----------------------------------------------------------------------
     // ft_strmapi TEST
     const char *str_strmapi = "Como estan los maquinas";
     printf("Test ft_strmapi : \n");
-    char ft_upper(unsigned int i_strmapi, char c_strmapi)
+/*    char ft_upper(unsigned int i_strmapi, char c_strmapi)
     {
 	    return ft_toupper(c_strmapi);
     }
@@ -347,7 +347,7 @@ printf("\n----------------------------------------------------------------------
     printf ("	Cadena original: %s\n", s_striteri);
     ft_striteri(s_striteri, ft_upper_striteri);
     printf("	Cadena modificada: %s\n\n", s_striteri);
-
+*/
 
     // ft_putchar_fd TEST
     printf("Test ft_putchar_fd :\n");

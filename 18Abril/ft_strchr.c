@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 02:43:04 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/18 16:28:50 by antalvar         ###   ########.fr       */
+/*   Created: 2024/04/12 02:44:00 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/13 19:08:10 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Copies size bytes from src to dest, even if they overlap.
+//Locates the first occurrence of c in str.
+
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+char	*ft_strchr(const char *s, int c)
 {
-	char		*d;
-	const char	*s;
-
-	d = (char *)dest;
-	s = (char *)src;
-	if (!dest && !src)
-		return (NULL);
-	if (d < s)
+	while (*s != (char)c)
 	{
-		while (len--)
-			*d++ = *s++;
+		if (!(*s))
+			return (NULL);
+		s++;
 	}
-	else
-	{
-		while (len--)
-			d[len] = s[len];
-	}
-	return (dest);
+	return ((char *)s);
 }
+
+/*int main()
+{
+    const char s[] = "Diplodocus";
+    int c;
+
+    c = 'l';
+    printf("%d", ft_strchr(s,c));
+}*/

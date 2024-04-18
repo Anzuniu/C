@@ -1,36 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 02:43:04 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/18 16:28:50 by antalvar         ###   ########.fr       */
+/*   Created: 2024/04/12 02:44:07 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/16 23:41:13 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Copies size bytes from src to dest, even if they overlap.
+/* Duplicates a dynamic string.*/
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+char	*ft_strdup(const char *str)
 {
-	char		*d;
-	const char	*s;
+	char	*cpy;
+	size_t	len;
+	size_t	i;
 
-	d = (char *)dest;
-	s = (char *)src;
-	if (!dest && !src)
+	len = ft_strlen(str);
+	cpy = (char *)malloc(sizeof(char) * (len + 1));
+	if (!cpy)
 		return (NULL);
-	if (d < s)
+	i = 0;
+	while (i < len)
 	{
-		while (len--)
-			*d++ = *s++;
+		cpy[i] = str[i];
+		i++;
 	}
-	else
-	{
-		while (len--)
-			d[len] = s[len];
-	}
-	return (dest);
+	cpy[len] = '\0';
+	return (cpy);
 }
+
+/*int main()
+{
+	const char str[] = "Como estan los maquinas";
+	char *cpy;
+
+	cpy = ft_strdup(str);
+	printf("%s", cpy);
+}*/

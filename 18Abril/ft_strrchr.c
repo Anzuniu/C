@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 02:43:04 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/18 16:28:50 by antalvar         ###   ########.fr       */
+/*   Created: 2024/04/12 02:45:30 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/13 19:26:33 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Copies size bytes from src to dest, even if they overlap.
+//Locates the last occurrence of c in str.
+
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+char	*ft_strrchr(const char *str, int c)
 {
-	char		*d;
-	const char	*s;
+	size_t	i;
 
-	d = (char *)dest;
-	s = (char *)src;
-	if (!dest && !src)
-		return (NULL);
-	if (d < s)
+	i = ft_strlen(str) + 1;
+	while (i--)
 	{
-		while (len--)
-			*d++ = *s++;
+		if (str[i] == (char)c)
+			return ((char *)&str[i]);
 	}
-	else
-	{
-		while (len--)
-			d[len] = s[len];
-	}
-	return (dest);
+	return (NULL);
 }
+
+/*int main()
+{
+    const char str[] = "Diplodocus";
+    int c;
+
+    c = 'o';
+    printf("%s", ft_strrchr(str,c));
+}*/

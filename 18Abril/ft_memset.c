@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 02:43:04 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/18 16:28:50 by antalvar         ###   ########.fr       */
+/*   Created: 2024/04/12 02:43:11 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/12 18:39:59 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Copies size bytes from src to dest, even if they overlap.
+//Fills the first size bytes of str with the byte c.
+
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+void	*ft_memset(void *str, int c, size_t size)
 {
-	char		*d;
-	const char	*s;
+	size_t	i;
 
-	d = (char *)dest;
-	s = (char *)src;
-	if (!dest && !src)
-		return (NULL);
-	if (d < s)
-	{
-		while (len--)
-			*d++ = *s++;
-	}
-	else
-	{
-		while (len--)
-			d[len] = s[len];
-	}
-	return (dest);
+	i = 0;
+	while (i < size)
+		((char *)str)[i++] = c;
+	return (str);
 }
+
+/*int main()
+{
+    int buffer[120];
+    size_t buffer_size = sizeof(buffer);
+
+    ft_memset(buffer, 'E', buffer_size);
+    buffer[buffer_size - 1] = '\0';
+    printf("Buffer modificado: %s", buffer);
+    return 0;
+}*/

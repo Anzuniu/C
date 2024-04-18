@@ -47,10 +47,6 @@ $(NAME): $(OBJ)
 	@ar rcs $(NAME) $(OBJ)
 	@echo "$(NAME) created!"
 
-test_program: test_program.o $(NAME)
-	@gcc $(FLAGS) -o test_program test_program.o -L. -lft
-	@echo "test_program ready!"
-
 all: $(NAME)
 
 
