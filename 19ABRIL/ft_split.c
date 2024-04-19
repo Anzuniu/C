@@ -6,13 +6,13 @@
 /*   By: antalvar <antalvar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 11:59:30 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/19 11:59:36 by antalvar         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:08:07 by antalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_counterchar(char const *s, char c)
+static size_t	ft_counterchar(char const *s, char c)
 {
 	size_t	i;
 	size_t	x;
