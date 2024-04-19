@@ -36,7 +36,12 @@ FILES = \
 	ft_tolower.c\
 	ft_toupper.c\
 
+BONUS_FILE = \
+	ft_lstnew_bonus.c\
+
 OBJ = $(FILES:.c=.o)
+
+BONUS_OBJ = $(BONUS_FILE:.c=.o)
 
 FLAGS = -Wall -Werror -Wextra
 
@@ -49,6 +54,10 @@ $(NAME): $(OBJ)
 
 all: $(NAME)
 
+bonus: $(BONUS_OBJ)
+	@$(CC) -c $(FLAGS) $(BONUS_FILE)
+	@ar rcs $(NAME) $(BONUS_OBJ)
+	@echo "Bonus library $(NAME) updated!"
 
 clean:
 	@rm -f $(OBJ)
@@ -56,7 +65,7 @@ clean:
 
 fclean: 
 	@rm -f $(OBJ)
-	@rm -f $(NAME) $(OBJ) test_program
+	@rm -f $(NAME) $(BONUS_OBJ) test_program
 	@echo "fclean completed!"
 
 re:	fclean all
