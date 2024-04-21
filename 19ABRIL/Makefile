@@ -63,9 +63,9 @@ $(NAME): $(OBJ)
 all: $(NAME)
 
 bonus: $(BONUS_OBJ)
-	@$(CC) -c $(FLAGS) $(BONUS_FILE)
+	@gcc -c $(FLAGS) $(BONUS_FILE)
 	@ar rcs $(NAME) $(BONUS_OBJ)
-	@echo "Bonus library $(NAME) updated!"
+	@echo "Bonus library $(NAME) created!"
 
 clean:
 	@rm -f $(OBJ)
@@ -73,7 +73,7 @@ clean:
 
 fclean: 
 	@rm -f $(OBJ)
-	@rm -f $(NAME) $(BONUS_OBJ) test_program
+	@rm -f $(NAME) $(BONUS_OBJ)
 	@echo "fclean completed!"
 
 re:	fclean all
