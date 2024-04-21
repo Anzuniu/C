@@ -6,7 +6,7 @@
 /*   By: Marina.BarbaRuiz <marvin@42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 03:32:47 by Marina.BarbaR     #+#    #+#             */
-/*   Updated: 2024/04/21 03:57:25 by Marina.BarbaR    ###   ########.fr       */
+/*   Updated: 2024/04/21 05:55:29 by Marina.BarbaR    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void(*del)(void *))
 			return (NULL);
 		}
 		ft_lstadd_back(&newlst, newel);
-		lst = lst -> next:
-		}
-			return (newlst);
+		lst = lst -> next;
 	}
+	return (newlst);
+}

@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:43:04 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/21 04:20:46 by Marina.BarbaR    ###   ########.fr       */
+/*   Updated: 2024/04/21 05:24:46 by Marina.BarbaR    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	s = (char *)src;
 	if (!dst && !src)
 		return (NULL);
-	if (d > s && d < s + len)
+	if (d > s)
 	{
 		while (len--)
 			d[len] = s[len];
