@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: Marina.BarbaRuiz <marvin@42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 02:43:04 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/21 04:20:46 by Marina.BarbaR    ###   ########.fr       */
+/*   Created: 2024/04/21 02:36:31 by Marina.BarbaR     #+#    #+#             */
+/*   Updated: 2024/04/21 02:36:33 by Marina.BarbaR    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+t_list	*ft_lstlast(t_list *lst)
 {
-	char		*d;
-	const char	*s;
-
-	d = (char *)dst;
-	s = (char *)src;
-	if (!dst && !src)
+	if (!lst)
 		return (NULL);
-	if (d > s && d < s + len)
-	{
-		while (len--)
-			d[len] = s[len];
-	}
-	else
-	{
-		while (len--)
-			*d++ = *s++;
-	}
-	return (dst);
+	while (lst->next)
+		lst = lst -> next;
+	return (lst);
 }

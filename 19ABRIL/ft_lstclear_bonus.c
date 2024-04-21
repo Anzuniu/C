@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: Marina.BarbaRuiz <marvin@42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 02:42:57 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/21 04:19:46 by Marina.BarbaR    ###   ########.fr       */
+/*   Created: 2024/04/21 02:36:12 by Marina.BarbaR     #+#    #+#             */
+/*   Updated: 2024/04/21 03:20:33 by Marina.BarbaR    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	char	*d;
-	char	*s;
+	t_list	*aux;
 
-	d = (char *)dst;
-	s = (char *)src;
-	if (!dst && !src)
-		return (NULL);
-	while (n--)
-		*d++ = *s++;
-	return (dst);
+	if (!lst)
+		return ;
+	while (*lst)
+	{
+		aux = *lst;
+		del((*lst)->content);
+		*lst = (*lst)->next;
+		free(aux);
+	}
 }
