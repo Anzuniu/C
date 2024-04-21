@@ -6,52 +6,98 @@
 /*   By: antalvar <antalvar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 11:59:30 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/19 16:08:07 by antalvar         ###   ########.fr       */
+/*   Updated: 2024/04/21 21:00:58 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_counterchar(char const *s, char c)
-{
-	size_t	i;
-	size_t	x;
-
-	i = 0;
-	x = 0;
-	while (s[i])
-	{
-		if (s[i++] != c && (s[i] == c || s[i] == 0))
-			x++;
-	}
-	return (x);
-}
+static int	ft_countchar(char const *s, char c);
+static int	ft_wordlen(char const *s, char c);
+static char	**ft_fill(char const *s, int words, char c, char **splitted);
+static void	*ft_free(char **splitted, int words);
 
 char	**ft_split(char const *s, char c)
 {
-	char	**str;
-	size_t	len;
-	size_t	n;
+	char	**splitted;
+	int		words;
 
-	str = malloc (sizeof (char *) * (ft_counterchar(s, c) + 1));
-	if (!str)
-		return (0);
-	n = 0;
-	while (*s)
+	if (!s)
+		return (NULL);
+	words = ft_countchar(s, c);
+	splitted = (char **)malloc(sizeof(char *) * (words + 1));
+	if (!splitted)
+		return (NULL);
+	splitted = ft_fill(s, words, c, splitted);
+	return (splitted);
+}
+
+static int	ft_countchar(char const *s, char c)
+{
+	int		i;
+	int		words;
+
+	words = 0;
+	i = 0;
+	while (s[i])
 	{
-		if (*s != c)
-		{
-			len = 0;
-			while (*s && *s != c)
-			{
-				++len;
-				++s;
-			}
-			str[n++] = ft_substr(s - len, 0, len);
-		}
-		else
-			++s;
+		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
+			words++;
+		i++;
 	}
-	str[n] = 0;
-	return (str);
+	return (words);
+}
+
+static int	ft_wordlen(char const *s, char c)
+{
+	int		i;
+	int		len;
+
+	i = 0;
+	len = 0;
+	while (s[i] != c && s[i] != '\0')
+	{
+		i++;
+		len++;
+	}
+	return (len);
+}
+
+static void	*ft_free(char **splitted, int words)
+{
+	int	i;
+
+	i = 0;
+	while (i < words)
+	{
+		free(splitted[i]);
+		i++;
+	}
+	free(splitted);
+	return (NULL);
+}
+
+static char	**ft_fill(char const *s, int words, char c, char **splitted)
+{
+	int		i;
+	int		j;
+	int		len;
+
+	i = 0;
+	while (i < words)
+	{
+		while (*s == c)
+			s++;
+		len = ft_wordlen(s, c);
+		splitted[i] = (char *)malloc(sizeof(char) * (len + 1));
+		if (!splitted[i])
+			return (ft_free(splitted, i));
+		j = 0;
+		while (j < len)
+			splitted[i][j++] = *s++;
+		splitted[i][j] = 0;
+		i++;
+	}
+	splitted[i] = NULL;
+	return (splitted);
 }
