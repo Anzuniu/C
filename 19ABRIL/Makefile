@@ -56,14 +56,14 @@ FLAGS = -Wall -Werror -Wextra
 CC = gcc
 
 $(NAME): $(OBJ)
-	@gcc -c $(FLAGS) $(FILES)
+	@$(CC) -c $(FLAGS) $(FILES)
 	@ar rcs $(NAME) $(OBJ)
 	@echo "$(NAME) created!"
 
 all: $(NAME)
 
 bonus: $(BONUS_OBJ)
-	@gcc -c $(FLAGS) $(BONUS_FILE)
+	@gcc -s -c $(FLAGS) $(BONUS_FILE)
 	@ar rcs $(NAME) $(BONUS_OBJ)
 	@echo "Bonus library $(NAME) created!"
 

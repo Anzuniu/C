@@ -6,33 +6,33 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:41:10 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/19 12:37:07 by antalvar         ###   ########.fr       */
+/*   Updated: 2024/04/21 23:45:20 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_atoi(const char *str);
+int			ft_atoi(const char *nptr);
 static int	jump_spaces(const char *str);
 static int	check_sign(const char *str);
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *nptr)
 {
 	int	i;
 	int	result;
 
 	i = 0;
 	result = 0;
-	i = jump_spaces(str);
-	while (str[i] >= '0' && str[i] <= '9')
+	i = jump_spaces(nptr);
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		result *= 10;
-		result = result + (str[i] - '0');
+		result = result + (nptr[i] - '0');
 		i++;
 	}
-	if (check_sign(str) == -1)
+	if (check_sign(nptr) == -1)
 		result *= -1;
-	if (check_sign(str) == 0)
+	if (check_sign(nptr) == 0)
 		return (0);
 	return (result);
 }
