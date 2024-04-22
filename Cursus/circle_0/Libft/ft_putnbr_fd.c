@@ -6,11 +6,9 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:43:35 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/15 01:05:34 by antonio          ###   ########.fr       */
+/*   Updated: 2024/04/19 13:19:27 by antalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//Writes an integer to a file descriptor.
 
 #include "libft.h"
 
@@ -34,11 +32,3 @@ void	ft_putnbr_fd(int n, int fd)
 	else
 		ft_putchar_fd(n + '0', fd);
 }
-
-/*int main()
-{
-    int n = -2147483647;
-    int fd = 1;
-
-    ft_putnbr_fd(n,fd);
-}*/

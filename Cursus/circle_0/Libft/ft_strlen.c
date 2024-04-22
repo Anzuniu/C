@@ -6,11 +6,9 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:44:53 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/13 01:50:46 by antonio          ###   ########.fr       */
+/*   Updated: 2024/04/19 13:24:03 by antalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//Computes the length of the string str.
 
 #include "libft.h"
 
@@ -23,9 +21,3 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
-
-/*int main()
-{
-    const char s[] = "Diplodocus";
-    printf("%d", ft_strlen(s));
-}*/

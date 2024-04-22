@@ -6,11 +6,9 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:45:44 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/13 01:10:37 by antonio          ###   ########.fr       */
+/*   Updated: 2024/04/19 13:26:59 by antalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//Removes specified characters from the beginning and end of a string.
 
 #include "libft.h"
 
@@ -27,11 +25,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 		i--;
 	return (ft_substr(s1, 0, i + 1));
 }
-
-/*int main()
-{
-    const char  s1[] = "Como estan los maquinas";
-    const char  set[] = "omo estan los maqui";
-
-    printf("\n\n%s", ft_strtrim(s1,set));
-}*/

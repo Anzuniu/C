@@ -6,11 +6,9 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:44:25 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/18 02:27:55 by antonio          ###   ########.fr       */
+/*   Updated: 2024/04/19 13:22:04 by antalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//Concatenates two strings into a new one.
 
 #include "libft.h"
 
@@ -41,11 +39,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	cat[i] = 0;
 	return (cat);
 }
-
-/*int main()
-{
-    char const s1[] = "Como estan ";
-    char const s2[] = "los maquinas.";
-
-    printf("%s", ft_strjoin(s1, s2));
-}*/

@@ -6,32 +6,22 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:45:09 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/13 14:26:38 by antonio          ###   ########.fr       */
+/*   Updated: 2024/04/22 10:41:41 by antalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Compares the first size characters of s1 and s2.
-
 #include "libft.h"
 
-int	ft_strncmp(const char *str1, const char *str2, size_t size)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	while (size--)
+	while (n--)
 	{
-		if (str1[i] != str2[i] || str1[i] == 0 || str2[i] == 0)
-			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
+		if (s1[i] != s2[i] || s1[i] == 0 || s2[i] == 0)
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 		i++;
 	}
 	return (0);
 }
-
-/*int main()
-{
-    const char str1[] = "test\200";
-    const char str2[] = "test\0";
-    size_t size = 6;
-    printf("%d", strncmp(str1,str2,size));
-    }*/

@@ -6,32 +6,21 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:45:30 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/13 19:26:33 by antonio          ###   ########.fr       */
+/*   Updated: 2024/04/22 10:42:13 by antalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Locates the last occurrence of c in str.
-
 #include "libft.h"
 
-char	*ft_strrchr(const char *str, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	size_t	i;
 
-	i = ft_strlen(str) + 1;
+	i = ft_strlen(s) + 1;
 	while (i--)
 	{
-		if (str[i] == (char)c)
-			return ((char *)&str[i]);
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
 	}
 	return (NULL);
 }
-
-/*int main()
-{
-    const char str[] = "Diplodocus";
-    int c;
-
-    c = 'o';
-    printf("%s", ft_strrchr(str,c));
-}*/

@@ -3,28 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antonio <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: antalvar <antalvar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/13 02:25:49 by antonio           #+#    #+#             */
-/*   Updated: 2024/04/13 02:26:13 by antonio          ###   ########.fr       */
+/*   Created: 2024/04/22 10:42:52 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/22 10:42:54 by antalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Converts character c to uppercase if it's lowercase.
-
 #include "libft.h"
 
-int	ft_toupper(int n)
+int	ft_toupper(int c)
 {
-	if (n >= 'a' && n <= 'z')
-		n -= 32;
-	return (n);
+	if (c >= 'a' && c <= 'z')
+		c -= 32;
+	return (c);
 }
-
-/*int main()
-{
-	int	n = 'h';
-
-	printf("%c",ft_toupper(n));
-       	return (0);
-}*/

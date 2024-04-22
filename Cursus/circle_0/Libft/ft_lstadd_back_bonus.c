@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: antalvar <antalvar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 02:41:30 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/19 12:37:40 by antalvar         ###   ########.fr       */
+/*   Created: 2024/04/22 10:33:58 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/22 10:53:11 by antalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero( void *s, size_t n)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	size_t	i;
-	char	*str;
-
-	str = (char *)s;
-	i = 0;
-	while (i < n)
-	{
-		str[i] = 0;
-		i++;
-	}
+	if (*lst)
+		(ft_lstlast(*lst))-> next = new;
+	else
+		*lst = new;
 }

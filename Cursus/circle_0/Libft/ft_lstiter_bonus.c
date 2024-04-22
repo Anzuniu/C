@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: antalvar <antalvar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 02:42:26 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/19 13:05:05 by antalvar         ###   ########.fr       */
+/*   Created: 2024/04/22 10:36:06 by antalvar          #+#    #+#             */
+/*   Updated: 2024/04/22 10:36:11 by antalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	return (c >= 32 && c <= 126);
+	if (lst)
+	{
+		while (lst)
+		{
+			f(lst -> content);
+			lst = lst -> next;
+		}
+	}
 }

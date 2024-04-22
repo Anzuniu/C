@@ -6,11 +6,9 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:41:55 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/12 19:31:17 by antonio          ###   ########.fr       */
+/*   Updated: 2024/04/19 13:03:11 by antalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//Checks if character c is alphanumeric.
 
 #include "libft.h"
 
@@ -20,10 +18,3 @@ int	ft_isalnum(int c)
 		|| (c >= 'A' && c <= 'Z')
 		|| (c >= 'a' && c <= 'z'));
 }
-
-/*int main()
-{
-	int c = '\n';
-
-	printf("%d", ft_isalnum(c));
-}*/

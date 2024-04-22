@@ -6,23 +6,22 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:42:57 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/12 02:55:11 by antalvar         ###   ########.fr       */
+/*   Updated: 2024/04/22 10:38:05 by antalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Copies size bytes from src to dest.
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t size)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	char	*d;
 	char	*s;
 
-	d = (char *)dest;
+	d = (char *)dst;
 	s = (char *)src;
-	if (!dest && !src)
+	if (!dst && !src)
 		return (NULL);
-	while (size--)
+	while (n--)
 		*d++ = *s++;
-	return (dest);
+	return (dst);
 }

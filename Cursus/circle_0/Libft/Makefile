@@ -36,23 +36,36 @@ FILES = \
 	ft_tolower.c\
 	ft_toupper.c\
 
+BONUS_FILE = \
+	ft_lstnew_bonus.c\
+	ft_lstadd_front_bonus.c\
+	ft_lstsize_bonus.c\
+	ft_lstlast_bonus.c\
+	ft_lstadd_back_bonus.c\
+	ft_lstdelone_bonus.c\
+	ft_lstclear_bonus.c\
+	ft_lstiter_bonus.c\
+	ft_lstmap_bonus.c\
+
 OBJ = $(FILES:.c=.o)
+
+BONUS_OBJ = $(BONUS_FILE:.c=.o)
 
 FLAGS = -Wall -Werror -Wextra
 
 CC = gcc
 
 $(NAME): $(OBJ)
-	@gcc -c $(FLAGS) $(FILES)
+	@$(CC) -c $(FLAGS) $(FILES)
 	@ar rcs $(NAME) $(OBJ)
 	@echo "$(NAME) created!"
 
-test_program: test_program.o $(NAME)
-	@gcc $(FLAGS) -o test_program test_program.o -L. -lft
-	@echo "test_program ready!"
-
 all: $(NAME)
 
+bonus: $(BONUS_OBJ)
+	@gcc -c $(FLAGS) $(BONUS_FILE)
+	@ar rcs $(NAME) $(BONUS_OBJ)
+	@echo "Bonus library $(NAME) created!"
 
 clean:
 	@rm -f $(OBJ)
@@ -60,7 +73,7 @@ clean:
 
 fclean: 
 	@rm -f $(OBJ)
-	@rm -f $(NAME) $(OBJ) test_program
+	@rm -f $(NAME) $(BONUS_OBJ)
 	@echo "fclean completed!"
 
 re:	fclean all

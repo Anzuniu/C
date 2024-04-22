@@ -6,25 +6,15 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:46:10 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/13 01:30:00 by antonio          ###   ########.fr       */
+/*   Updated: 2024/04/22 10:23:33 by antalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Converts character c to lowercase if it's uppercase.
-
 #include "libft.h"
 
-int	ft_tolower(int n)
+int	ft_tolower(int c)
 {
-	if (n >= 'A' && n <= 'Z')
-		n += 32;
-	return (n);
+	if (c >= 'A' && c <= 'Z')
+		c += 32;
+	return (c);
 }
-
-/*int main()
-{
-    char    str[] = "DiPlOdOcUs";
-
-    printf("%s\n",ft_tolower(str));
-    return (0);
-}*/

@@ -6,25 +6,15 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:41:10 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/13 17:31:14 by antonio          ###   ########.fr       */
+/*   Updated: 2024/04/22 10:27:28 by antalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*Converts a string to an integer.*/
-
 #include "libft.h"
 
-int	ft_atoi(const char *str);
-int	jump_spaces(const char *str);
-int	check_sign(const char *str);
-
-/*int main()
-{
-    const char str[] = "-124f312--+-+3-65415asd123";
-
-    printf("%d\n", ft_atoi(str));
-    return (0);
-}*/
+int			ft_atoi(const char *str);
+static int	jump_spaces(const char *str);
+static int	check_sign(const char *str);
 
 int	ft_atoi(const char *str)
 {
@@ -47,7 +37,7 @@ int	ft_atoi(const char *str)
 	return (result);
 }
 
-int	jump_spaces(const char *str)
+static int	jump_spaces(const char *str)
 {
 	size_t	i;
 
@@ -59,7 +49,7 @@ int	jump_spaces(const char *str)
 	return (i);
 }
 
-int	check_sign(const char *str)
+static int	check_sign(const char *str)
 {
 	size_t	i;
 	size_t	neg;

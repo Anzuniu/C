@@ -6,21 +6,13 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:42:19 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/12 22:52:49 by antonio          ###   ########.fr       */
+/*   Updated: 2024/04/22 10:32:10 by antalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Checks if character c is a numeric digit.
 #include "libft.h"
 
-int	ft_isdigit(int n)
+int	ft_isdigit(int c)
 {
-	return (n >= '0' && n <= '9');
+	return (c >= '0' && c <= '9');
 }
-
-/*int main()
-{
-	int n = '4';
-
-	printf("%d", ft_isdigit(n));
-}*/

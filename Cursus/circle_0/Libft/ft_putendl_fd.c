@@ -6,11 +6,9 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:43:27 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/13 00:25:47 by antonio          ###   ########.fr       */
+/*   Updated: 2024/04/19 13:18:56 by antalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//Writes a string followed by a newline to a file descriptor.
 
 #include "libft.h"
 
@@ -25,11 +23,3 @@ void	ft_putendl_fd(char *s, int fd)
 		write (fd, &s[i++], 1);
 	write (fd, "\n", 1);
 }
-
-/*int main()
-{
-    char c[] = "Como estan los maquinas";
-    int fd = 1;
-
-    ft_putendl_fd(c,fd);
-}*/

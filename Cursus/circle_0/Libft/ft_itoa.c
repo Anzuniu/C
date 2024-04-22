@@ -6,26 +6,15 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 02:42:36 by antalvar          #+#    #+#             */
-/*   Updated: 2024/04/13 16:53:18 by antonio          ###   ########.fr       */
+/*   Updated: 2024/04/19 13:05:38 by antalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Converts an integer to a string.
-
 #include "libft.h"
 
-char	*ft_itoa(int n);
-size_t	len_int(int n);
+char			*ft_itoa(int n);
 
-/*int	main(void)
-{
-	int	n;
-
-	n = -2147483647;
-    	printf("%s", ft_itoa(n));
-}*/
-
-size_t	len_int(int n)
+static size_t	len_int(int n)
 {
 	size_t	len;
 
