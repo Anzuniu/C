@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antonio <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/01 14:27:01 by antonio           #+#    #+#             */
-/*   Updated: 2024/05/01 18:25:48 by antonio          ###   ########.fr       */
+/*   Created: 2024/05/01 18:46:41 by antalvar          #+#    #+#             */
+/*   Updated: 2024/05/01 19:20:22 by antalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ char	*ft_read_fd(int fd, char *aux_line)
 	int		read_bytes;
 	char	*save_line;
 
-	save_line = NULL;
 	buffer = ft_calloc((BUFFER_SIZE + 1), sizeof(char));
 	if (!buffer)
 		return (NULL);
@@ -61,6 +60,8 @@ char	*ft_read_fd(int fd, char *aux_line)
 		read_bytes = read(fd, buffer, BUFFER_SIZE);
 	}
 	free(buffer);
+	if (ft_strlen(aux_line) == 0)
+		return (free(aux_line), NULL);
 	return (aux_line);
 }
 
