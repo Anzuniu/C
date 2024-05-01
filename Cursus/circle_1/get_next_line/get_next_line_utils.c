@@ -6,29 +6,11 @@
 /*   By: antonio <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 14:27:14 by antonio           #+#    #+#             */
-/*   Updated: 2024/05/01 14:27:17 by antonio          ###   ########.fr       */
+/*   Updated: 2024/05/01 17:18:16 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-char	*ft_strchr(const char *s, int c)
-{
-	int	i;
-
-	i = 0;
-	if (!s)
-		return (0);
-	while (s[i])
-	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i++;
-	}
-	if ((char)c == '\0')
-		return ((char *)&s[i]);
-	return (0);
-}
 
 size_t	ft_strlen(const char *s)
 {
@@ -49,7 +31,7 @@ char	*ft_strjoin(char *aux_line, char *buffer, int read_bytes)
 	int		j;
 
 	if (!aux_line)
-		aux_line = ft_calloc(1, 1);
+		aux_line = "";
 	str = malloc((ft_strlen(aux_line) + read_bytes + 1));
 	if (!str)
 		return (NULL);
@@ -61,7 +43,8 @@ char	*ft_strjoin(char *aux_line, char *buffer, int read_bytes)
 	while (j < read_bytes)
 		str[i++] = buffer[j++];
 	str[i] = '\0';
-	free (aux_line);
+	if (!str)
+		free(aux_line);
 	return (str);
 }
 
@@ -80,26 +63,6 @@ void	*ft_calloc(size_t count, size_t size)
 		i++;
 	}
 	return (p);
-}
-
-char	*ft_strdup(const char *s1)
-{
-	char	*cpy;
-	size_t	len;
-	size_t	i;
-
-	len = ft_strlen(s1);
-	cpy = (char *)malloc(sizeof(char) * (len + 1));
-	if (!cpy)
-		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		cpy[i] = s1[i];
-		i++;
-	}
-	cpy[len] = '\0';
-	return (cpy);
 }
 
 size_t	ft_strlcpy(char	*dst, const char	*src, size_t dstsize)
@@ -130,7 +93,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	if (ft_strlen(s) < start)
-		return (ft_strdup(""));
+	{
+		substr = malloc(1);
+		if (!substr)
+			return (NULL);
+		substr[0] = '\0';
+		return (substr);
+	}
 	if (len > ft_strlen(s + start))
 		len = ft_strlen(s + start);
 	substr = malloc(sizeof(char) * (len + 1));

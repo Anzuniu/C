@@ -6,35 +6,41 @@
 /*   By: antonio <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 14:27:01 by antonio           #+#    #+#             */
-/*   Updated: 2024/05/01 16:06:26 by antonio          ###   ########.fr       */
+/*   Updated: 2024/05/01 17:32:53 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
 char	*ft_read_fd(int fd, char *aux_line);
-char    *ft_get_line(char *aux_line);
-char    *ft_remove_line(char *aux_line);
+char	*ft_get_line(char *aux_line);
+char	*ft_remove_line(char *aux_line);
 
 char	*get_next_line(int fd)
 {
 	static char	*aux_line;
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	{
+		free (aux_line);
+		aux_line = NULL;
 		return (NULL);
+	}
 	aux_line = ft_read_fd(fd, aux_line);
 	if (!aux_line)
 		return (NULL);
 	line = ft_get_line(aux_line);
 	aux_line = ft_remove_line(aux_line);
+	if (!line)
+		free (aux_line);
 	return (line);
 }
 
 char	*ft_read_fd(int fd, char *aux_line)
 {
 	char	*buffer;
-	int	read_bytes;
+	int		read_bytes;
 	char	*save_line;
 
 	save_line = NULL;
@@ -73,17 +79,19 @@ char	*ft_get_line(char *aux_line)
 	size_t	i;
 
 	i = 0;
-	while (aux_line[i] != '\n' && aux_line[i])
+	while (aux_line[i] != '\n' && aux_line[i] != '\0')
 		i++;
-	line = ft_calloc(i + 1, sizeof(char));
+	line = ft_calloc((i + 1 + (aux_line[i] == '\n')), sizeof(char));
 	if (!line)
 		return (NULL);
 	i = 0;
-	while (aux_line[i] != '\n' && aux_line[i])
+	while (aux_line[i] != '\n' && aux_line[i] != '\0')
 	{
 		line[i] = aux_line[i];
 		i++;
 	}
+	if (aux_line[i] == '\n')
+		line[i++] = '\n';
 	line[i] = '\0';
 	return (line);
 }
@@ -96,9 +104,16 @@ char	*ft_remove_line(char *aux_line)
 
 	aux_line_len = ft_strlen(aux_line);
 	i = 0;
-	while (aux_line[i] != '\n')
+	while (aux_line[i] != '\n' && aux_line[i] != '\0')
 		i++;
+	if (aux_line[i] == '\0')
+	{
+		free(aux_line);
+		return (NULL);
+	}
 	i += 1;
 	new_aux_line = ft_substr(aux_line, i, (aux_line_len - i));
+	if (!new_aux_line)
+		free(aux_line);
 	return (new_aux_line);
 }
