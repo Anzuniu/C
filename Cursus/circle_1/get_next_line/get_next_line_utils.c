@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 18:47:06 by antalvar          #+#    #+#             */
-/*   Updated: 2024/05/01 18:47:09 by antalvar         ###   ########.fr       */
+/*   Updated: 2024/05/01 19:37:38 by antalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,10 @@ char	*ft_strjoin(char *aux_line, char *buffer, int read_bytes)
 	int		j;
 
 	if (!aux_line)
-		aux_line = "";
+		aux_line = ft_calloc(1, 1);
 	str = malloc((ft_strlen(aux_line) + read_bytes + 1));
 	if (!str)
-	{
-		free (aux_line);
 		return (NULL);
-	}
 	i = 0;
 	j = 0;
 	while (aux_line[j])
@@ -46,6 +43,7 @@ char	*ft_strjoin(char *aux_line, char *buffer, int read_bytes)
 	while (j < read_bytes)
 		str[i++] = buffer[j++];
 	str[i] = '\0';
+	free (aux_line);
 	return (str);
 }
 
