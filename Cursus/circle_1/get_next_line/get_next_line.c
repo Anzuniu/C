@@ -6,7 +6,7 @@
 /*   By: antonio <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 14:27:01 by antonio           #+#    #+#             */
-/*   Updated: 2024/05/01 18:03:47 by antonio          ###   ########.fr       */
+/*   Updated: 2024/05/01 18:25:48 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,27 +47,18 @@ char	*ft_read_fd(int fd, char *aux_line)
 	buffer = ft_calloc((BUFFER_SIZE + 1), sizeof(char));
 	if (!buffer)
 		return (NULL);
-	read_bytes = 1;
+	read_bytes = read(fd, buffer, BUFFER_SIZE);
 	while (read_bytes > 0)
 	{
-		read_bytes = read(fd, buffer, BUFFER_SIZE);
-		if (read_bytes == -1)
-		{
-			free(aux_line);
-			aux_line = NULL;
-			free(buffer);
-			return (NULL);
-		}
 		save_line = aux_line;
 		aux_line = ft_strjoin(save_line, buffer, read_bytes);
 		if (!aux_line)
 		{
-			free(save_line);
 			free(buffer);
+			free(save_line);
 			return (NULL);
 		}
-		if (read_bytes < BUFFER_SIZE)
-			break ;
+		read_bytes = read(fd, buffer, BUFFER_SIZE);
 	}
 	free(buffer);
 	return (aux_line);

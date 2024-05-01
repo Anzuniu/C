@@ -6,7 +6,7 @@
 /*   By: antonio <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 14:27:14 by antonio           #+#    #+#             */
-/*   Updated: 2024/05/01 18:03:00 by antonio          ###   ########.fr       */
+/*   Updated: 2024/05/01 18:07:50 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ char	*ft_strjoin(char *aux_line, char *buffer, int read_bytes)
 	while (j < read_bytes)
 		str[i++] = buffer[j++];
 	str[i] = '\0';
-	free(aux_line);
 	return (str);
 }
 
