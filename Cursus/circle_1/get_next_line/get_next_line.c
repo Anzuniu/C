@@ -6,7 +6,7 @@
 /*   By: antonio <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 14:27:01 by antonio           #+#    #+#             */
-/*   Updated: 2024/05/01 17:32:53 by antonio          ###   ########.fr       */
+/*   Updated: 2024/05/01 18:03:47 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,6 @@ char	*ft_remove_line(char *aux_line)
 	}
 	i += 1;
 	new_aux_line = ft_substr(aux_line, i, (aux_line_len - i));
-	if (!new_aux_line)
-		free(aux_line);
+	free(aux_line);
 	return (new_aux_line);
 }

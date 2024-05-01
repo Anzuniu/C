@@ -6,7 +6,7 @@
 /*   By: antonio <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 14:27:14 by antonio           #+#    #+#             */
-/*   Updated: 2024/05/01 17:18:16 by antonio          ###   ########.fr       */
+/*   Updated: 2024/05/01 18:03:00 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,10 @@ char	*ft_strjoin(char *aux_line, char *buffer, int read_bytes)
 		aux_line = "";
 	str = malloc((ft_strlen(aux_line) + read_bytes + 1));
 	if (!str)
+	{
+		free (aux_line);
 		return (NULL);
+	}
 	i = 0;
 	j = 0;
 	while (aux_line[j])
@@ -43,8 +46,7 @@ char	*ft_strjoin(char *aux_line, char *buffer, int read_bytes)
 	while (j < read_bytes)
 		str[i++] = buffer[j++];
 	str[i] = '\0';
-	if (!str)
-		free(aux_line);
+	free(aux_line);
 	return (str);
 }
 
