@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 18:47:06 by antalvar          #+#    #+#             */
-/*   Updated: 2024/05/04 01:00:04 by antonio          ###   ########.fr       */
+/*   Updated: 2024/05/04 01:03:02 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,44 @@ char	*ft_strdup(const char *s1)
 	}
 	cpy[len] = '\0';
 	return (cpy);
+}
+
+size_t	ft_strlcpy(char	*dst, const char	*src, size_t dstsize)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	while (src[j])
+		j++;
+	if (dstsize)
+	{
+		while (src[i] && i < (dstsize - 1))
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = 0;
+	}
+	return (j);
+}
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*substr;
+
+	if (!s)
+		return (NULL);
+	if (ft_strlen(s) < start)
+		return (ft_strdup(""));
+	if (len > ft_strlen(s + start))
+		len = ft_strlen(s + start);
+	substr = malloc(sizeof(char) * (len + 1));
+	if (!substr)
+		return (NULL);
+	ft_strlcpy(substr, (s + start), len + 1);
+	return (substr);
 }
 
 char	*ft_strchr(const char *s, int c)

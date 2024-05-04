@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 18:47:21 by antalvar          #+#    #+#             */
-/*   Updated: 2024/05/04 00:59:41 by antonio          ###   ########.fr       */
+/*   Updated: 2024/05/04 01:04:00 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,7 @@ char	*ft_read_fd(int fd, char *aux_line);
 char	*ft_get_line(char *aux_line);
 char	*ft_remove_line(char *aux_line);
 char	*ft_strchr(const char *s, int c);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+size_t	ft_strlcpy(char	*dst, const char *src, size_t dstsize);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 18:46:41 by antalvar          #+#    #+#             */
-/*   Updated: 2024/05/04 01:06:16 by antonio          ###   ########.fr       */
+/*   Updated: 2024/05/04 01:07:07 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,34 @@ char	*get_next_line(int fd)
 		free (aux_line);
 	return (line);
 }
+
+/*char	*ft_read_fd(int fd, char *aux_line)
+{
+	char	*buffer;
+	int		read_bytes;
+	char	*save_line;
+
+	buffer = ft_calloc((BUFFER_SIZE + 1), sizeof(char));
+	if (!buffer)
+		return (NULL);
+	read_bytes = read(fd, buffer, BUFFER_SIZE);
+	while (read_bytes > 0)
+	{
+		save_line = aux_line;
+		aux_line = ft_strjoin(save_line, buffer, read_bytes);
+		if (!aux_line)
+		{
+			free(buffer);
+			free(save_line);
+			return (NULL);
+		}
+		read_bytes = read(fd, buffer, BUFFER_SIZE);
+	}
+	free(buffer);
+	if (ft_strlen(aux_line) == 0)
+		return (free(aux_line), NULL);
+	return (aux_line);
+}*/
 
 char	*ft_read_fd(int fd, char *aux_line)
 {
@@ -70,7 +98,10 @@ char	*ft_get_line(char *aux_line)
 	char	*line;
 	size_t	i;
 
-	line = ft_calloc((ft_strlen(aux_line) + 1), sizeof(char));
+	i = 0;
+	while (/*aux_line[i] != '\n' && */aux_line[i] != '\0')
+		i++;
+	line = ft_calloc((i + 1/* + (aux_line[i] == '\n')*/), sizeof(char));
 	if (!line)
 		return (NULL);
 	i = 0;
@@ -89,25 +120,19 @@ char	*ft_remove_line(char *aux_line)
 {
 	char	*new_aux_line;
 	size_t	i;
-	size_t	j;
+	size_t	aux_line_len;
 
+	aux_line_len = ft_strlen(aux_line);
 	i = 0;
-	while (aux_line[i] && aux_line[i] != '\n')
+	while (aux_line[i] != '\n' && aux_line[i])
 		i++;
-	if (ft_strlen(aux_line) - i <= 0)
+	if (!aux_line[i])
 	{
 		free(aux_line);
-		aux_line = NULL;
 		return (NULL);
 	}
-	new_aux_line = ft_calloc(ft_strlen(aux_line) - i + 1, sizeof(char));
-	if (!new_aux_line)
-		return (NULL);
-	i++;
-	j = 0;
-	while (aux_line[i] != '\0')
-		new_aux_line[j++] = aux_line[i++];
+	i += 1;
+	new_aux_line = ft_substr(aux_line, i, (aux_line_len - i));
 	free(aux_line);
-	aux_line = NULL;
 	return (new_aux_line);
 }
