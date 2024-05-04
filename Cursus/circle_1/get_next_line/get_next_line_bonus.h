@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 18:47:21 by antalvar          #+#    #+#             */
-/*   Updated: 2024/05/04 01:54:10 by antonio          ###   ########.fr       */
+/*   Updated: 2024/05/04 01:49:20 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE
+#  define BUFFER_SIZE 1
 # endif
 
+# include <limits.h>
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
-# include <limits.h>
+# include <fcntl.h>
 
 size_t	ft_strlen(const char *s);
 char	*ft_strjoin(char *aux_line, char *buffer, int read_bytes);
