@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 18:46:41 by antalvar          #+#    #+#             */
-/*   Updated: 2024/05/04 01:06:16 by antonio          ###   ########.fr       */
+/*   Updated: 2024/05/04 15:34:37 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ char	*ft_read_fd(int fd, char *aux_line)
 	}
 	free(buffer);
 	if (ft_strlen(aux_line) == 0)
-		return (free(aux_line), NULL);
+		return (free (aux_line), NULL);
 	return (aux_line);
 }
 
@@ -74,7 +74,7 @@ char	*ft_get_line(char *aux_line)
 	if (!line)
 		return (NULL);
 	i = 0;
-	while (aux_line[i] != '\n' && aux_line[i] != '\0')
+	while (aux_line[i] != '\n' && aux_line[i])
 	{
 		line[i] = aux_line[i];
 		i++;
