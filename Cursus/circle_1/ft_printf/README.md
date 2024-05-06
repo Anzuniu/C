@@ -1,3 +1,3 @@
 <div align="center">
-  <img src="../../../.assets/get_next_line.png">
+  <img src="../../../.assets/ft_printf.png">
 </div>
