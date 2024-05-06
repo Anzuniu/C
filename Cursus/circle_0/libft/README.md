@@ -1,5 +1,9 @@
 ![header_libft](../../../.assets/header_libft.gif)
 
+<div align="center">
+  <img src="../../../.assets/header_libft.gif" alt="Descripción del GIF">
+</div>
+
 ## LIBFT
 
 ## MAKEFILE
