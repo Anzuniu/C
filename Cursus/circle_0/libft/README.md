@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="../../../.assets/header_libft.png" alt="Descripción del GIF">
+  <img src="../../../.assets/libft.png">
 </div>
 
 ## LIBFT
