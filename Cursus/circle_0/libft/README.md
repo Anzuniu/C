@@ -1,4 +1,4 @@
-![header_libft](../../../.assets/.jpg)
+![header_libft](../../../.assets/giphy.gif)
 
 ## LIBFT
 
