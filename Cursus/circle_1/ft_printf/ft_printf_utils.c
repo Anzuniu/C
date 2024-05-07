@@ -6,68 +6,72 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 01:16:16 by antalvar          #+#    #+#             */
-/*   Updated: 2024/05/07 04:15:21 by antonio          ###   ########.fr       */
+/*   Updated: 2024/05/07 13:49:51 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libftprintf.h"
+#include "ft_printf.h"
 
-void    ft_putchar(char c)
+void	ft_putchar(char c)
 {
-        write (1, &c, 1);
+	write (1, &c, 1);
 }
 
-void    ft_putnbr(int n)
+void	ft_putnbr(int n)
 {
-        if (n == INT_MIN)
-        {
-                write (1, "-2147483648", 11);
-                return ;
-        }
-        if (n < 0)
-        {
-                ft_putchar('-');
-                n *= -1;
-        }
-        if (n >= 10)
-        {
-                ft_putnbr(n / 10);
-                ft_putnbr(n % 10);
-        }
-        else
-                ft_putchar(n + '0');
+	if (n == INT_MIN)
+		write (1, "-2147483648", 11);
+	if (n < 0)
+	{
+		ft_putchar('-');
+		n *= -1;
+	}
+	if (n >= 10)
+	{
+		ft_putnbr(n / 10);
+		ft_putnbr(n % 10);
+	}
+	else
+		ft_putchar(n + '0');
+	return ;
 }
 
-void    ft_putstr(char *s)
+void	ft_putstr(char *s)
 {
-        size_t  i;
+	size_t	i;
 
-        i = 0;
-        if (!s)
-                return ;
-        while (s[i])
-                write (1, &s[i++], 1);
+	i = 0;
+	if (!s)
+		return ;
+	while (s[i])
+		write (1, &s[i++], 1);
+	return ;
 }
 
 void	ft_putunnbr(unsigned int n)
 {
 	long	i;
-	
+
 	i = (long)n;
-        if (i >= 10)
-        {
-                ft_putunnbr(i / 10);
-                ft_putunnbr(i % 10);
-        }
-        else
-                ft_putchar(i + '0');
+	if (i >= 10)
+	{
+		ft_putunnbr(i / 10);
+		ft_putunnbr(i % 10);
+	}
+	else
+		ft_putchar(i + '0');
+	return ;
 }
 
-void	ft_puthexup(int n)
+void	ft_puthex(int n, char c)
 {
-	char *HEX; 
-		
-	HEX = "0123456789ABCDEF";
+	char	*hex_up;
+	char	*hex_low;
+	char	tmp;
+
+	tmp = c;
+	hex_up = "0123456789ABCDEF";
+	hex_low = "0123456789abcdef";
 	if (n < 0)
 	{
 		ft_putchar('-');
@@ -75,32 +79,15 @@ void	ft_puthexup(int n)
 	}
 	if (n >= 16)
 	{
-		ft_puthexup(n / 16);
-		ft_puthexup(n % 16);
+		ft_puthex((n / 16), tmp);
+		ft_puthex((n % 16), tmp);
 	}
 	else
 	{
-		ft_putchar(HEX[n]);
+		if (tmp == 'x')
+			ft_putchar(hex_low[n]);
+		if (tmp == 'X' || tmp == 'p')
+			ft_putchar(hex_up[n]);
 	}
-}
-
-void    ft_puthexlow(int n)
-{
-        char *hex;
-
-        hex = "0123456789abcdef";
-        if (n < 0)
-        {
-                ft_putchar('-');
-                n *= -1;
-        }
-        if (n >= 16)
-        {
-                ft_puthexlow(n / 16);
-                ft_puthexlow(n % 16);
-        }
-        else
-        {
-                ft_putchar(hex[n]);
-        }
+	return ;
 }
