@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="../../../.assets/libft.png">
+  <img src="../../../.assets/Libft.png">
 </div>
 
 ## LIBFT
