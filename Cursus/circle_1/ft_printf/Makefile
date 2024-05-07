@@ -1,12 +1,10 @@
-NAME = libftprint.a
+NAME = libftprintf.a
 
 FILES = \
-
-BONUS_FILE = \
+	ft_printf.c\
+	ft_printf_utils.c\
 
 OBJ = $(FILES:.c=.o)
-
-BONUS_OBJ = $(BONUS_FILE:.c=.o)
 
 FLAGS = -Wall -Werror -Wextra
 
@@ -19,11 +17,6 @@ $(NAME): $(OBJ)
 
 all: $(NAME)
 
-bonus: $(BONUS_OBJ)
-	@gcc -c $(FLAGS) $(BONUS_FILE)
-	@ar rcs $(NAME) $(BONUS_OBJ)
-	@echo "Bonus library $(NAME) created!"
-
 clean:
 	@rm -f $(OBJ)
 	@echo "clean completed!"
@@ -34,6 +27,10 @@ fclean:
 	@echo "fclean completed!"
 
 re:	fclean all
+
+test:	
+	@$(CC) $(FILES) $(FLAGS) $(NAME) -o test.out
+	@echo "test created!"
 
 $(OBJ): %.o: %.c
 	@$(CC) -c $(FLAGS) $< -o $@
