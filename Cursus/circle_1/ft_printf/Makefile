@@ -6,7 +6,7 @@
 #    By: antonio <antalvar@student.42.fr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/07 17:23:51 by antonio           #+#    #+#              #
-#    Updated: 2024/05/07 20:11:49 by antonio          ###   ########.fr        #
+#    Updated: 2024/05/08 01:38:01 by antalvar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,11 @@ NAME = libftprintf.a
 
 FILES = \
 	ft_printf.c\
-	ft_printf_utils.c\
+	ft_putdeci.c\
 	ft_puthex.c\
 	ft_putunnbr.c\
+	ft_putstr.c\
+	ft_putchar.c\
 
 OBJ = $(FILES:.c=.o)
 

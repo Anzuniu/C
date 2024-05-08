@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:12:12 by antalvar          #+#    #+#             */
-/*   Updated: 2024/05/07 20:27:31 by antonio          ###   ########.fr       */
+/*   Updated: 2024/05/08 01:38:37 by antalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	ft_check_format(const char *str, va_list args)
 	if (str[i] == 'p')
 		printed_chars += ft_puthex(va_arg(args, int), str[i]);
 	if (str[i] == 'd' || str[i] == 'i')
-		printed_chars += ft_putnbr(va_arg(args, int));
+		printed_chars += ft_putdeci(va_arg(args, int));
 	if (str[i] == 'u')
 		printed_chars += ft_putunnbr(va_arg(args, unsigned int));
 	if (str[i] == '%')

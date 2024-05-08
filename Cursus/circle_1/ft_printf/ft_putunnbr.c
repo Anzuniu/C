@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 17:51:37 by antalvar          #+#    #+#             */
-/*   Updated: 2024/05/07 20:12:11 by antonio          ###   ########.fr       */
+/*   Updated: 2024/05/08 02:19:01 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,23 @@ int	ft_char_count(unsigned int n);
 
 int	ft_putunnbr(unsigned int n)
 {
-	long	i;
 	int		printed_chars;
+	long	i;
+	long	aux;
 
-	i = (long)n;
-	printed_chars = 0;
+	printed_chars = 1;
+	i = (long) n;
+	if (i < 0)
+		i = 4294967295 + i;
+	aux = i;
 	if (i >= 10)
 	{
-		printed_chars++;
-		ft_putunnbr(i / 10);
-		ft_putunnbr(i % 10);
+		ft_putunnbr((unsigned int)(i / 10));
+		ft_putchar(i % 10 + '0');
 	}
 	else
-	{
 		ft_putchar(i + '0');
-		printed_chars = ft_chars_count(n);
-	}
+	printed_chars = ft_chars_count(aux);
 	return (printed_chars);
 }
 

@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 15:51:38 by antalvar          #+#    #+#             */
-/*   Updated: 2024/05/07 17:59:46 by antonio          ###   ########.fr       */
+/*   Updated: 2024/05/08 01:38:15 by antalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # include <stdarg.h>
 
 int		ft_putchar(char c);
-int		ft_putnbr(int n);
+int		ft_putdeci(int n);
 int		ft_putstr(char *s);
 int		ft_putunnbr(unsigned int i);
 int		ft_puthex(int n, char c);
