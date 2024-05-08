@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:12:12 by antalvar          #+#    #+#             */
-/*   Updated: 2024/05/08 02:21:42 by antonio          ###   ########.fr       */
+/*   Updated: 2024/05/08 15:47:55 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	ft_check_format(const char *str, va_list args)
 	if (str[i] == 's')
 		printed_chars += ft_putstr(va_arg(args, char *));
 	if (str[i] == 'p')
-		printed_chars += ft_puthex(va_arg(args, int), str[i]);
+		printed_chars += ft_puthex(va_arg(args, unsigned long), str[i]);
 	if (str[i] == 'd' || str[i] == 'i')
 		printed_chars += ft_putdeci(va_arg(args, int));
 	if (str[i] == 'u')
@@ -60,3 +60,18 @@ int	ft_check_format(const char *str, va_list args)
 		printed_chars += ft_puthex(va_arg(args, int), str[i]);
 	return (printed_chars);
 }
+/*
+int main(void)
+{
+        ft_printf(" %p ", -1);
+        ft_printf(" %p ", 1);
+        ft_printf(" %p ", 15);
+        ft_printf(" %p ", 16);
+        ft_printf(" %p ", 17);
+        ft_printf(" %p %p ", LONG_MIN, LONG_MAX);
+        ft_printf(" %p %p ", INT_MIN, INT_MAX);
+	ft_printf(" %p %p ", ULONG_MAX, -ULONG_MAX);
+        ft_printf(" %p %p ", NULL, NULL);
+	printf("\n\n	%p %p ", NULL, NULL);
+        return (0);
+}*/
