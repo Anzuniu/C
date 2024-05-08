@@ -110,4 +110,4 @@ Tienes que implementar las siguientes conversiones:
 No es necesario hacer todos los bonus.
 
 - Gestiona cualquier combinación de los siguientes flags: `-`, `0` y `.` y el ancho mínimo (_field minimum width_) bajo todas las conversiones posibles.
-- Gestiona todos los siguientes flags: `#`, ` `(space) y ` +`.
+- Gestiona todos los siguientes flags: `#`, ` ` y `+`.
