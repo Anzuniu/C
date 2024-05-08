@@ -20,7 +20,11 @@ El objetivo de este proyecto es bastante sencillo. Deberás reprogramar printf()
 <table>
   <tr>
     <th>Nombre del programa</th>
-    <td><i>libftprintf.a</i></td>
+    <td>libftprintf.a</td>
+</tr>
+<tr>
+    <td><strong>Prototipo</strong></td>
+    <td>int ft_printf(char const *, ...);</td>
   </tr>
   <tr>
     <th>Archivos a entregar</th>
@@ -43,14 +47,6 @@ El objetivo de este proyecto es bastante sencillo. Deberás reprogramar printf()
     <td>Escribe una librería que contenga la función <code>ft_printf()</code> que reproduzca la función <code>printf()</code> original.</td>
   </tr>
 </table>
-
-### Prototipo
-
-El prototipo de `ft_printf()` es:
-
-```c
-int ft_printf(char const *, ...);
-```
 
 ### Requisitos
 
