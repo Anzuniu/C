@@ -5,7 +5,7 @@
 <p align="center">
 	<a href="#about">About</a> •
 	<a href="#mandatory">Mandatory</a> •
-	<a href="#bonus">Bonus</a> •
+	<a href="#bonus">Bonus</a>
 </p>
 
 ## About
