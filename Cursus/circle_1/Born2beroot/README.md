@@ -28,7 +28,7 @@ Crearás tu primera máquina en VirtualBox (o UTM si no puedes utilizar VirtualB
   
   <div align="center"><img src="./assets/4.png"></div>
 
-  4 - Creamos un dissco virtual ahora.
+  4 - Creamos un disco virtual ahora.
   
   <div align="center"><img src="./assets/5.png"></div>
   
@@ -39,9 +39,21 @@ Crearás tu primera máquina en VirtualBox (o UTM si no puedes utilizar VirtualB
   6 - Comprobamos en el resumen que hemos elegido todo correctamente y presionamos `Terminar`.
   
   <div align="center"><img src="./assets/7.png"></div>
+
+  7 - Volvemos a la pantalla de inicio de Oracle y presionamos en `ConfiguraciOn`.
+  
   <div align="center"><img src="./assets/8.png"></div>
+  
+  8 - Ahora pincharemos en `Almacenamiento`.
+  
   <div align="center"><img src="./assets/9.png"></div>
+
+  9 - Elegimos el controlador: IDE y presionando el enoticono 💿 se nos despliegan varias opciones. Yo he seleccionado `debian-12.5.0` porque es el sistema que estamos instalando.
+  
   <div align="center"><img src="./assets/10.png"></div>
+
+  10 - Una vez realizado esto podemos hacer click en `Iniciar`.
+  
   <div align="center"><img src="./assets/11.png"></div>
   <div align="center"><img src="./assets/12.png"></div>
   <div align="center"><img src="./assets/13.png"></div>
