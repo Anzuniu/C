@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 18:47:06 by antalvar          #+#    #+#             */
-/*   Updated: 2024/05/04 01:00:04 by antonio          ###   ########.fr       */
+/*   Updated: 2024/05/09 20:44:37 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,26 +62,6 @@ void	*ft_calloc(size_t count, size_t size)
 		i++;
 	}
 	return (p);
-}
-
-char	*ft_strdup(const char *s1)
-{
-	char	*cpy;
-	size_t	len;
-	size_t	i;
-
-	len = ft_strlen(s1);
-	cpy = (char *)malloc(sizeof(char) * (len + 1));
-	if (!cpy)
-		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		cpy[i] = s1[i];
-		i++;
-	}
-	cpy[len] = '\0';
-	return (cpy);
 }
 
 char	*ft_strchr(const char *s, int c)
