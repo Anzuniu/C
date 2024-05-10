@@ -15,14 +15,29 @@ Crearás tu primera máquina en VirtualBox (o UTM si no puedes utilizar VirtualB
 
   ## 2- Instalacion de la maquina 🛠
 
-  Abrimos VirtualBox y pinchamos en `Nueva`
+  1 - Abrimos VirtualBox y pinchamos en `Nueva`
   
   <div align="center"><img src="./assets/1.png"></div>
+
+  2 - Introducimos el nombre de nuestra máquina virtual, la ruta de instalaciOn y la imagen ISO del Sistema Operativo a instalar. En mi caso estoy instalando `Debian 12.5`.
+  
   <div align="center"><img src="./assets/2.png"></div>
   <div align="center"><img src="./assets/3.png"></div>
+
+  3 - Asignamos la cantidad de RAM para la mAquina.
+  
   <div align="center"><img src="./assets/4.png"></div>
+
+  4 - Creamos un dissco virtual ahora.
+  
   <div align="center"><img src="./assets/5.png"></div>
+  
+  5 - Establecemos la memoria que queramos, en este caso yo he usado `30,80 GB` ya que quiero hacer el bonus. En caso de que no queramos hacerlo podemos usar la cantidad recomendada de `12 GB`.
+  
   <div align="center"><img src="./assets/6.png"></div>
+
+  6 - Comprobamos en el resumen que hemos elegido todo correctamente y presionamos `Terminar`.
+  
   <div align="center"><img src="./assets/7.png"></div>
   <div align="center"><img src="./assets/8.png"></div>
   <div align="center"><img src="./assets/9.png"></div>
