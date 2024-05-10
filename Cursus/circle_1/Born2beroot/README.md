@@ -58,13 +58,31 @@ Crearás tu primera máquina en VirtualBox (o UTM si no puedes utilizar VirtualB
   10 - Una vez realizado esto podemos hacer click en `Iniciar`.
   
   <div align="center"><img src="./assets/11.png"></div>
+
+  11 - Se nos abrirá el menú de instalación de `debian` y elegiremos `Install`.
+  
   <div align="center"><img src="./assets/12.png"></div>
+
+  12 - Escogemos un idioma.
+  
   <div align="center"><img src="./assets/13.png"></div>
+
+  13 - Escogemos un pais.
+  
   <div align="center"><img src="./assets/14.png"></div>
   <div align="center"><img src="./assets/15.png"></div>
   <div align="center"><img src="./assets/16.png"></div>
+
+  14 - Seleccionamos `United States`.
+  
   <div align="center"><img src="./assets/17.png"></div>
+
+  15 - Yo elegiré `American English` como idioma de teclado, pero puedes escoger el que quieras.
+  
   <div align="center"><img src="./assets/18.png"></div>
+
+  16 - Para el `Host Name` debemos escribir tu login seguido de 42.
+  
   <div align="center"><img src="./assets/19.png"></div>
   <div align="center"><img src="./assets/20.png"></div>
   <div align="center"><img src="./assets/21.png"></div>
