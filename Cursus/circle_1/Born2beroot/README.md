@@ -84,11 +84,23 @@ Crearás tu primera máquina en VirtualBox (o UTM si no puedes utilizar VirtualB
   16 - Para el `Host Name` debemos escribir tu login seguido de 42.
   
   <div align="center"><img src="./assets/19.png"></div>
+
+  17 - El subject no menciona nada sobre el `Domain name`, así que lo dejamos vacío.
+  
   <div align="center"><img src="./assets/20.png"></div>
+
+  18 - Ahora debemos introducir una contraseña, la usaremos más adelante así que apúntatela o acuerdate porque si no tendrás que comenzar de nuevo.
+  
   <div align="center"><img src="./assets/21.png"></div>
   <div align="center"><img src="./assets/22.png"></div>
+
+  19 - Elegiremos un nombre de usuario. Llamaré a este usuario con mi login.
+  
   <div align="center"><img src="./assets/23.png"></div>
   <div align="center"><img src="./assets/24.png"></div>
+
+  20 - Elegiremos la contraseña para nuestro nuevo usuario. Apúntala o acuerdate, que te hará falta.
+  
   <div align="center"><img src="./assets/25.png"></div>
   <div align="center"><img src="./assets/26.png"></div>
   <div align="center"><img src="./assets/27.png"></div>
