@@ -82,47 +82,105 @@ Crearás tu primera máquina en VirtualBox (o UTM si no puedes utilizar VirtualB
   <div align="center"><img src="./assets/18.png"></div>
 
   16 - Para el `Host Name` debemos escribir tu login seguido de 42.
-  
-  <div align="center"><img src="./assets/19.png"></div>
+
+  <div align="center"><img src="./assets/20.png"></div>
 
   17 - El subject no menciona nada sobre el `Domain name`, así que lo dejamos vacío.
   
-  <div align="center"><img src="./assets/20.png"></div>
+  <div align="center"><img src="./assets/21.png"></div>
 
   18 - Ahora debemos introducir una contraseña, la usaremos más adelante así que apúntatela o acuerdate porque si no tendrás que comenzar de nuevo.
-  
-  <div align="center"><img src="./assets/21.png"></div>
+    
   <div align="center"><img src="./assets/22.png"></div>
 
-  19 - Elegiremos un nombre de usuario. Llamaré a este usuario con mi login.
-  
   <div align="center"><img src="./assets/23.png"></div>
-  <div align="center"><img src="./assets/24.png"></div>
 
+  19 - Elegiremos un nombre de usuario. Llamaré a este usuario con mi login.
+    
+  <div align="center"><img src="./assets/24.png"></div>
+  <div align="center"><img src="./assets/25.png"></div>
+  
   20 - Elegiremos la contraseña para nuestro nuevo usuario. Apúntala o acuerdate, que te hará falta.
   
-  <div align="center"><img src="./assets/25.png"></div>
   <div align="center"><img src="./assets/26.png"></div>
+
+  21 - Elegimos una zona horaria para configurar el reloj.
+  
   <div align="center"><img src="./assets/27.png"></div>
+
+  22 - Escogeremos la opción de `Manual` porque queremos realizar el bonus, de lo contrario podemos darle a `Guied - use entire disk and set up encrypted LVM`, que nos facilita la creación de la partición cifrada. Yo voy a crearla manualmente.
+  
   <div align="center"><img src="./assets/28.png"></div>
+
+  23 - Seleccionamos el disco en el que vamos a hacer la partición.
+  
   <div align="center"><img src="./assets/29.png"></div>
+
+  24 - Para realizar la partición debemos seleccionar `Separate /home partition`.
+  
   <div align="center"><img src="./assets/30.png"></div>
+
+  25 - Seleccionamos `Yes` para escribir los cambios en los discos y configurar el LVM.
+  
   <div align="center"><img src="./assets/31.png"></div>
+
+  26 - Cancelamos, no nos hace falta borrar los datos del disco.
+  
   <div align="center"><img src="./assets/32.png"></div>
+
+  27 - Ponemos una contraseña para la encriptación. Vuelve a apuntarte esto que es importante.
+  
   <div align="center"><img src="./assets/33.png"></div>
   <div align="center"><img src="./assets/34.png"></div>
+
+  28 - Debemos introducir la cantidad de volumen que usaremos para la partición, en mi caso `30,80GB`.
+  
   <div align="center"><img src="./assets/35.png"></div>
+
+  29 - Para terminar la partición presionamos `Finish partitioning and write changes to disk`.
+  
   <div align="center"><img src="./assets/36.png"></div>
+
+  30 - `Yes` a escribir los cambios en los discos.  
+  
   <div align="center"><img src="./assets/37.png"></div>
+
+  31 - `No` puesto que no queremos paquetes adicionales.
+  
   <div align="center"><img src="./assets/38.png"></div>
+
+  32 - Escogemos nuestro país.
+  
   <div align="center"><img src="./assets/39.png"></div>
+
+  33 - Seleccionamos `deb.debian.org`.
+  
   <div align="center"><img src="./assets/40.png"></div>
+
+  34 - Lo dejamos vacío y `Continue`.
+  
   <div align="center"><img src="./assets/41.png"></div>
+
+  35 - Le damos a `No`, no nos interesan que vean nuestras estadísticas.
+  
   <div align="center"><img src="./assets/42.png"></div>
+
+  36 - Desmarcamos todas las opciones.
+  
   <div align="center"><img src="./assets/43.png"></div>
+
+  37 - Seleccionamos `Yes` para instalar GRUB boot.
+
   <div align="center"><img src="./assets/44.png"></div>
+
+  38 - Escogemos el dispositivo para la instalación del cargador de arranque. `/dev/sda (ata_VBOX_HARDDISK)`.
+  
   <div align="center"><img src="./assets/45.png"></div>
+
+  39 - `Continue` y finalizamos la instalación.
+    
   <div align="center"><img src="./assets/46.png"></div>
   
   
   
+ 
