@@ -1,6 +1,9 @@
 <div align="center">
   <img src="../../../.assets/Born2beroot.png">
-
+  <p align="center">
+	  <a href="#about">About</a> •
+    <a href="#instalación">Instalación</a>
+  </p>
 </div>
 
 ## About
@@ -13,7 +16,7 @@ Crearás tu primera máquina en VirtualBox (o UTM si no puedes utilizar VirtualB
 
 [Click aquí](./es.subject.pdf) para ver el `PDF` del proyecto.
 
-  ## 2- Instalacion de la maquina 🛠
+  ## Instalación
 
   1 - Abrimos VirtualBox y pinchamos en `Nueva`
   
