@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 01:24:48 by antalvar          #+#    #+#             */
-/*   Updated: 2024/05/08 01:24:53 by antalvar         ###   ########.fr       */
+/*   Updated: 2024/05/14 15:23:20 by antalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 int	ft_putchar(char c)
 {
-	write (1, &c, 1);
-	return (1);
+	return (write (1, &c, 1));
 }

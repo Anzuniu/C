@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 01:25:33 by antalvar          #+#    #+#             */
-/*   Updated: 2024/05/09 18:24:11 by antonio          ###   ########.fr       */
+/*   Updated: 2024/05/14 14:42:40 by antalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	ft_puthex(unsigned long n, char c)
 	hex_low = "0123456789abcdef";
 	if (c == 'p' && n == 0)
 	{
-		write (1, "(nil)", 5);
-		printed_chars = 5;
+		write (1, "0x0", 3);
+		printed_chars = 3;
 	}
 	if (c == 'x')
 		printed_chars += ft_printhex((unsigned int)n, hex_low, printed_chars);
