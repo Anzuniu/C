@@ -1,4 +1,4 @@
-<img src="antalvar_white.png" alt="Imagen clara sobre fondo oscuro" class="dark-theme">
+<img src="/assets/antalvar_white.png" alt="Imagen clara sobre fondo oscuro" class="dark-theme">
 <img src="antalvar_black.png" alt="Imagen oscura sobre fondo claro" class="light-theme">
 
 img.light-theme { display: none; }
