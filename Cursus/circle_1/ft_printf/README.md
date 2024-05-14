@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="../../../.assets/Sin título-2.png">
+  <img src="../../../.assets/FT_PRINT.png">
 </div>
 
 <p align="center">
