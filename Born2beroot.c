@@ -1,4 +1,4 @@
-Su
+su
 apt install sudo
 //Reiniciamos la máquina 
 sudo reboot
