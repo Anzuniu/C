@@ -1,46 +1,34 @@
 #!/bin/bash
-//--------------------------------------------------------------------------------------------------------------------------
+
 # ARCHITETURE
-	arc=$(uname -a)
-//--------------------------------------------------------------------------------------------------------------------------
+		arc=$(uname -a)
 # CPU PHYSICAL
-	pcpu=$(grep "physical id" /proc/cpuinfo | sort | uniq | wc -l) 
-//--------------------------------------------------------------------------------------------------------------------------
+		pcpu=$(grep "physical id" /proc/cpuinfo | sort | uniq | wc -l) 
 # CPU VIRTUAL
-	vcpu=$(grep "^processor" /proc/cpuinfo | wc -l)
-//--------------------------------------------------------------------------------------------------------------------------
+		vcpu=$(grep "^processor" /proc/cpuinfo | wc -l)
 # RAM
-	fram=$(free -m | awk '$1 == "Mem:" {print $2}')
-	uram=$(free -m | awk '$1 == "Mem:" {print $3}')
-	pram=$(free | awk '$1 == "Mem:" {printf("%.2f"), $3/$2*100}')
-//--------------------------------------------------------------------------------------------------------------------------
+		fram=$(free -m | awk '$1 == "Mem:" {print $2}')
+		uram=$(free -m | awk '$1 == "Mem:" {print $3}')
+		pram=$(free | awk '$1 == "Mem:" {printf("%.2f"), $3/$2*100}')
 # DISK
-	fdisk=$(df -BG | grep '^/dev/' | grep -v '/boot$' | awk '{ft += $2} END {print ft}')
-	udisk=$(df -BM | grep '^/dev/' | grep -v '/boot$' | awk '{ut += $3} END {print ut}')
-	pdisk=$(df -BM | grep '^/dev/' | grep -v '/boot$' | awk '{ut += $3} {ft+= $2} END {printf("%d"), ut/ft*100}')
-//--------------------------------------------------------------------------------------------------------------------------
+		fdisk=$(df -BG | grep '^/dev/' | grep -v '/boot$' | awk '{ft += $2} END {print ft}')
+		udisk=$(df -BM | grep '^/dev/' | grep -v '/boot$' | awk '{ut += $3} END {print ut}')
+		pdisk=$(df -BM | grep '^/dev/' | grep -v '/boot$' | awk '{ut += $3} {ft+= $2} END {printf("%d"), ut/ft*100}')
 # CPU LOAD
-	cpul=$(top -bn1 | grep '^%Cpu' | cut -c 9- | xargs | awk '{printf("%.1f%%"), $1 + $3}')
-//--------------------------------------------------------------------------------------------------------------------------
+		cpul=$(top -bn1 | grep '^%Cpu' | cut -c 9- | xargs | awk '{printf("%.1f%%"), $1 + $3}')
 # LAST BOOT
-	lb=$(who -b | awk '$1 == "system" {print $3 " " $4}')
-//--------------------------------------------------------------------------------------------------------------------------
+		lb=$(who -b | awk '$1 == "system" {print $3 " " $4}')
 # LVM USE
-	lvmu=$(if [ $(lsblk | grep "lvm" | wc -l) -eq 0 ]; then echo no; else echo yes; fi)
-//--------------------------------------------------------------------------------------------------------------------------
+		lvmu=$(if [ $(lsblk | grep "lvm" | wc -l) -eq 0 ]; then echo no; else echo yes; fi)
 # TCP CONNECTIONS
-	ctcp=$(ss -neopt state established | wc -l)
-//--------------------------------------------------------------------------------------------------------------------------
+		ctcp=$(ss -neopt state established | wc -l)
 # USER LOG
-	ulog=$(users | wc -w)
-//--------------------------------------------------------------------------------------------------------------------------
+		ulog=$(users | wc -w)
 # NETWORK
-	ip=$(hostname -I)
-	mac=$(ip link show | grep "ether" | awk '{print $2}')
-//---------------------------------------------------------------------------------------------------------------------------
+		ip=$(hostname -I)
+		mac=$(ip link show | grep "ether" | awk '{print $2}')
 # SUDO
-	cmds=$(journalctl _COMM=sudo | grep COMMAND | wc -l)
-//---------------------------------------------------------------------------------------------------------------------------
+		cmds=$(journalctl _COMM=sudo | grep COMMAND | wc -l)
 	
 wall "	#Architecture: $arc
 	#CPU physical: $pcpu
