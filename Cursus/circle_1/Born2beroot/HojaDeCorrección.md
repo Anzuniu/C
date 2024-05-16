@@ -1,10 +1,10 @@
-### Preliminary tests
+## Preliminary tests
 
 - Defense can only happen if the student being evaluated or groups is present. This way everybody learns by sharing knowledge with each other.
 - Uf no work has been submited (or wrong files, wrong directory, or wrong filenames), the grade is 0, and the evaluation process ends.
 - For this project, you have to clone theus Git repository on their station.
 
-### General instructions
+## General instructions
 
 - During the defense, as soon as you need help to verify a point, the student evaluated must help you.
 - Ensure that the "signature.txt" file is present at the root of the cloned repository.
@@ -13,9 +13,10 @@
 - Start the virtual machine to be evaluated.
 - If something doesn't work as expected or the two signatures differ, the evaluation stops here.
 
-### Mandatory part
+## Mandatory part
 
-## Project overview
+### Project overview
+
 · The student being evaluated should explain to you simply:
   - How a virtual machine works.
   - Their choice of operating system.
