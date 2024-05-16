@@ -41,5 +41,13 @@ Normally there should be one or two modified files. If there is any problem, the
 ##Hostname and partitions
 Remember: Whenever you need help checking something, the student being evaluated should be able to help you.
 - Check that the hostname of the machine is correctly formatted as follows: login42 (login of the student being evaluted).
+- Modify this hostname by replacing the login with yours, then restart the machine. If on restart, the hostname has not been updated, the evaluation stops here.
+- You can now restore the machine to the original hostname.
+- Ask the student being evaluated how to view the partitions for this virtual machine.
+- Compare the output with the example given in the subject. Please note: if the student evaluated makes the bonuses, it will be necessary to refer to the bonus example.
+  This part is an opportunity to discuss the scores! The student being evaluated should give you a brief explanation of how LVM works and what it is all about.
+
+## SUDO
+- Check that
 - Modify this hostname by replacing the login with yours, then restart the machine. If on restart, the hostna,e has not been updated, the evaluation stops here.
 - You can now restore the machine to the original hostname. 
