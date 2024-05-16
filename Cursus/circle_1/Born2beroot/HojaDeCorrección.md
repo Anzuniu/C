@@ -15,9 +15,7 @@
 
 ## Mandatory part
 
-### Project overview
-
-· The student being evaluated should explain to you simply:
+The student being evaluated should explain to you simply:
   - How a virtual machine works.
   - Their choice of operating system.
   - The basic differences between Rocky and Debian.
