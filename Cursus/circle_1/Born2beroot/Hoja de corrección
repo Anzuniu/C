@@ -20,3 +20,11 @@
   - The purpose of virtual machine.
   - If the evaluated student chose Rocky: what SELinux and DNF are.
   - If the evaluated student chose Debian: the difference between aptitude and apt, and what APPPArmir is. During the defense, a script must display information all every 10 minutes. Its operation will be checked in detail later. If the explanations are not clear, the evaluation stops here.
+
+# Simple setup
+· Ensure that the machine does not have a graphical environment at launch. A password will be requested before attempting to connect to this machine. Finally, connect with a user with the help of the student beiing evaluated. This user must not be root. Pay attention to the password chosen. it must folloow the rules imposed in the subject.
+· Check that the UFW service is started with the help of the evaluator.
+· Check that the SSH service is started with the help of the evaluator.
+· Check that the chosen operating system is Debian or Rocky with the help of the evaluator. If something does not work as expected or is not clearly explained, the evaluation stops here.
+
+# User
