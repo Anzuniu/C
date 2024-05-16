@@ -32,3 +32,16 @@
 - Check that the chosen operating system is Debian or Rocky with the help of the evaluator. If something does not work as expected or is not clearly explained, the evaluation stops here.
 
 ## User
+Remember: Whenever you need help checking something, the student being evaluated shoyld be able to help you.
+The subject requests that a user with the login of the student being evaluated is present on the virtual machine. Check that it has been added and that it belongs to the "sudo" and "user42" group.
+Make sure the rules imposed in the subject concerning the password policy have been put in the place following the following steps.
+Firstm create a new user. Assign it a password of your choice, respeting the subject rules. The student being evaluated must now explain to you how they were able to set up the rules requested in the subject on their virtual machine.
+Normally there should be one or two modified files. If there is any problem, the evaluation stops here.
+- Now that you have a new user, ask the student being evaluated to create a group named "evaluation" in front of you and assign it to this user. Finally, check that this user belongs to the "evaluating" group.
+- Finally, ask the student being evaluated to explain the advantages of this password policy, as well as the advantages and disvantages of its implementation. Of course, answering that it is because the subject asks for it does not count.
+
+##Hostname and partitions
+Remember: Whenever you need help checking something, the student being evaluated should be able to help you.
+- Check that the hostname of the machine is correctly formatted as follows: login42 (login of the student being evaluted).
+- Modify this hostname by replacing the login with yours, then restart the machine. If on restart, the hostna,e has not been updated, the evaluation stops here.
+- You can now restore the machine to the original hostname. 
