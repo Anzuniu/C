@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="../../../.assets/born2beroot.png">
+  <img src="../.assets/born2beroot.png">
   <p align="center">
 	  <a href="#about">About</a> •
     <a href="#instalación">Instalación</a>
