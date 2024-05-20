@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 18:46:41 by antalvar          #+#    #+#             */
-/*   Updated: 2024/05/09 20:19:52 by antonio          ###   ########.fr       */
+/*   Updated: 2024/05/18 21:21:26 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ char	*ft_remove_line(char *aux_line)
 		aux_line = NULL;
 		return (NULL);
 	}
-	new_aux_line = ft_calloc(ft_strlen(aux_line) - i + 1, sizeof(char));
+	new_aux_line = ft_calloc((ft_strlen(aux_line) - i + 1), sizeof(char));
 	if (!new_aux_line)
 		return (NULL);
 	i++;
