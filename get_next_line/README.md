@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="../../../.assets/get_next_line2.png">
+  <img src="../.assets/get_next_line2.png">
 </div>
 
 <p align="center">
