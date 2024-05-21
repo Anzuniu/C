@@ -1,4 +1,4 @@
-<img src="/.assets/antalvartest2.png" alt="Imagen clara sobre fondo oscuro" class="dark-theme">
+<img src="/.assets/antalvar.png" alt="Imagen clara sobre fondo oscuro" class="dark-theme">
 
 <div align="center">
   
