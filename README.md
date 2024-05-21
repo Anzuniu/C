@@ -12,6 +12,6 @@
 
 
 
-![GitHub Stats](https://github-readme-stats.anuraghazra1.vercel.app/api?username=anzuniu&show_icons=true&include_all_commits=true&theme=dark&count_private=true 'Datos de Antonio Álvarez')
+![GitHub Stats](https://github-readme-stats.anuraghazra1.vercel.app/api?username=anzuniu&show_icons=true&include_all_commits=true&theme=shadow_blue&count_private=true 'Datos de Antonio Álvarez')
 
 </div>
