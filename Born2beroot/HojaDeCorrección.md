@@ -48,6 +48,13 @@ Remember: Whenever you need help checking something, the student being evaluated
   This part is an opportunity to discuss the scores! The student being evaluated should give you a brief explanation of how LVM works and what it is all about.
 
 ## SUDO
-- Check that
-- Modify this hostname by replacing the login with yours, then restart the machine. If on restart, the hostna,e has not been updated, the evaluation stops here.
-- You can now restore the machine to the original hostname. 
+- Check that the "sudo" program is properly installed on the visual machine.
+- The student being evaluated should now show assigning your new user to the "sudo" group.
+- The subject imposes strict rules for sudo. The student being evaluated must first explain the value and operation of sudo using examples of their choice. In a second step, it must show you the implementation of the rules imposed by the subject.
+Verify that the "/var/log/sudo/" folder exists and has at least one file. Check the contents of the files in this folder. You should see a history of the commands used with sudo. Finally, try to run a command via sudo. See if the file (s) in the "/var/log/sudo/" folder have been updated. If something does not work as expected or is not clearly explained, the evaluation stops here.
+
+## UFW / Firewalld
+Remember: Whenever you need help checking something, the student being evaluated should be able to help you.
+- Check that the "UFW" (or "Firewalld" for rocky) program is properly installed on the virtual machine.
+- Check that it is working properly.
+
