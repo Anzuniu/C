@@ -176,7 +176,7 @@ Vamos a desarrollar el código de la siguiente forma:
 - Una función `ss` que llame a la función `swap` con los dos stacks.
   
 ```ruby
-static void	swap(t_stack *stack)
+void	swap(t_stack *stack)
 {
 	t_stack	*first;
 	t_stack	*second;
@@ -194,4 +194,43 @@ static void	swap(t_stack *stack)
 - Una vez hecho esto, iniciamos nuestro valor de `first` con el valor de nuestro stack y nuestro `second` con el valor del nodo al que apunta nuestro primer nodo de stack, que es el segundo.
 - Hacemos que el componente `next` de nuestro nodo `first` apunte al mismo nodo que apunta `second`.
 - Ahora hacemos que el componente `next` de nuestro nodo `second` apunte a `first`.
+
+Una vez hecha nuestra función `swap` simplemente tenemos que aplicarlas con nuestras listas, de forma que tendríamos el siguiente código:
+
+```ruby
+static void     swap(t_list lst)
+{
+        t_list  *first;
+        t_list  *second;
+
+        if (!lst || lst -> next == NULL)
+                return (lst);
+        first = lst;
+        second = lst -> next;
+        first -> next = second -> next;
+        second -> next = first;
+}
+
+void    sa(t_list **stack_a)
+{
+        swap(stack_a);
+        write(1, "sa\n", 3);
+}
+
+void    sb(t_list **stack_b)
+{
+        swap(stack_b);
+        write(1, "sb\n", 3);
+}
+
+void    ss(t_list **stack_a, t_list **stack_b)
+{
+        swap(stack_a);
+        swap(stack_b);
+        write(1, "ss\n", 3);
+}
+```
+
+Mantenemos la función `swap` en static porque no la vamos a necesitar fuera de este archivo ya que solo la llamamos aquí.
+Con esto ya hemos completado esta operación.
 
