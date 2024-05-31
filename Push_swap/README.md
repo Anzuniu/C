@@ -146,3 +146,52 @@ typedef struct	s_stack
 - `next`: El puntero al siguiente nodo en la lista, necesario para una estructura de lista enlazada.
 
 Si más adelante necesitamos modificar esta estructura, lo haremos.
+
+### Operaciones
+
+Voy a comenzar por lo que considero más sencillo, programar las operaciones.
+
+### Swap
+<table>
+	<tr>
+		<th>sa</th>
+		<td>intercambia los dos primeros elementos encima del stack a. No hace nada si hay uno o menos elementos.</td>
+	</tr>
+	<tr>
+		<th>sb</th>
+		<td>intercambia los dos primeros elementos encima del stack b. No hace nada si hay uno o menos elementos.</td>
+	</tr>
+	<tr>
+		<th>ss</th>
+		<td><code>sa</code> y <code>sb</code> a la vez.</td>
+	</tr>
+</table>
+
+Para realizar esto necesitaremos desarrollar un swap entre dos listas distintas, A y B. Como vamos a necesitar 3 funciones(sa, sb y ss) podemos desarrollarlas en el mismo archivo. Desarrollamos el código de swap:
+
+Vamos a desarrollar el código de la siguiente forma:
+- Una función `swap` que nos haga el swap entre el primer nodo de una lista y el segundo.
+- Una función `sa` que llame a la función `swap` con el stack `a`
+- Una función `sb` que llame a la función `swap` con el stack `b`
+- Una función `ss` que llame a la función `swap` con los dos stacks.
+  
+```ruby
+static void	swap(t_stack *stack)
+{
+	t_stack	*first;
+	t_stack	*second;
+
+	if (!stack || stack -> next == NULL)
+		return (stack);
+	first = stack;
+	second = stack -> next;
+	first -> next = second -> next;
+	second -> next = first;
+}
+```
+- Creamos dos variables para establecer las posiciones 1 y 2 de nuestro stack. 
+- Hacemos un checkeo para ver si tenemos stack o es NULL. 
+- Una vez hecho esto, iniciamos nuestro valor de `first` con el valor de nuestro stack y nuestro `second` con el valor del nodo al que apunta nuestro primer nodo de stack, que es el segundo.
+- Hacemos que el componente `next` de nuestro nodo `first` apunte al mismo nodo que apunta `second`.
+- Ahora hacemos que el componente `next` de nuestro nodo `second` apunte a `first`.
+
