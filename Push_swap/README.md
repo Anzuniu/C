@@ -21,8 +21,6 @@ el conjunto de enteros recibido como argumento.
 
 ¿A que es fácil? Bueno, eso ya lo veremos...
 
-(./assets/es.subject.pdf)[`PDF`]
-
 ## Mandatory
 <table>
   <tr>
@@ -142,9 +140,9 @@ typedef struct	s_stack
 }			s_stack;
 ```
 
-value: El valor almacenado en el nodo.
-index: Un índice que puede ser útil para ciertas operaciones o para mantener un orden específico.
-pos: La posición actual del nodo en alguna estructura o arreglo.
-next: El puntero al siguiente nodo en la lista, necesario para una estructura de lista enlazada.
+- `value`: El valor almacenado en el nodo.
+- `index`: Un índice que puede ser útil para ciertas operaciones o para mantener un orden específico.
+- `pos`: La posición actual del nodo en alguna estructura o arreglo.
+- `next`: El puntero al siguiente nodo en la lista, necesario para una estructura de lista enlazada.
 
 Si más adelante necesitamos modificar esta estructura, lo haremos.
