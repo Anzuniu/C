@@ -2,6 +2,7 @@
 	<a href="#about">About</a> •
 	<a href="#mandatory">Mandatory</a> •
 	<a href="#bonus">Bonus</a>
+	<a href="#desarrollo">Desarrollo</a>
 </p>
 
 ## About
@@ -328,3 +329,17 @@ void	push(t_stack *a, t_stack *b)
 		<tr><th>rrr</th><td></td></tr>
 	</table>
 </p>
+
+### [Rotate](./r.c)
+<tr>
+		<th>ra</th>
+		<td> desplaza hacia arriba todos los elementos del stack a una posición, de forma que el primer elemento se convierte en el último.</td>
+	</tr>
+	<tr>
+		<th>rb</th>
+		<td> desplaza hacia arriba todos los elementos del stack b una posición, de forma que el primer elemento se convierte en el último.</td>
+	</tr>
+	<tr>
+		<th>rr</th>
+		<td><code>ra</code> y <code>rb</code> a la vez.</td>
+	</tr>
