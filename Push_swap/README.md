@@ -132,7 +132,7 @@ Tenemos 2 stacks, A y B. El stack A contiene una cantidad aleatoria de números 
 Un stack es una estructura de datos que sigue el primcipio LIFO (Last In, Fist Out), donde el último elemento en ser añadido es el primero en ser retirado. Las dos operaciones principales son PUSH (insertar un elemento en la parte superior) y POP (eliminar el elemento de la parte superior).
 Podríamos establecer una primera estructura así:
 
-...
+```ruby
 typedef struct	s_stack
 {
 	int		value;
@@ -140,7 +140,7 @@ typedef struct	s_stack
   	int		pos;
    	struct s_stack	*next;
 }			s_stack;
-...
+```
 
 value: El valor almacenado en el nodo.
 index: Un índice que puede ser útil para ciertas operaciones o para mantener un orden específico.
