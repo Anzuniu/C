@@ -151,7 +151,7 @@ Si más adelante necesitamos modificar esta estructura, lo haremos.
 
 Voy a comenzar por lo que considero más sencillo, programar las operaciones.
 
-### Swap
+### [Swap](./s.c)
 <table>
 	<tr>
 		<th>sa</th>
@@ -250,7 +250,7 @@ Con esto ya hemos completado esta operación.
 	</table>
 </p>
 
-### Push
+### [Push](./p.c)
 
 <table>
 	<tr>
