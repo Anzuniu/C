@@ -265,3 +265,66 @@ Con esto ya hemos completado esta operación.
 
 Estas operaciones hacen un push de un stack a otro, de forma que el primer elemento de un stack pasa a ser el primer elemento del otro stack. Teniendo esto en cuenta, podemos hacer lo mismo que en el anterior caso, una función static llamada push y después hacemos las llamadas a las funciones de cada stack.
 
+```
+void	push(t_stack *a, t_stack *b)
+{
+	t_stack aux;
+
+	if (!*a)                
+		return ;
+	aux = *a -> next;
+	*a -> next = *b;
+	*b = *a;
+	*a = aux;
+}
+```
+
+- Si estamos pasando de "a" a "b", chequeamos que tenemos algo que pasar
+- Guardamos el contenido next de "a" en "aux"
+- Hacemos que "a" apunte al primer contenido de "b", posicionandolo el primero
+- Hacemos que el primer contenido de "b" ahora sea "a"
+- Y el nuevo "a" es "aux", el que apuntaba el primer nodo de "a"
+
+  Ahora creamos las funciones `pa` y `pb`
+
+  ```ruby
+  static void     push(t_stack *a, t_stack *b)
+  {
+        t_stack aux;
+
+        if (!*a)
+                return ;
+        aux = *a -> next;
+        *a -> next = *b;
+        *b = *a;
+        *a = aux;
+  }
+
+  void    pa(t_stack **stack_a, t_stack **stack_b)
+  {
+        push(stack_b, stack_a);
+        write(1, "pa\n", 3);
+  }
+
+  void    pb(t_stack **stack_b, t_stack **stack_a)
+  {
+        push(stack_a, stack_b);
+        write(1, "pb\n", 3);
+  }
+  ```
+
+  <p align="center">
+	<table>
+		<tr><th>sa</th><td>:heavy_check_mark:</td></tr>
+		<tr><th>sb</th><td>:heavy_check_mark:</td></tr>
+		<tr><th>ss</th><td>:heavy_check_mark:</td></tr>
+		<tr><th>pa</th><td>:heavy_check_mark:</td></tr>
+		<tr><th>pb</th><td>:heavy_check_mark:</td></tr>
+		<tr><th>ra</th><td></td></tr>
+		<tr><th>rb</th><td></td></tr>
+		<tr><th>rr</th><td></td></tr>
+		<tr><th>rra</th><td></td></tr>
+		<tr><th>rrb</th><td></td></tr>
+		<tr><th>rrr</th><td></td></tr>
+	</table>
+</p>
