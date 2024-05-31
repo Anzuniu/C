@@ -234,3 +234,18 @@ void    ss(t_list **stack_a, t_list **stack_b)
 Mantenemos la función `swap` en static porque no la vamos a necesitar fuera de este archivo ya que solo la llamamos aquí.
 Con esto ya hemos completado esta operación.
 
+<p align="center">
+	<table>
+		<tr><th>sa</th><td>:heavy_check_mark:</td></tr>
+		<tr><th>sb</th><td>:heavy_check_mark:</td></tr>
+		<tr><th>ss</th><td>:heavy_check_mark:</td></tr>
+		<tr><th>pa</th><td></td></tr>
+		<tr><th>pb</th><td></td></tr>
+		<tr><th>ra</th><td></td></tr>
+		<tr><th>rb</th><td></td></tr>
+		<tr><th>rr</th><td></td></tr>
+		<tr><th>rra</th><td></td></tr>
+		<tr><th>rrb</th><td></td></tr>
+		<tr><th>rrr</th><td></td></tr>
+	</table>
+</p>
