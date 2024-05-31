@@ -1,9 +1,12 @@
-<p align="center">
-	<a href="#about">About</a> •
-	<a href="#mandatory">Mandatory</a> •
-	<a href="#bonus">Bonus</a>
-	<a href="#desarrollo">Desarrollo</a>
-</p>
+### Índice
+<a href="#about">About</a> 
+
+<a href="#mandatory">Mandatory</a>
+
+<a href="#bonus">Bonus</a> 
+
+<a href="#desarrollo">Desarrollo</a>
+	- <a href="#operaciones">Operaciones</a>
 
 ## About
 Este proyecto te hará ordenar datos en un *stack*, con un conjunto limitado de
