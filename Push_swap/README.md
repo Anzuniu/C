@@ -51,7 +51,7 @@ el conjunto de enteros recibido como argumento.
   </tr>
 </table>
 
-### Operations
+### Operaciones
 para ordenar los numeros solo podremos usar las siguientes operaciones:
 <table>
 	<tr>
@@ -100,7 +100,7 @@ para ordenar los numeros solo podremos usar las siguientes operaciones:
 	</tr>
 </table>
 
-### Rules
+### Reglas
 - Debes escribir un programa llamado push_swap que recibirá como argumento el stack a con el formato de una lista de enteros. El primer argumento debe ser el que esté encima del stack (cuidado con el orden).
 - El programa debe mostrar la lista de instrucciones (más corta posible) para ordenar el stack a, de menor a mayor donde el menor se sitúe en la cima del stack.
 - Las instrucciones deben separarse utilizando un “\n” y nada más.
@@ -116,7 +116,7 @@ a fin, y que tu gestión de errores debe ser impecable aunque el programa se uti
 incorrectamente. De no ser así, esta parte será IGNORADA.
 ¿Te animas a hacerte tu propio checker? ¡Suena interesante!
 
-### Rules
+### Reglas del bonus
 - Escribe un programa llamado checker, que tomará como argumento el stack a formateado como una lista de enteros. El primer argumento debe estar encima del stack (cuidado con el orden). Si no se da argumento, checker termina y no muestra nada.
 - Durante la ejecución de checker se esperará y leerá una lista de instrucciones, separadas utilizando ’\n’. Cuando todas las instrucciones se hayan leído, checker las ejecutará utilizando el stack recibido como argumento.
 - Tras ejecutar todas las instrucciones, el stack a deberá estar ordenado y el stack b deberá estar vacío. Si es así, checker imprimirá “OK” seguido de un ’\n’ en el stdout. De no ser así, mostrará “KO” seguido de un ’\n’ en el stdout.
@@ -125,3 +125,26 @@ incorrectamente. De no ser así, esta parte será IGNORADA.
   - Algunos o todos los argumentos son más grandes que un int.
   - Hay uno o varios números duplicados.
   - Una instrucción no existe y/o no está bien formateada.
+ 
+## Desarrollo
+
+Tenemos 2 stacks, A y B. El stack A contiene una cantidad aleatoria de números y B está vacío. Vamos a definir stack.
+Un stack es una estructura de datos que sigue el primcipio LIFO (Last In, Fist Out), donde el último elemento en ser añadido es el primero en ser retirado. Las dos operaciones principales son PUSH (insertar un elemento en la parte superior) y POP (eliminar el elemento de la parte superior).
+Podríamos establecer una primera estructura así:
+
+...
+typedef struct	s_stack
+{
+	int		value;
+ 	int		index;
+  	int		pos;
+   	struct s_stack	*next;
+}			s_stack;
+...
+
+value: El valor almacenado en el nodo.
+index: Un índice que puede ser útil para ciertas operaciones o para mantener un orden específico.
+pos: La posición actual del nodo en alguna estructura o arreglo.
+next: El puntero al siguiente nodo en la lista, necesario para una estructura de lista enlazada.
+
+Si más adelante necesitamos modificar esta estructura, lo haremos.
