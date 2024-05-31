@@ -11,7 +11,7 @@
   | 1 | [**born2beroot**](./Born2beroot) | **-** | - |
   |||
   | 2 | [**push_swap**](./push_swap) | **-** | - |
-  | 2 | [**Minitalk**](./Minitalk) | **-** | - |
+  | 2 | [**minitalk**](./minitalk) | **-** | - |
 
 
 ![GitHub Stats](https://github-readme-stats.anuraghazra1.vercel.app/api?username=anzuniu&show_icons=true&include_all_commits=true&theme=gotham&count_private=true 'Datos de Antonio Álvarez')
