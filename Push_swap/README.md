@@ -249,3 +249,19 @@ Con esto ya hemos completado esta operación.
 		<tr><th>rrr</th><td></td></tr>
 	</table>
 </p>
+
+### Push
+
+<table>
+	<tr>
+		<th>pa</th>
+		<td>toma el primer elemento del stack b y lo pone encima del stack a. No hace nada si b está vacío.</td>
+	</tr>
+	<tr>
+		<th>pb</th>
+		<td> push b - toma el primer elemento del stack a y lo pone encima del stack b. No hace nada si a está vacío.</td>
+	</tr>
+</table>
+
+Estas operaciones hacen un push de un stack a otro, de forma que el primer elemento de un stack pasa a ser el primer elemento del otro stack. Teniendo esto en cuenta, podemos hacer lo mismo que en el anterior caso, una función static llamada push y después hacemos las llamadas a las funciones de cada stack.
+
