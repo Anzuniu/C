@@ -334,7 +334,9 @@ void	push(t_stack *a, t_stack *b)
 </p>
 
 ### [Rotate](./r.c)
-<tr>
+
+<table>
+	<tr>
 		<th>ra</th>
 		<td> desplaza hacia arriba todos los elementos del stack a una posición, de forma que el primer elemento se convierte en el último.</td>
 	</tr>
@@ -346,6 +348,7 @@ void	push(t_stack *a, t_stack *b)
 		<th>rr</th>
 		<td><code>ra</code> y <code>rb</code> a la vez.</td>
 	</tr>
+</table>
 
 ### [Algorítmos de ordenación](https://www.geeksforgeeks.org/sorting-algorithms/)
 
