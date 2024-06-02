@@ -354,11 +354,11 @@ void	push(t_stack *a, t_stack *b)
 
 Tenemos que elegir un algorítmo de ordenación que implementar. Aquí hay una lista con unos cuantos entre los que elegir:
 
-- [Quick Sort](https://www.geeksforgeeks.org/quick-sort/)
 - [Bubble Sort](https://www.geeksforgeeks.org/bubble-sort/)
 - [Selection Sort](https://www.geeksforgeeks.org/selection-sort/)
 - [Insertion Sort](https://www.geeksforgeeks.org/selection-sort/)
 - [Merge Sort](https://www.geeksforgeeks.org/selection-sort/)
+- [Quick Sort](https://www.geeksforgeeks.org/quick-sort/)
 - [Heap Sort](https://www.geeksforgeeks.org/selection-sort/)
 - [Counting Sort](https://www.geeksforgeeks.org/counting-sort/)
 - [Radix Sort](https://www.geeksforgeeks.org/radix-sort/)
