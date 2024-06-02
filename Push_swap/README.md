@@ -347,4 +347,6 @@ void	push(t_stack *a, t_stack *b)
 		<td><code>ra</code> y <code>rb</code> a la vez.</td>
 	</tr>
 
-### [Algorítmos de ordenación](https://www.freecodecamp.org/espanol/news/algoritmos-de-ordenacion-explicados-con-ejemplos-en-javascript-python-java-y-c/#:~:text=Los%20algoritmos%20de%20ordenaci%C3%B3n%20son,ZA%2C%209%2D0)
+### [Algorítmos de ordenación](https://www.geeksforgeeks.org/sorting-algorithms/)
+
+[Link 1](https://www.freecodecamp.org/espanol/news/algoritmos-de-ordenacion-explicados-con-ejemplos-en-javascript-python-java-y-c/#:~:text=Los%20algoritmos%20de%20ordenaci%C3%B3n%20son,ZA%2C%209%2D0)
