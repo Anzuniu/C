@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="../.assets/FT_PRINT.png">
+  <img src="../.assets/ft_print.png">
 </div>
 
 <p align="center">
