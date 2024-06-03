@@ -134,7 +134,7 @@ Tenemos 2 stacks, A y B. El stack A contiene una cantidad aleatoria de números 
 Un stack es una estructura de datos que sigue el primcipio LIFO (Last In, Fist Out), donde el último elemento en ser añadido es el primero en ser retirado. Las dos operaciones principales son PUSH (insertar un elemento en la parte superior) y POP (eliminar el elemento de la parte superior).
 Podríamos establecer una primera estructura así:
 
-```ruby
+```c
 typedef struct	s_stack
 {
 	int		value;
@@ -179,7 +179,7 @@ Vamos a desarrollar el código de la siguiente forma:
 - Una función `sb` que llame a la función `swap` con el stack `b`
 - Una función `ss` que llame a la función `swap` con los dos stacks.
   
-```ruby
+```c
 void	swap(t_stack *stack)
 {
 	t_stack	*first;
@@ -201,7 +201,7 @@ void	swap(t_stack *stack)
 
 Una vez hecha nuestra función `swap` simplemente tenemos que aplicarlas con nuestras listas, de forma que tendríamos el siguiente código:
 
-```ruby
+```c
 static void     swap(t_list lst)
 {
         t_list  *first;
@@ -269,7 +269,7 @@ Con esto ya hemos completado esta operación.
 
 Estas operaciones hacen un push de un stack a otro, de forma que el primer elemento de un stack pasa a ser el primer elemento del otro stack. Teniendo esto en cuenta, podemos hacer lo mismo que en el anterior caso, una función static llamada push y después hacemos las llamadas a las funciones de cada stack.
 
-```
+```c
 void	push(t_stack *a, t_stack *b)
 {
 	t_stack aux;
@@ -291,7 +291,7 @@ void	push(t_stack *a, t_stack *b)
 
   Ahora creamos las funciones `pa` y `pb`
 
-  ```ruby
+  ```c
   static void     push(t_stack *a, t_stack *b)
   {
         t_stack aux;
@@ -350,6 +350,154 @@ void	push(t_stack *a, t_stack *b)
 	</tr>
 </table>
 
+Estas operaciones hacen que el último elemento de un stack pase a ser el primer elemento del mismo stack. Teniendo esto en cuenta, podemos hacer lo mismo que en el caso anterior, con una función estática llamada `rotate_reverse` y después hacemos las llamadas a las funciones de cada stack.
+
+```c
+void rotate_reverse(t_stack **stack) 
+{
+    t_stack *aux;
+    t_stack *last_node;
+
+    if (!(*stack) || !(*stack)->next)		
+		return ;
+
+    aux = *stack;
+    last_node = ft_lstlast(*stack);
+    last_node->next = *stack;
+    *stack = last_node;
+    aux->next = NULL;
+}
+```
+- Si queremos rotar el stack de forma inversa, chequeamos si tenemos más de un nodo en la lista.
+- Guardamos el primer nodo en aux.
+- Obtenemos el último nodo de la lista.
+- Hacemos que el último nodo apunte al primer nodo, estableciendo así un bucle circular.
+- Establecemos el primer nodo como el último nodo.
+- Establecemos el siguiente puntero del antiguo último nodo (ahora el penúltimo) como NULL, rompiendo así el bucle.
+
+Ahora podemos crear las funciones rra y rrb para rotar inversamente los stacks.
+
+```c
+static void rotate_reverse(t_stack **stack) 
+{
+    t_stack *aux;
+    t_stack *last_node;
+
+    if (!(*stack) || !(*stack)->next)		
+		return ;
+
+    aux = *stack;
+    last_node = ft_lstlast(*stack);
+    last_node->next = *stack;
+    *stack = last_node;
+    aux->next = NULL;
+}
+
+void	rra(t_stack **stack)
+{
+    rotate_reverse(stack);
+    write(1, "rra\n", 4);
+}
+
+void	rrb(t_stack **stack)
+{
+    rotate_reverse(stack);
+    write(1, "rrb\n", 4);
+}
+```
+
+  <p align="center">
+	<table>
+		<tr><th>sa</th><td>:heavy_check_mark:</td></tr>
+		<tr><th>sb</th><td>:heavy_check_mark:</td></tr>
+		<tr><th>ss</th><td>:heavy_check_mark:</td></tr>
+		<tr><th>pa</th><td>:heavy_check_mark:</td></tr>
+		<tr><th>pb</th><td>:heavy_check_mark:</td></tr>
+		<tr><th>ra</th><td>:heavy_check_mark:</td></tr>
+		<tr><th>rb</th><td>:heavy_check_mark:</td></tr>
+		<tr><th>rr</th><td>:heavy_check_mark:</td></tr>
+		<tr><th>rra</th><td></td></tr>
+		<tr><th>rrb</th><td></td></tr>
+		<tr><th>rrr</th><td></td></tr>
+	</table>
+</p>
+
+### [Reverse Rotate](./r.c)
+
+Estas operaciones hacen que el último elemento de un stack pase a ser el primer elemento del mismo stack. Teniendo esto en cuenta, podemos hacer lo mismo que en el caso anterior, con una función estática llamada `rotate_reverse` y después hacemos las llamadas a las funciones de cada stack.
+
+```c
+void rotate_reverse(t_stack **stack) 
+{
+    t_stack *aux;
+    t_stack *last_node;
+
+    if (!(*stack) || !(*stack)->next)		
+		return ;
+
+    aux = *stack;
+    last_node = ft_lstlast(*stack);
+    last_node->next = *stack;
+    *stack = last_node;
+    aux->next = NULL;
+}
+```
+
+- Si queremos rotar el stack de forma inversa:
+- Chequeamos si tenemos más de un nodo en la lista.
+- Guardamos el primer nodo en aux.
+- Obtenemos el último nodo de la lista.
+- Hacemos que el último nodo apunte al primer nodo, estableciendo así un bucle circular.
+- Establecemos el primer nodo como el último nodo.
+- Establecemos el siguiente puntero del antiguo último nodo (ahora el penúltimo) como NULL, rompiendo así el bucle.
+
+Ahora podemos crear las funciones rra y rrb para rotar inversamente los stacks.
+
+```c
+static void rotate_reverse(t_stack **stack) 
+{
+    t_stack *aux;
+    t_stack *last_node;
+
+    if (!(*stack) || !(*stack)->next)		
+		return ;
+
+    aux = *stack;
+    last_node = ft_lstlast(*stack);
+    last_node->next = *stack;
+    *stack = last_node;
+    aux->next = NULL;
+}
+
+void	rra(t_stack **stack)
+{
+    rotate_reverse(stack);
+    write(1, "rra\n", 4);
+}
+
+void	rrb(t_stack **stack)
+{
+    rotate_reverse(stack);
+    write(1, "rrb\n", 4);
+}
+```
+
+  <p align="center">
+	<table>
+		<tr><th>sa</th><td>:heavy_check_mark:</td></tr>
+		<tr><th>sb</th><td>:heavy_check_mark:</td></tr>
+		<tr><th>ss</th><td>:heavy_check_mark:</td></tr>
+		<tr><th>pa</th><td>:heavy_check_mark:</td></tr>
+		<tr><th>pb</th><td>:heavy_check_mark:</td></tr>
+		<tr><th>ra</th><td>:heavy_check_mark:</td></tr>
+		<tr><th>rb</th><td>:heavy_check_mark:</td></tr>
+		<tr><th>rr</th><td>:heavy_check_mark:</td></tr>
+		<tr><th>rra</th><td>:heavy_check_mark:</td></tr>
+		<tr><th>rrb</th><td>:heavy_check_mark:</td></tr>
+		<tr><th>rrr</th><td>:heavy_check_mark:</td></tr>
+	</table>
+</p>
+
 ### [Algorítmos de ordenación](https://www.geeksforgeeks.org/sorting-algorithms/)
 
 Tenemos que elegir un algorítmo de ordenación que implementar. Aquí hay una lista con unos cuantos entre los que elegir:
@@ -358,7 +506,8 @@ Tenemos que elegir un algorítmo de ordenación que implementar. Aquí hay una l
 - [Selection Sort](https://www.geeksforgeeks.org/selection-sort/)
 - [Insertion Sort](https://www.geeksforgeeks.org/selection-sort/)
 - [Merge Sort](https://www.geeksforgeeks.org/selection-sort/)
-- [Quick Sort](https://www.geeksforgeeks.org/quick-sort/) Muy buenos con muchos datos
+- [Quick Sort](https://www.geeksforgeeks.org/quick-sort/)
+	Muy buenos con muchos datos
 - [Heap Sort](https://www.geeksforgeeks.org/selection-sort/)
 - [Counting Sort](https://www.geeksforgeeks.org/counting-sort/)
 - [Radix Sort](https://www.geeksforgeeks.org/radix-sort/)
