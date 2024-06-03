@@ -358,7 +358,7 @@ Tenemos que elegir un algorítmo de ordenación que implementar. Aquí hay una l
 - [Selection Sort](https://www.geeksforgeeks.org/selection-sort/)
 - [Insertion Sort](https://www.geeksforgeeks.org/selection-sort/)
 - [Merge Sort](https://www.geeksforgeeks.org/selection-sort/)
-- [Quick Sort](https://www.geeksforgeeks.org/quick-sort/)
+- [Quick Sort](https://www.geeksforgeeks.org/quick-sort/) Muy buenos con muchos datos
 - [Heap Sort](https://www.geeksforgeeks.org/selection-sort/)
 - [Counting Sort](https://www.geeksforgeeks.org/counting-sort/)
 - [Radix Sort](https://www.geeksforgeeks.org/radix-sort/)
