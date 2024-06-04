@@ -165,7 +165,7 @@ typedef struct	s_stack
 
 - `value`: El valor almacenado en el nodo.
 - `pos`: La posición actual del nodo en alguna estructura o arreglo.
-- `pos`: La posición actual del nodo objetivo en el otro stack.
+- `target_pos`: La posición actual del nodo objetivo en el otro stack.
 - `next`: El puntero al siguiente nodo en la lista, necesario para una estructura de lista enlazada.
 - `cost_a`: Cantidad de operaciones necesarias para colocar este nodo en el top del stack a.
 - `cost_b`: Cantidad de operaciones necesarias para colocar este nodo en el top del stack b.
