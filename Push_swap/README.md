@@ -134,7 +134,7 @@ Tenemos 2 stacks, A y B. El stack A contiene una cantidad aleatoria de números 
 Un stack es una estructura de datos que sigue el primcipio LIFO (Last In, Fist Out), donde el último elemento en ser añadido es el primero en ser retirado. Las dos operaciones principales son PUSH (insertar un elemento en la parte superior) y POP (eliminar el elemento de la parte superior).
 Podríamos establecer una primera estructura así:
 
-Primera estructura para Stack
+**Primera estructura para Stack**
 ```c
 typedef struct	s_stack
 {
@@ -150,7 +150,7 @@ typedef struct	s_stack
 - `pos`: La posición actual del nodo en alguna estructura o arreglo.
 - `next`: El puntero al siguiente nodo en la lista, necesario para una estructura de lista enlazada.
 
-#Actual estructura para Stack#
+**Actual estructura para Stack**
 
 He sustituido `index` por `target_pod` y he añadido dos variables para el coste que supondría realizar las operaciones.
 
