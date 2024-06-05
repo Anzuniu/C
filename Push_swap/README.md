@@ -150,7 +150,7 @@ typedef struct	s_stack
 - `pos`: La posición actual del nodo en alguna estructura o arreglo.
 - `next`: El puntero al siguiente nodo en la lista, necesario para una estructura de lista enlazada.
 
-Nueva estructura para Stack
+#Actual estructura para Stack#
 
 He sustituido `index` por `target_pod` y he añadido dos variables para el coste que supondría realizar las operaciones.
 
