@@ -130,6 +130,8 @@ incorrectamente. De no ser así, esta parte será IGNORADA.
  
 ## Desarrollo
 
+Comenzaremos con toda la fase de desarrollo del programa. He de añadir que esto no es un tutorial por lo que probablemente seguir esto paso a paso pueda ser contraproducente, pero voy a ir escribiendo las distintas fases de desarrollo que voy a afrontar, aunque posteriormente sean corregidas por otros métodos mas efectivos.
+
 Tenemos 2 stacks, A y B. El stack A contiene una cantidad aleatoria de números y B está vacío. Vamos a definir stack.
 Un stack es una estructura de datos que sigue el primcipio LIFO (Last In, Fist Out), donde el último elemento en ser añadido es el primero en ser retirado. Las dos operaciones principales son PUSH (insertar un elemento en la parte superior) y POP (eliminar el elemento de la parte superior).
 Podríamos establecer una primera estructura así:
