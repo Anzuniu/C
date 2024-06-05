@@ -151,6 +151,9 @@ typedef struct	s_stack
 - `next`: El puntero al siguiente nodo en la lista, necesario para una estructura de lista enlazada.
 
 Nueva estructura para Stack
+
+He sustituido `index` por `target_pod` y he añadido dos variables para el coste que supondría realizar las operaciones.
+
 ```c
 typedef struct	s_stack
 {
