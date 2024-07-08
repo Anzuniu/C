@@ -1,5 +1,34 @@
 # include "push_swap.h"
 
+t_stack *ft_stacknew(int value)
+{
+    t_stack *new_node;
+
+    new_node = (t_stack *)malloc(sizeof(t_stack));
+    if (!new_node)
+        return (NULL);
+    new_node->value = value;
+    new_node->next = NULL;
+    return (new_node);
+}
+
+void ft_stackadd_back(t_stack **stack, t_stack *new)
+{
+    t_stack *last;
+
+    if (!stack || !new)
+        return;
+    if (!*stack)
+    {
+        *stack = new;
+    }
+    else
+    {
+        last = ft_stacklast(*stack);
+        last->next = new;
+    }
+}
+
 t_stack *create_stack(int argc, char **argv)    //Creamos el stack
 {
     t_stack *stack;
@@ -10,72 +39,81 @@ t_stack *create_stack(int argc, char **argv)    //Creamos el stack
     if (argc < 2)
         return (NULL);
     i = 1;
-    stack = ft_lstnew(ft_atoi(argv[i]));
+    stack = ft_stacknew(ft_atoi(argv[i]));
     if (!stack)
         return (NULL);
     current = stack;
     while (i < argc)
     {
-        new_node = ft_lstnew(ft_atoi(argv[i]));
+        new_node = ft_stacknew(ft_atoi(argv[i]));
         if(!new_node)
             return (NULL);
-        ft_lstadd_back(&current, new_node);
+        ft_stackadd_back(&current, new_node);
         current = current -> next;
         i++;
     }
     return (stack);
 }
 
-t_stack	*find_min(t_stack *stack) //Define a function that searches a stack and returns the node with the smallest number
+t_stack	*find_min(t_stack *stack)
 {
-	long			min; //To store the smallest value so far
+	long			min;
 	t_stack	*min_node; //To store a pointer that points to the smallest number
 
 	if (!stack)
 		return (NULL);
 	min = LONG_MAX; //Assign to the smallest value so far, the max long integer
-	while (stack) //Loop until the end of the stack is reached
+	while (stack)
 	{
-		if (stack->value < min) //Check if the current node value is smaller than the smallest so far
+		if (stack->value < min)
 		{
-			min = stack->value; //If so, update the smallest number so far
-			min_node = stack; //Set the pointer to point to the node with the smallest number so far
+			min = stack->value;
+			min_node = stack;
 		}
-		stack = stack->next; //Move to the next node for processing
+		stack = stack->next;
 	}
 	return (min_node); 
 }
 
-t_stack	*find_max(t_stack *stack) //Define a function that searches a stack and returns the node with the biggest number
+t_stack	*find_max(t_stack *stack)
 {
-	long			max; //To store the biggest value so far
+	long			max; 
 	t_stack	*max_node; //To store a pointer that points to the biggest number
 
 	if (!stack)
 		return (NULL);
 	max = LONG_MIN; //Assign to the biggest value so far, the max long integer
-	while (stack) //Loop until the end of the stack is reached
+	while (stack)
 	{
-		if (stack->value > max) //Check if the current node value is smaller than the biggest so far
+		if (stack->value > max)
 		{
-			max = stack->value; //If so, update the biggest number so far
-			max_node = stack; //Set the pointer to point to the node with the biggest number so far
+			max = stack->value;
+			max_node = stack; 
 		}
-		stack = stack->next; //Move to the next node for processing
+		stack = stack->next; 
 	}
 	return (max_node);
 }
 
-int	stack_len(t_stack *stack) //Define a function that calculates and returns the length of a stack
+t_stack	*ft_stacklast(t_stack *stack)
 {
-	int	count; //To store the node count
+	if (!stack)
+		return (NULL);
+	while (stack->next)
+		stack = stack -> next;
+	return (stack);
+}
+
+int	stack_len(t_stack *stack)
+{
+	int	count;
 
 	if (!stack) 
 		return (0);
 	count = 0;
-	while (stack) //Loop until the end of the stack is reached
+	while (stack)
 	{
-		stack = stack->next; //Move to the next node
+		stack = stack->next;
 		count++;
 	}
 	return (count);

@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static void	current_pos(t_stack *stack)
+void	current_pos(t_stack *stack)
 {
 	int		i;
 	int		median;
@@ -101,7 +101,7 @@ void	set_cheapest(t_stack *stack)
 	cheapest_node -> cheapest = true;
 }
 
-void    init_nodes_a(t_stack *a, t_stack *b)
+void    set_nodes_a(t_stack *a, t_stack *b)
 {
     current_pos(a);
     current_pos(b);

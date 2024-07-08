@@ -6,11 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 01:24:48 by antalvar          #+#    #+#             */
-<<<<<<< HEAD
 /*   Updated: 2024/05/16 02:07:07 by antonio          ###   ########.fr       */
-=======
-/*   Updated: 2024/05/14 15:23:20 by antalvar         ###   ########.fr       */
->>>>>>> 193f6ebe78161c0c208b94ddee27d6e0d7078737
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +14,8 @@
 
 int	ft_putchar(char c)
 {
-<<<<<<< HEAD
 	write (1, &c, 1);
 	if (write(1, &c, 1) == -1)
 		return (-1);
 	return (1);
-=======
-	return (write (1, &c, 1));
->>>>>>> 193f6ebe78161c0c208b94ddee27d6e0d7078737
 }

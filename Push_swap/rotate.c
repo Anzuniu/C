@@ -10,19 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 #include "./libft/libft.h"
 
 static void	rotate(t_stack **stack)
 {
-	t_stack	*aux;
-	
-	if (!(*stack) || !(*stack)->next)		
-		return ;
+	t_stack	*last_node;
 
-	aux = *stack;
-	*stack = (*stack) -> next;
-	aux -> next = NULL;
-	ft_lstadd_back(stack, aux);
+	if (!*stack || !(*stack)->next)
+		return ;
+	last_node = ft_stacklast(*stack); 
+	last_node->next = *stack;
+	*stack = (*stack)->next;
+	(*stack)->prev = NULL;
 }
 
 void	ra(t_stack **stack_a)

@@ -10,50 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
-static void move_a_to_b(t_stack **a, t_stack **b)
+void    sort_three(t_stack **a)
 {
-    t_stack *cheapest_node;
+    t_stack *biggest; //Creamos un puntero para apuntar al número más grande
 
-    cheapest_node = get_cheapest(*a);
-    if (cheapest_node -> above_med && cheapest_node -> target_node -> above_med)
-        rr(a,b);
-    else if (!(cheapest_node -> above_med ) && !(cheapest_node -> target_node->above_med))
-        rrr(a,b);
-    prep_for_push(a, cheapest_node, 'a');
-    prep_for_push(b, cheapest_node, 'b');
-    pb(b, a);
-}
-
-static void move_b_to_a(t_stack **a, t_stack **b)
-{
-    prep_for_push(a, (*b) -> target_node, 'a');
-    pa(a,b);
-}
-
-static void min_on_top(t_stack **a)
-{
-    while ((*a)->value != find_min(*a)->value)
-    {
-        if (find_min(*a)->above_med)
-            ra(a);
-        else
-            rra(a);
-    }
-}
-
-bool    stack_sorted(t_stack *stack)
-{
-    if (!stack)
-        return (1);
-    while (stack -> next)
-    {
-        if (stack -> value > stack -> next -> value)
-            return (0);
-            stack = stack -> next;
-    }
-    return (1);
+    biggest = find_max(*a);
+    if (biggest == *a) //Verificamos que el número mayor esté en la parte superior
+        ra(a);          //Si es así, rotamos
+    else if ((*a)->next == biggest) //Si nuestro segundo nodo es el más grande, rotamos inversamente, moviendolo al fondo
+        rra(a);
+    if ((*a)->value > (*a)->next->value) //Ahora que nuestro número más grande está al fondo, verificamos si el primero es mayor que el segundo
+        sa(a);  //Si es así, los intercambiamos
 }
 
 void    sort_stacks(t_stack **a, t_stack **b)
@@ -76,6 +45,6 @@ void    sort_stacks(t_stack **a, t_stack **b)
         set_nodes_a(*b, *a);
         move_a_to_b(b, a);
     }
-    get_pos(*a);
+    current_pos(*a);
     min_on_top(a);
 }

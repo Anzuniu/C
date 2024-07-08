@@ -24,17 +24,16 @@ int main(int argc, char **argv)
 		argv = ft_split(argv[1], ' ');
     stack_a = create_stack(argc, argv + 1); //+1 para empezar por el segundo elemento
     if (!stack_a)
-        return (NULL);
-    get_pos(stack_a);   //Con esta función establecemos la posición relativa del elemento en todo el conjunto
+		return (0);
 	if (!stack_sorted(stack_a)) //Si nuestro stack no está ordenado, lo ordenaremos
 	{
 		if (stack_len(stack_a) == 2) //Si solo tenemos dos valores en el stack a y están desordenados, los cambiamos entre ellos
-			sa(stack_a);
+			sa(&stack_a);
 		else if (stack_len(stack_a) == 3) //Si solo tenemos tres valores, aplicamos el algoritmo de ordenación para casos de 3 valores
-			sort_three(stack_a);
+			sort_three(&stack_a);
 		else	//Si estamos en el caso normal de desorden, aplicamos nuestro algoritmo
-			sort_stacks(stack_a, stack_b);
+			sort_stacks(&stack_a, &stack_b);
 	}
-	free_stack(stack_a); //Liberamos nuestro stack
+	free_stack(&stack_a); //Liberamos nuestro stack
 	return (0);
 }

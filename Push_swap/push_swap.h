@@ -35,13 +35,19 @@ void			current_index(t_stack *stack); //Set the node's current index
 void			set_cheapest(t_stack *stack); //Set the stack's cheapest node
 t_stack	*get_cheapest(t_stack *stack); //Get the cheapest node of a stack
 void			prep_for_push(t_stack **s, t_stack *n, char c); //Prep the required nodes on top for pushing
+void    set_nodes_a(t_stack *a, t_stack *b);
 
 //Stack utils
 int				stack_len(t_stack *stack); //Calculate the length of a stack
-t_stack	*find_last(t_stack *stack); //Find the last node of a stack
 bool			stack_sorted(t_stack *stack); //To check whether a stack is sorted
 t_stack	*find_min(t_stack *stack); //Find the smallest number
 t_stack	*find_max(t_stack *stack); //Find the biggest number
+t_stack	*get_cheapest(t_stack *stack); //Find the cheapest
+t_stack	*ft_stacklast(t_stack *stack);
+void	current_pos(t_stack *stack);
+void min_on_top(t_stack **a);
+t_stack *ft_stacknew(int value);
+void ft_stackadd_back(t_stack **stack, t_stack *new);
 
 //Commands
 void	ra(t_stack **stack_a);
@@ -59,5 +65,6 @@ void	ss(t_stack **stack_a, t_stack **stack_b);
 //Algorithms
 void			sort_three(t_stack **a);
 void			sort_stacks(t_stack **a, t_stack **b); //Turk algorithm
+void move_a_to_b(t_stack **a, t_stack **b);
 
 #endif

@@ -10,19 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
+#include "push_swap.h"
 
-static void	swap(t_stack lst)
+static void	swap(t_stack **stack)
 {
-	t_list	*first;
-	t_list	*second;
+	t_stack	*first;
+	t_stack	*second;
 	
-	if (!lst || lst -> next == NULL)
-		return (lst);
-	first = lst;
-	second = lst -> next;
+	if (!*stack || !(*stack) -> next)
+		return ;
+	first = *stack;
+	second = (*stack) -> next;
 	first -> next = second -> next;
 	second -> next = first;
+	*stack = second;
 }
 
 void	sa(t_stack **stack_a)

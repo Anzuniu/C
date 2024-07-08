@@ -1,18 +1,19 @@
 NAME = push_swap
 
 LIBFT = ./libft/libft.a
+FT_PRINTF = ./ft_printf/libftprintf.a
 
 FILES = \
-	push.c\
-	rotate.c\
-	reverse_rotate.c\
-	sort_three.c\
-	sort.c\
-	swap.c\
-	handle_errors.c\
-	init_nodes.c\
-	push_swap.c\
-	stack_utils.c
+	push.c \
+	rotate.c \
+	reverse_rotate.c \
+	sort.c \
+	sort_utils.c \
+	swap.c \
+	handle_errors.c \
+	init_nodes.c \
+	push_swap.c \
+	stacks_utils.c
 
 OBJ = $(FILES:.c=.o)
 
@@ -20,30 +21,41 @@ FLAGS = -Wall -Werror -Wextra
 
 CC = gcc
 
-$(NAME): $(OBJ) $(LIBFT)
-	@$(CC) -c $(FLAGS) $(FILES) $(LIBFT) -o $(NAME)
-	@ar rcs $(NAME) $(OBJ)
+ifdef ComSpec
+	RM = del /Q
+	FixPath = $(subst /,\,$1)
+else
+	RM = rm -f
+	FixPath = $1
+endif
+
+$(NAME): $(OBJ) $(LIBFT) $(FT_PRINTF)
+	@$(CC) $(FLAGS) $(OBJ) $(LIBFT) $(FT_PRINTF) -o $(NAME)
 	@echo "$(NAME) created!"
 
 $(LIBFT):
 	@make -C ./libft
 
+$(FT_PRINTF):
+	@make -C ./ft_printf
+
 all: $(NAME)
 
 clean:
-	@rm -f $(OBJ)
+	$(RM) $(call FixPath,$(OBJ))
 	@make clean -C ./libft
+	@make clean -C ./ft_printf
 	@echo "clean completed!"
 
-fclean: 
-	clean
-	@rm -f $(NAME)
-	@rm -f $(LIBFT)
+RM = rm -f
+
+fclean: clean
+	$(RM) $(call FixPath,$(NAME))
 	@echo "fclean completed!"
 
-re:	fclean all
+re: fclean all
 
-$(OBJ): %.o: %.c
+%.o: %.c
 	@$(CC) -c $(FLAGS) $< -o $@
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
