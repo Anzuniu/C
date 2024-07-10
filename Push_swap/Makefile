@@ -35,16 +35,16 @@ all: $(NAME)
 
 clean:
 	@rm -f $(OBJ)
-	@make clean -C ./libft
-	@make clean -C ./ft_printf
+	@make clean -C ./libft > /dev/null 2>&1 || true
+	@make clean -C ./ft_printf > /dev/null 2>&1 || true
 	@echo "clean completed!"
 
 RM = rm -f
 
 fclean: clean
 	@rm -f $(NAME)
-	@make fclean -C ./libft
-	@make fclean -C ./ft_printf
+	@make fclean -C ./libft > /dev/null 2>&1 || true
+	@make fclean -C ./ft_printf > /dev/null 2>&1 || true
 	@echo "fclean completed!"
 
 re: fclean all
