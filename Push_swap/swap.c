@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 12:19:57 by antalvar          #+#    #+#             */
-/*   Updated: 2024/05/31 15:41:32 by antonio          ###   ########.fr       */
+/*   Updated: 2024/07/10 14:24:23 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ static void	swap(t_stack **stack)
 {
 	t_stack	*first;
 	t_stack	*second;
-	
-	if (!*stack || !(*stack) -> next)
+
+	if (!*stack || !(*stack)->next)
 		return ;
 	first = *stack;
-	second = (*stack) -> next;
+	second = (*stack)->next;
 	first -> next = second -> next;
 	second -> next = first;
 	*stack = second;
