@@ -1,7 +1,7 @@
 NAME = push_swap
 
 LIBFT = ./libft/libft.a
-FT_PRINTF = ./ft_printf/libftprintf.a
+FT_PRINTF = ./ft_printf/ft_printf.a
 
 FILES = \
 	push.c \
@@ -21,14 +21,6 @@ FLAGS = -Wall -Werror -Wextra
 
 CC = gcc
 
-ifdef ComSpec
-	RM = del /Q
-	FixPath = $(subst /,\,$1)
-else
-	RM = rm -f
-	FixPath = $1
-endif
-
 $(NAME): $(OBJ) $(LIBFT) $(FT_PRINTF)
 	@$(CC) $(FLAGS) $(OBJ) $(LIBFT) $(FT_PRINTF) -o $(NAME)
 	@echo "$(NAME) created!"
@@ -42,7 +34,7 @@ $(FT_PRINTF):
 all: $(NAME)
 
 clean:
-	$(RM) $(call FixPath,$(OBJ))
+	@rm -f $(OBJ)
 	@make clean -C ./libft
 	@make clean -C ./ft_printf
 	@echo "clean completed!"
@@ -50,7 +42,9 @@ clean:
 RM = rm -f
 
 fclean: clean
-	$(RM) $(call FixPath,$(NAME))
+	@rm -f $(NAME)
+	@make fclean -C ./libft
+	@make fclean -C ./ft_printf
 	@echo "fclean completed!"
 
 re: fclean all

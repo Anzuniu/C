@@ -6,12 +6,11 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 12:20:40 by antalvar          #+#    #+#             */
-/*   Updated: 2024/05/30 12:20:43 by antalvar         ###   ########.fr       */
+/*   Updated: 2024/07/10 11:13:08 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "./libft/libft.h"
 
 static void	rotate(t_stack **stack)
 {

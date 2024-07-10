@@ -4,8 +4,8 @@
 # include <stdbool.h>
 # include <limits.h>
 # include <stdio.h>
-#include "./libft/libft.h"
-#include "./ft_printf/ft_printf.h"
+# include "./libft/libft.h"
+# include "./ft_printf/ft_printf.h"
 
 typedef struct	t_stack
 {
