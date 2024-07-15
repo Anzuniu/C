@@ -6,7 +6,7 @@
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 12:20:27 by antalvar          #+#    #+#             */
-/*   Updated: 2024/07/15 15:45:10 by antonio          ###   ########.fr       */
+/*   Updated: 2024/07/15 16:27:58 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@
 char	*process_line(char **stash);
 char	*read_from_fd(int fd);
 char	*get_next_line_helper(char **stash, int fd);
-char	*get_next_line_bonus(int fd); 
+char	*get_next_line_bonus(int fd);
 
 #endif
