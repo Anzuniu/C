@@ -1,38 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   init_b_to_a.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 12:20:27 by antalvar          #+#    #+#             */
-/*   Updated: 2024/07/12 19:39:09 by antonio          ###   ########.fr       */
+/*   Updated: 2024/07/12 19:38:42 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+static void	set_target_b(t_stack *a, t_stack *b)
 {
-	t_stack	*a;
-	t_stack	*b;
+	t_stack	*current_a;
+	t_stack	*target_node;
+	long	best_match_pos;
 
-	a = NULL;
-	b = NULL;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (1);
-	else if (argc == 2)
-		argv = split(argv[1], ' ');
-	init_stack_a(&a, argv + 1);
-	if (!stack_sorted(a))
+	while (b)
 	{
-		if (stack_len(a) == 2)
-			sa(&a, false);
-		else if (stack_len(a) == 3)
-			sort_three(&a);
+		best_match_pos = LONG_MAX;
+		current_a = a;
+		while (current_a)
+		{
+			if (current_a->value > b->value
+				&& current_a->value < best_match_pos)
+			{
+				best_match_pos = current_a->value;
+				target_node = current_a;
+			}
+			current_a = current_a->next;
+		}
+		if (best_match_pos == LONG_MAX)
+			b->target_node = find_min(a);
 		else
-			sort_stacks(&a, &b);
+			b->target_node = target_node;
+		b = b->next;
 	}
-	free_stack(&a);
-	return (0);
+}
+
+void	init_nodes_b(t_stack *a, t_stack *b)
+{
+	current_pos(a);
+	current_pos(b);
+	set_target_b(a, b);
 }

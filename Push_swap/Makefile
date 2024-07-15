@@ -1,42 +1,40 @@
 NAME = push_swap
 
 LIBFT = ./libft/libft.a
-FT_PRINTF = ./ft_printf/ft_printf.a
 
 FILES = \
-	push.c \
-	rotate.c \
-	reverse_rotate.c \
-	sort.c \
-	sort_utils.c \
-	swap.c \
 	handle_errors.c \
-	init_nodes.c \
+	init_a_to_b.c \
+	init_b_to_a.c \
+	push.c \
 	push_swap.c \
-	stacks_utils.c
+	rev_rotate.c \
+	rotate.c \
+	sort_stacks.c \
+	sort_three.c \
+	split.c \
+	stack_init.c \
+	stack_utils.c \
+	swap.c 
 
 OBJ = $(FILES:.c=.o)
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra -g
 
 CC = gcc
 
-$(NAME): $(OBJ) $(LIBFT) $(FT_PRINTF)
-	@$(CC) $(FLAGS) $(OBJ) $(LIBFT) $(FT_PRINTF) -o $(NAME)
+$(NAME): $(OBJ) $(LIBFT)
+	@$(CC) $(FLAGS) $(OBJ) $(LIBFT) -o $(NAME)
 	@echo "$(NAME) created!"
 
 $(LIBFT):
 	@make -C ./libft
-
-$(FT_PRINTF):
-	@make -C ./ft_printf
 
 all: $(NAME)
 
 clean:
 	@rm -f $(OBJ)
 	@make clean -C ./libft > /dev/null 2>&1 || true
-	@make clean -C ./ft_printf > /dev/null 2>&1 || true
 	@echo "clean completed!"
 
 RM = rm -f
@@ -44,7 +42,6 @@ RM = rm -f
 fclean: clean
 	@rm -f $(NAME)
 	@make fclean -C ./libft > /dev/null 2>&1 || true
-	@make fclean -C ./ft_printf > /dev/null 2>&1 || true
 	@echo "fclean completed!"
 
 re: fclean all

@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 02:41:10 by antalvar          #+#    #+#             */
-/*   Updated: 2024/07/15 15:08:18 by antonio          ###   ########.fr       */
+/*   Created: 2024/05/30 12:20:27 by antalvar          #+#    #+#             */
+/*   Updated: 2024/07/15 15:45:10 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-int	ft_atoi(const char *s)
-{
-	int	result;
-	int	sign;
+# include <stdlib.h>
+# include <unistd.h>
 
-	result = 0;
-	sign = 1;
-	while (*s == ' ' || *s == '\t' || *s == '\n' || \
-		*s == '\r' || *s == '\f' || *s == '\v')
-		s++;
-	if (*s == '-' || *s == '+')
-	{
-		if (*s == '-')
-			sign = -1;
-		s++;
-	}
-	while (ft_isdigit(*s))
-		result = result * 10 + (*s++ - '0');
-	return (result * sign);
-}
+# define MAX_FD 1024
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
+char	*process_line(char **stash);
+char	*read_from_fd(int fd);
+char	*get_next_line_helper(char **stash, int fd);
+char	*get_next_line_bonus(int fd); 
+
+#endif

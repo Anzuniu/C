@@ -1,34 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_handle_percent.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 02:41:10 by antalvar          #+#    #+#             */
-/*   Updated: 2024/07/15 15:08:18 by antonio          ###   ########.fr       */
+/*   Created: 2024/05/30 12:20:27 by antalvar          #+#    #+#             */
+/*   Updated: 2024/07/15 15:21:50 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_atoi(const char *s)
+int	ft_handle_percent(void)
 {
-	int	result;
-	int	sign;
-
-	result = 0;
-	sign = 1;
-	while (*s == ' ' || *s == '\t' || *s == '\n' || \
-		*s == '\r' || *s == '\f' || *s == '\v')
-		s++;
-	if (*s == '-' || *s == '+')
-	{
-		if (*s == '-')
-			sign = -1;
-		s++;
-	}
-	while (ft_isdigit(*s))
-		result = result * 10 + (*s++ - '0');
-	return (result * sign);
+	ft_putchar('%');
+	return (1);
 }

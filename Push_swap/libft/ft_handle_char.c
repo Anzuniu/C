@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_handle_char.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/08 01:25:02 by antalvar          #+#    #+#             */
-/*   Updated: 2024/07/10 12:13:23 by antonio          ###   ########.fr       */
+/*   Created: 2024/05/30 12:20:27 by antalvar          #+#    #+#             */
+/*   Updated: 2024/07/15 15:21:14 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr(char *s)
+int	ft_handle_char(va_list ap)
 {
-	size_t	i;
+	char	c;
 
-	i = 0;
-	if (!s)
-	{
-		write(1, "(null)", 6);
-		return (6);
-	}
-	while (s[i])
-		ft_putchar(s[i]);
-	return (i);
+	c = va_arg(ap, int);
+	return (write(1, &c, 1));
 }

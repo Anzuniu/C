@@ -1,40 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putdeci.c                                       :+:      :+:    :+:   */
+/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/07 01:16:16 by antalvar          #+#    #+#             */
-/*   Updated: 2024/07/10 12:13:09 by antonio          ###   ########.fr       */
+/*   Created: 2024/04/12 02:41:10 by antalvar          #+#    #+#             */
+/*   Updated: 2024/07/15 16:06:51 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putdeci(int n)
+int	ft_putnbr_base(unsigned long long nb, const char *base)
 {
-	int	printed_n;
+	unsigned long long	len;
+	int					count;
 
-	printed_n = 0;
-	if (n == INT_MIN)
-	{
-		write (1, "-2147483648", 11);
-		printed_n = printed_n + 11;
-	}
-	else if (n < 0)
-	{
-		printed_n += ft_putchar('-');
-		printed_n += ft_putdeci(-n);
-	}
-	else if (n >= 10)
-	{
-		printed_n += ft_putdeci(n / 10);
-		printed_n += ft_putchar(n % 10 + '0');
-	}
-	else
-	{
-		printed_n += ft_putchar(n + '0');
-	}
-	return (printed_n);
+	count = 0;
+	len = ft_strlen(base);
+	if (nb >= len)
+		count += ft_putnbr_base(nb / len, base);
+	count += ft_putchar(base[nb % len]);
+	return (count);
+}
+
+int	ft_putchar(char c)
+{
+	return (write(1, &c, 1));
 }

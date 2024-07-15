@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_handle_int.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 02:41:10 by antalvar          #+#    #+#             */
-/*   Updated: 2024/07/15 15:08:18 by antonio          ###   ########.fr       */
+/*   Created: 2024/05/30 12:20:27 by antalvar          #+#    #+#             */
+/*   Updated: 2024/07/15 15:21:38 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_atoi(const char *s)
+int	ft_handle_int(va_list ap)
 {
-	int	result;
-	int	sign;
+	long long	n;
+	int			neg;
 
-	result = 0;
-	sign = 1;
-	while (*s == ' ' || *s == '\t' || *s == '\n' || \
-		*s == '\r' || *s == '\f' || *s == '\v')
-		s++;
-	if (*s == '-' || *s == '+')
+	n = va_arg(ap, int);
+	neg = 0;
+	if (n < 0)
 	{
-		if (*s == '-')
-			sign = -1;
-		s++;
+		n *= -1;
+		neg++;
+		write(1, "-", 1);
 	}
-	while (ft_isdigit(*s))
-		result = result * 10 + (*s++ - '0');
-	return (result * sign);
+	return (ft_putnbr_base(n, "0123456789") + neg);
 }

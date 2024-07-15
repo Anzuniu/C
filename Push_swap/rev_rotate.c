@@ -1,59 +1,59 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   rev_rotate.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 12:20:27 by antalvar          #+#    #+#             */
-/*   Updated: 2024/07/12 19:39:39 by antonio          ###   ########.fr       */
+/*   Updated: 2024/07/12 19:39:22 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	rotate(t_stack **stack)
+static void	rev_rotate(t_stack **stack)
 {
-	t_stack	*last_node;
+	t_stack	*last;
 
 	if (!*stack || !(*stack)->next)
 		return ;
-	last_node = find_last(*stack);
-	last_node->next = *stack;
-	*stack = (*stack)->next;
-	(*stack)->prev = NULL;
-	last_node->next->prev = last_node;
-	last_node->next->next = NULL;
+	last = find_last(*stack);
+	last->prev->next = NULL;
+	last->next = *stack;
+	last->prev = NULL;
+	*stack = last;
+	last->next->prev = last;
 }
 
-void	ra(t_stack **a, bool print)
+void	rra(t_stack **a, bool print)
 {
-	rotate(a);
+	rev_rotate(a);
 	if (!print)
-		ft_printf("ra\n");
+		ft_printf("rra\n");
 }
 
-void	rb(t_stack **b, bool print)
+void	rrb(t_stack **b, bool print)
 {
-	rotate(b);
+	rev_rotate(b);
 	if (!print)
-		ft_printf("rb\n");
+		ft_printf("rrb\n");
 }
 
-void	rr(t_stack **a, t_stack **b, bool print)
+void	rrr(t_stack **a, t_stack **b, bool print)
 {
-	rotate(a);
-	rotate(b);
+	rev_rotate(a);
+	rev_rotate(b);
 	if (!print)
-		ft_printf("rr\n");
+		ft_printf("rrr\n");
 }
 
-void	rotate_both(t_stack **a,
+void	rev_rotate_both(t_stack **a,
 		t_stack **b, t_stack *cheapest_node)
 {
 	while (*b != cheapest_node->target_node
 		&& *a != cheapest_node)
-		rr(a, b, false);
+		rrr(a, b, false);
 	current_pos(*a);
 	current_pos(*b);
 }

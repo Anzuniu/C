@@ -5,42 +5,44 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: antalvar <antalvar@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/30 12:19:57 by antalvar          #+#    #+#             */
-/*   Updated: 2024/07/10 14:24:23 by antonio          ###   ########.fr       */
+/*   Created: 2024/05/30 12:20:27 by antalvar          #+#    #+#             */
+/*   Updated: 2024/07/12 19:40:47 by antonio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	swap(t_stack **stack)
+static void	swap(t_stack **head)
 {
-	t_stack	*first;
-	t_stack	*second;
-
-	if (!*stack || !(*stack)->next)
+	if (!*head || !(*head)->next)
 		return ;
-	first = *stack;
-	second = (*stack)->next;
-	first -> next = second -> next;
-	second -> next = first;
-	*stack = second;
+	*head = (*head)->next;
+	(*head)->prev->prev = *head;
+	(*head)->prev->next = (*head)->next;
+	if ((*head)->next)
+		(*head)->next->prev = (*head)->prev;
+	(*head)->next = (*head)->prev;
+	(*head)->prev = NULL;
 }
 
-void	sa(t_stack **stack_a)
+void	sa(t_stack	**a, bool print)
 {
-	swap(stack_a);
-	write(1, "sa\n", 3);
+	swap(a);
+	if (!print)
+		ft_printf("sa\n");
 }
 
-void	sb(t_stack **stack_b)
+void	sb(t_stack **b, bool print)
 {
-	swap(stack_b);
-	write(1, "sb\n", 3);
+	swap(b);
+	if (!print)
+		ft_printf("sb\n");
 }
 
-void	ss(t_stack **stack_a, t_stack **stack_b)
+void	ss(t_stack **a, t_stack **b, bool print)
 {
-	swap(stack_a);
-	swap(stack_b);
-	write(1, "ss\n", 3);
+	swap(a);
+	swap(b);
+	if (!print)
+		ft_printf("ss\n");
 }
